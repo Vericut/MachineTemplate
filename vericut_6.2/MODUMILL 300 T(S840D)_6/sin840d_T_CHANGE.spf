@@ -1,0 +1,36 @@
+; TOOLCHANGE
+   
+CGTECH_MACRO "SubroutineSequence" "CGT_TOOLCHANGE"
+CGTech_Macro "RotationPlaneCancelReset"
+CGTech_Macro "ActiveSpindleOnOff" "" 0
+CGTech_Macro "ZAxisMachineMotion" "" 0
+CGTech_Macro "ProcessMotion" 
+CGTech_Macro "YAxisMachineMotion" "" 0
+CGTech_Macro "CAxisMachineMotion" "" -90
+CGTech_Macro "ProcessMotion"
+CGTech_Macro "BAxisMachineMotion" "" 90
+CGTech_Macro "ProcessMotion"
+CGTech_Macro "ZAxisMachineMotion" "" -773.104
+CGTech_Macro "ProcessMotion"
+CGTech_Macro "ToolChange"
+CGTech_Macro "ZAxisMachineMotion" "" 0
+CGTech_Macro "ProcessMotion" 
+CGTech_Macro "CAxisMachineMotion" "" 0
+CGTech_Macro "BAxisMachineMotion" "" 0
+CGTech_Macro "ProcessMotion"
+CGTech_Macro "GageOffsetDrivenPoint" "" 1
+CGTech_Macro "TurnOnOffGageOffset" "" 1
+CGTech_Macro "TurnOnOffGagePivotOffset" "" 1
+CGTech_Macro "ToolCutterComp" "" 1
+CGTECH_MACRO "EndSub"
+
+
+
+
+
+
+
+
+
+
+

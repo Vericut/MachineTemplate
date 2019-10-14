@@ -1,0 +1,223 @@
+PROC CYCLE800(INT _FR ,STRING[32] _TC ,INT _ST ,INT _MODE ,REAL _X0 ,REAL _Y0 ,REAL _Z0 ,REAL _A ,REAL _B ,REAL _C ,REAL _X1 ,REAL _Y1 ,REAL _Z1 ,INT _DIR ,INT _LOG_ON) SBLOF DISPLOF
+; started from "dmu160_s840d.sub"
+; enhanced during BIY 2006 by CW
+
+;CGTECH_MACRO "RpcpOff" ""
+CGTECH_MACRO "RtcpOn" ""
+
+; maybe more has to be switch off / on
+
+CGTECH_VAR REAL WP_ANG_1, WP_ANG_2, WP_ANG_3
+
+CASE (_FR) OF 0 GOTOF SWIVEL_CYCLE800 1 GOTOF FR_1 2 GOTOF FR_2 4 GOTOF FR_4 5 GOTOF FR_5 6 GOTOF FR_6
+GOTOF ERROR_CYCL800 
+
+FR_1:
+CGTECH_MACRO "ToolRetract" "" 
+CGTECH_MACRO "ProcessMotion" ""
+GOTOF SWIVEL_CYCLE800
+
+FR_2:
+GOTOF ERROR_CYCL800
+GOTOF SWIVEL_CYCLE800
+
+FR_4:
+GOTOF ERROR_CYCL800
+GOTOF SWIVEL_CYCLE800
+
+FR_5:
+GOTOF ERROR_CYCL800
+GOTOF SWIVEL_CYCLE800
+
+FR_6:
+GOTOF ERROR_CYCL800
+GOTOF SWIVEL_CYCLE800
+
+SWIVEL_CYCLE800:
+
+CGTECH_MACRO "RotationPlaneXPoint" "" - #_X0
+CGTECH_MACRO "RotationPlaneYPoint" "" - #_Y0
+CGTECH_MACRO "RotationPlaneZPoint" "" - #_Z0
+
+CGTECH_MACRO "RotationPlaneLocal2" ""
+
+CASE (_ST) OF 0 GOTOF ST_000 1 GOTOF ST_001 10 GOTOF ST_010 11 GOTOF ST_011 100 GOTOF ST_100 101 GOTOF ST_101 110 GOTOF ST_110 111 GOTOF ST_111
+GOTOF ERROR_CYCL800 
+
+ST_000:
+CGTECH_MACRO "RtcpContour" "" 0
+CGTECH_MACRO "RotationPlaneAngle1" "Z" 0
+CGTECH_MACRO "RotationPlaneAngle2" "Y" 0
+CGTECH_MACRO "RotationPlaneAngle3" "X" 0
+CGTECH_MACRO "RotationPlane2"
+GOTOF CALC_CYCLE800
+
+ST_001:
+CGTECH_MACRO "RtcpContour" "" 0
+GOTOF CALC_CYCLE800
+
+ST_010:
+CGTECH_MACRO "RtcpContour" "" 1
+CGTECH_MACRO "RotationPlaneAngle1" "Z" 0
+CGTECH_MACRO "RotationPlaneAngle2" "Y" 0
+CGTECH_MACRO "RotationPlaneAngle3" "X" 0
+CGTECH_MACRO "RotationPlane2"
+GOTOF CALC_CYCLE800
+
+ST_011:
+CGTECH_MACRO "RtcpContour" "" 1
+GOTOF CALC_CYCLE800
+
+ST_100:
+CGTECH_MACRO "RtcpContour" "" 0
+CGTECH_MACRO "RotationPlaneAngle1" "Z" 0
+CGTECH_MACRO "RotationPlaneAngle2" "Y" 0
+CGTECH_MACRO "RotationPlaneAngle3" "X" 0
+CGTECH_MACRO "RotationPlane2"
+GOTOF CALC_CYCLE800
+
+ST_101:
+CGTECH_MACRO "RtcpContour" "" 0
+GOTOF CALC_CYCLE800
+
+ST_110:
+CGTECH_MACRO "RtcpContour" "" 1
+CGTECH_MACRO "RotationPlaneAngle1" "Z" 0
+CGTECH_MACRO "RotationPlaneAngle2" "Y" 0
+CGTECH_MACRO "RotationPlaneAngle3" "X" 0
+CGTECH_MACRO "RotationPlane2"
+GOTOF CALC_CYCLE800
+
+ST_111:
+CGTECH_MACRO "RtcpContour" "" 1
+GOTOF CALC_CYCLE800
+
+CALC_CYCLE800:
+IF _MODE > 63 GOTOF ERROR_CYCL800 ; Not supported with this SUB: Solid angle (_A, _B) or Angle of projection (_A, _B, _C) only Swivel angle per axis (_A, _B, _C)
+CASE (_MODE) OF 57 GOTOF MODE_57 54 GOTOF MODE_54 45 GOTOTF MODE_45 39 GOTOF MODE_39 30 GOTOF MODE 30 27 GOTOF MODE_27 0 GOTOF MOVE_CYCLE800
+GOTOF ERROR_CYCL800 
+
+MODE_57:
+CGTECH_MACRO "RotationPlaneIncAngle1" "Z" #_C
+CGTECH_MACRO "RotationPlaneIncAngle2" "Y" #_B
+CGTECH_MACRO "RotationPlaneIncAngle3" "X" #_A
+
+CGTECH_MACRO "WorkingPlane2Abc" "WP_ANG_1 WP_ANG_2 WP_ANG_3" 0
+
+CGTECH_MACRO "RotationPlaneXPoint" "" #_X1 
+CGTECH_MACRO "RotationPlaneYPoint" "" #_Y1 
+CGTECH_MACRO "RotationPlaneZPoint" "" #_Z1 
+
+CGTECH_MACRO "RotationPlaneLocal2" ""
+
+GOTOF MOVE_CYCLE800
+
+MODE_54:
+CGTECH_MACRO "RotationPlaneIncAngle1" "Y" #_C
+CGTECH_MACRO "RotationPlaneIncAngle2" "Z" #_B
+CGTECH_MACRO "RotationPlaneIncAngle3" "X" #_A
+
+CGTECH_MACRO "WorkingPlane2Abc" "WP_ANG_1 WP_ANG_2 WP_ANG_3" 0
+
+CGTECH_MACRO "RotationPlaneXPoint" "" #_X1 
+CGTECH_MACRO "RotationPlaneYPoint" "" #_Y1 
+CGTECH_MACRO "RotationPlaneZPoint" "" #_Z1 
+
+CGTECH_MACRO "RotationPlaneLocal2" ""
+
+GOTOF MOVE_CYCLE800
+
+MODE_45:
+CGTECH_MACRO "RotationPlaneIncAngle1" "Z" #_C
+CGTECH_MACRO "RotationPlaneIncAngle2" "X" #_B
+CGTECH_MACRO "RotationPlaneIncAngle3" "Y" #_A
+
+CGTECH_MACRO "WorkingPlane2Abc" "WP_ANG_1 WP_ANG_2 WP_ANG_3" 0
+
+CGTECH_MACRO "RotationPlaneXPoint" "" #_X1 
+CGTECH_MACRO "RotationPlaneYPoint" "" #_Y1 
+CGTECH_MACRO "RotationPlaneZPoint" "" #_Z1 
+
+CGTECH_MACRO "RotationPlaneLocal2" ""
+GOTOF MOVE_CYCLE800
+
+MODE_39:
+CGTECH_MACRO "RotationPlaneIncAngle1" "Y" #_C
+CGTECH_MACRO "RotationPlaneIncAngle2" "X" #_B
+CGTECH_MACRO "RotationPlaneIncAngle3" "Z" #_A 
+
+CGTECH_MACRO "WorkingPlane2Abc" "WP_ANG_1 WP_ANG_2 WP_ANG_3" 0
+
+CGTECH_MACRO "RotationPlaneXPoint" "" #_X1 
+CGTECH_MACRO "RotationPlaneYPoint" "" #_Y1 
+CGTECH_MACRO "RotationPlaneZPoint" "" #_Z1 
+
+CGTECH_MACRO "RotationPlaneLocal2" ""
+
+GOTOF MOVE_CYCLE800
+
+MODE_30:
+CGTECH_MACRO "RotationPlaneIncAngle1" "X" #_C
+CGTECH_MACRO "RotationPlaneIncAngle2" "Z" #_B
+CGTECH_MACRO "RotationPlaneIncAngle3" "Y" #_A
+
+CGTECH_MACRO "WorkingPlane2Abc" "WP_ANG_1 WP_ANG_2 WP_ANG_3" 0
+
+CGTECH_MACRO "RotationPlaneXPoint" "" #_X1 
+CGTECH_MACRO "RotationPlaneYPoint" "" #_Y1 
+CGTECH_MACRO "RotationPlaneZPoint" "" #_Z1 
+
+CGTECH_MACRO "RotationPlaneLocal2" ""
+GOTOF MOVE_CYCLE800
+
+MODE_27:
+CGTECH_MACRO "RotationPlaneIncAngle1" "X" #_C
+CGTECH_MACRO "RotationPlaneIncAngle2" "Y" #_B
+CGTECH_MACRO "RotationPlaneIncAngle3" "Z" #_A 
+
+CGTECH_MACRO "WorkingPlane2Abc" "WP_ANG_1 WP_ANG_2 WP_ANG_3" 0
+
+CGTECH_MACRO "RotationPlaneXPoint" "" #_X1 
+CGTECH_MACRO "RotationPlaneYPoint" "" #_Y1 
+CGTECH_MACRO "RotationPlaneZPoint" "" #_Z1 
+
+CGTECH_MACRO "RotationPlaneLocal2" ""
+
+GOTOF MOVE_CYCLE800
+
+MOVE_CYCLE800:
+IF _DIR == 0 GOTOF END_CYCLE800
+A WP_ANG_1 B WP_ANG_2 C WP_ANG_3
+GOTOF END_CYCLE800
+
+ERROR_CYCL800:
+CGTECH_MACRO "ErrorMacro" " with parameters of CYCLE800" 
+
+END_CYCLE800:
+CGTECH_MACRO "SubroutineSequence" "TOOLCHANGE"
+CGTECH_MACRO "RotationPlaneCancelReset"
+CGTECH_MACRO "ActiveSpindleOnOff" "" 0
+CGTech_Macro "ZAxisMachineMotion" "" 0
+CGTech_Macro "ProcessMotion" 
+CGTech_Macro "YAxisMachineMotion" "" 0
+CGTech_Macro "CAxisMachineMotion" "" -90
+CGTech_Macro "ProcessMotion"
+CGTech_Macro "BAxisMachineMotion" "" 90
+CGTech_Macro "ProcessMotion"
+CGTech_Macro "ZAxisMachineMotion" "" -773.104
+CGTech_Macro "ProcessMotion"
+CGTech_Macro "ToolChange"
+CGTech_Macro "ZAxisMachineMotion" "" 0
+CGTech_Macro "ProcessMotion" 
+CGTech_Macro "CAxisMachineMotion" "" 0
+CGTech_Macro "BAxisMachineMotion" "" 0
+CGTech_Macro "ProcessMotion"
+CGTECH_MACRO "GageOffsetDrivenPoint" "" 1
+CGTECH_MACRO "TurnOnOffGageOffset" "" 1
+CGTECH_MACRO "TurnOnOffGagePivotOffset" "" 1
+CGTECH_MACRO "ToolCutterComp" "" 1
+;  This comment was added to force a block finish and update the variable
+CGTECH_MACRO "EndSub
+
+M17
+

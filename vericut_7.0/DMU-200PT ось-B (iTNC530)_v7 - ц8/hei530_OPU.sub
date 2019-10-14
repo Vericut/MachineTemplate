@@ -1,0 +1,279 @@
+;(VERICUT CONTROL MCD SUBROUTINE FILE: hei530.sub)
+
+   ; NOTE! Commas cannot be used with CGTech_VAR because they are used as a decimal point if Heidenhain MP7280 = 0
+
+
+
+
+CGTECH_MACRO "SubroutineSequence" "CGT_DEF7_WORK_OFFSET"    
+                                                            ; CYCL DEF 7.0 Subroutine
+CGTech_VAR REAL CGT_DEF7_X                                  ; Write the Work Offset values to the Shift Offset Registers
+CGTech_VAR REAL CGT_DEF7_Y                                  ; so that DEF 7.1 X# etc will use the same offsets
+CGTech_VAR REAL CGT_DEF7_Z
+CGTech_VAR REAL CGT_DEF7_A
+CGTech_VAR REAL CGT_DEF7_B
+CGTech_VAR REAL CGT_DEF7_C
+CGT_DEF7_X=Q(((CGT_DEF7_INDEX -1) * 20) + 7001)
+CGT_DEF7_Y=Q(((CGT_DEF7_INDEX -1) * 20) + 7002)
+CGT_DEF7_Z=Q(((CGT_DEF7_INDEX -1) * 20) + 7003)
+CGT_DEF7_A=Q(((CGT_DEF7_INDEX -1) * 20) + 7004)
+CGT_DEF7_B=Q(((CGT_DEF7_INDEX -1) * 20) + 7005)
+CGT_DEF7_C=Q(((CGT_DEF7_INDEX -1) * 20) + 7006)
+CGTech_Macro "WorkCoordXValue" "MIRROR" #CGT_DEF7_X
+CGTech_Macro "WorkCoordYValue" "MIRROR" #CGT_DEF7_Y
+CGTech_Macro "WorkCoordZValue" "MIRROR" #CGT_DEF7_Z
+CGTech_Macro "WorkCoordAValue" "MIRROR" #CGT_DEF7_A
+CGTech_Macro "WorkCoordBValue" "MIRROR" #CGT_DEF7_B
+CGTech_Macro "WorkCoordCValue" "MIRROR" #CGT_DEF7_C
+CGTech_Macro "SiemensShiftOffsetA"
+CGTECH_MACRO "EndSub"
+
+CGTECH_MACRO "SubroutineSequence" "CGT_CYCL_DEF204"
+                              ; CYCL DEF 204 Back Boring Subroutine
+CGTECH_MACRO "ActiveSpindleActiveTool"
+CGTECH_MACRO "ActiveSpindleOnOff" "" 0
+
+L ZQ200+Q203 FMAX
+CGTECH_MACRO "C2AxisMotion" "" 0
+CGTECH_MACRO "ProcessMotion"
+CGTECH_MACRO "C2AxisMotion" "" #336
+CGTECH_MACRO "ProcessMotion"
+
+IF[Q214 EQ 1] GOTO 2141
+IF[Q214 EQ 2] GOTO 2142
+IF[Q214 EQ 3] GOTO 2143
+IF[Q214 EQ 4] GOTO 2144
+
+2141
+L iX-Q251 FMAX
+L iZ-[Q250+Q252+Q200+Q200] 
+L iXQ251 FMAX
+     CALL LBL 4711
+L iX-Q251 FMAX
+L iZ[Q250+Q252+Q200+Q200]
+L iZQ204
+GOTO 999
+
+2142
+L iY-Q251 FMAX
+L iZ-[Q250+Q252+Q200+Q200]
+L iYQ251 FMAX
+        CALL LBL 4711
+L iY-Q251 FMAX
+L iZ[Q250+Q252+Q200+Q200]
+L iZQ204
+GOTO 999
+
+2143
+L iXQ251 FMAX
+L iZ-[Q250+Q252+Q200+Q200]  
+L iX-Q251 FMAX
+    CALL LBL 4711
+L iXQ251 FMAX
+L iZ[Q250+Q252+Q200+Q200]
+L iZQ204
+GOTO 999
+
+2144
+L iYQ251 FMAX
+L iZ-[Q250+Q252+Q200+Q200] 
+L iY-Q251 FMAX
+    CALL LBL 4711
+L iYQ251 FMAX
+L iZ[Q250+Q252+Q200+Q200]
+L iZQ204
+GOTO 999
+
+LBL 4711
+S100 M3
+L iZQ249 FQ253
+L iZ-Q249  FQ253
+CGTECH_MACRO "ActiveSpindleActiveTool"
+CGTECH_MACRO "ActiveSpindleOnOff" "" 0
+CGTECH_MACRO "ProcessMotion"
+CGTECH_MACRO "C2AxisMotion" "" #336
+CGTECH_MACRO "ProcessMotion"
+LBL 0
+999
+CGTECH_MACRO "EndSub"
+
+
+CGTECH_MACRO "SubroutineSequence" "CGT_CYCL_DEF202"
+                              ; CYCL DEF 202 Back Boring Subroutine
+L ZQ200+Q203 FMAX
+L iZ-(Q200-Q200)
+L iZQ201-Q200 FQ206 Q211
+;CGTECH_MACRO "SubsystemActivateTool"
+CGTECH_MACRO "ActiveSpindleActiveTool"
+CGTECH_MACRO "ActiveSpindleOnOff" "" 0
+CGTECH_MACRO "C2AxisMotion" "" 0
+CGTECH_MACRO "ProcessMotion"
+CGTECH_MACRO "C2AxisMotion" "" #336
+CGTECH_MACRO "ProcessMotion"
+
+IF[Q214 EQ 0] GOTO 2140
+IF[Q214 EQ 1] GOTO 2141
+IF[Q214 EQ 2] GOTO 2142
+IF[Q214 EQ 3] GOTO 2143
+IF[Q214 EQ 4] GOTO 2144
+
+2140
+CALL LBL 4711
+GOTO 999
+
+2141
+L iX-0.2 FMAX
+CALL LBL 4711
+GOTO 999
+
+2142
+L iY-0.2 FMAX
+CALL LBL 4711
+GOTO 999
+
+2143
+L iX+0.2 FMAX
+CALL LBL 4711
+GOTO 999
+
+2144
+L iY+0.2 FMAX
+CALL LBL 4711
+GOTO 999
+
+LBL 4711
+IF[Q208 EQ 0] GOTO 2
+L ZQ200+Q203  FQ208
+GOTO 3
+2
+L ZQ200+Q203  FQ206
+3
+L ZQ204+Q203 FMAX
+LBL 0
+
+999
+S100 M3
+CGTECH_MACRO "EndSub"
+
+
+CGTECH_MACRO "SubroutineSequence" "CGT_CYCL_DEF208"          
+                                                             ; CYCL DEF 208 & G208 Helical Milling Subroutine
+IF[CGT_TOOLDIAM LT Q335]GOTO1
+CGTECH_MACRO "ErrorMacro" "Tool larger than Bore"
+1
+IF[Q335LT[CGT_TOOLDIAM*2]]GOTO2
+IF[Q342GT0]GOTO2
+CGTECH_MACRO "ErrorMacro" "Large Bore programmed without Q342 being set"
+  ;Q200   Sicherheitsabstand - setup clearance
+  ;Q201   Taschentiefe - Bore depth
+  ;Q203   Werkstückoberfläche - part surface position
+  ;Q334   Zustelltiefe - depth step
+  ;Q335   Bohrungs-Durchmesser - bore diameter
+  ;Q204   2.Sicherheitsabstand - secondary clearance
+  ;Q206   Bearbeitungsvorschub - Plunge feedrate
+  ;Q143   aktuelle Tiefe - current depth
+  ;Q111   Startposition X
+  ;Q112   Startposition Y
+2                                                            ; From Heidenhain manual - If Depth is positive, Reverse the Clearance planes!!!!
+IF [Q201 LT 0] GOTO 5
+CGTECH_MACRO "ErrorMacro" "CYCL DEF 208 or G208 Depth programmed as positive"
+Q200=-1*Q200
+Q204=-1*Q204
+5
+;Mirror image check and setting for X and Y
+Q111=CGT_LOCAL_X
+Q112=CGT_LOCAL_Y
+IF[Q10001 NE 1] GOTO 6
+Q111=-1 * Q111
+6
+IF[Q10002 NE 1] GOTO 7
+Q112=-1 * Q112
+7
+Q101=Q201+Q203
+L XQ111 YQ112
+L ZQ204+Q203 FMAX
+L ZQ200+Q203
+L ZQ203 FQ206
+CC XQ111 YQ112
+L X[Q335/2]+Q111 YQ112 RL
+Q143 = Q203
+10
+Q143 = Q143 - Q334
+IF[Q143 LE Q101] GOTO20
+CR X-[Q335/2]+Q111 YQ112 R[Q335/2] ZQ143+[Q334/2] DR+
+CR X[Q335/2]+Q111 YQ112 R[Q335/2] ZQ143 DR+
+GOTO10
+20
+Q143=Q143+Q334
+CR X-[Q335/2]+Q111 YQ112 R[Q335/2] ZQ101-[[Q101-Q143]/2] DR+
+CR X[Q335/2]+Q111 YQ112 R[Q335/2] ZQ101 DR+
+30
+CR X-[Q335/2]+Q111 YQ112 R[Q335/2] DR+
+CR X[Q335/2]+Q111 YQ112 R[Q335/2] DR+
+L XQ111 YQ112 R0                                             ; Move to centre of the hole
+L ZQ204+Q203 FMAX
+CGTECH_MACRO "EndSub"
+
+
+
+
+CGTECH_MACRO "SubroutineSequence" "CGT_CYCL_DEF262"         
+                                                             ; CYCL DEF 262 and G262 HH Thread Milling Cycle
+  ; Internal Thread Only Supported At Present with Q355=1
+  ; Inputs from Cycle Definition
+  ;Q200   Safety Clearance
+  ;Q201   Depth
+  ;Q203   Surface Z
+  ;Q204   2nd Setup Clearance Distance
+  ;Q207   Cutting Feedrate
+  ;Q239   Z Pitch
+  ;Q253   Feedrate PRE POSITIONING
+  ;Q335   Hole Diameter
+  ;Q342   Roughing Diameter
+  ;Q351   Climbing or Upcut (conventional milling)
+  ; Other Values Used
+  ;Q111   Startposition X
+  ;Q112   Startposition Y
+  ;Q143   Current Depth
+IF [Q201 LT 0] GOTO 5
+CGTECH_MACRO "ErrorMacro" "CYCL DEF 262 or G262 Depth programmed as positive"
+Q200=-1*Q200
+Q204=-1*Q204
+5
+Q111=CGT_LOCAL_X
+Q112=CGT_LOCAL_Y
+Q101=Q201+Q203
+L XQ111 YQ112
+L ZQ204+Q203 FMAX
+L ZQ200+Q203
+L ZQ203 FQ253
+CC XQ111 YQ112
+IF [Q351 LT 0] GOTO 50
+L X[Q335/2]+Q111 YQ112 RR
+Q143 = Q203
+10
+Q143 = Q143 - Q239
+IF[Q143 LE Q101] GOTO 20
+CR X-[Q335/2]+Q111 YQ112 R[Q335/2] ZQ143+[Q239/2] DR- FQ207
+CR X[Q335/2]+Q111 YQ112 R[Q335/2] ZQ143 DR-
+GOTO 10
+20
+L XQ111 YQ112 R0                                             ; Move to centre of the hole
+L ZQ204+Q203 FMAX
+GOTO 99
+50
+L X[Q335/2]+Q111 YQ112 RL
+Q143 = Q203
+60
+Q143 = Q143 - Q239
+IF[Q143 LE Q101] GOTO 70
+CR X-[Q335/2]+Q111 YQ112 R[Q335/2] ZQ143+[Q239/2] DR+ FQ207
+CR X[Q335/2]+Q111 YQ112 R[Q335/2] ZQ143 DR+
+GOTO 60
+70
+L XQ111 YQ112 R0                                             ; Move to centre of the hole
+L ZQ204+Q203 FMAX
+99
+CGTECH_MACRO "EndSub"
+
+

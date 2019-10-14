@@ -1,0 +1,387 @@
+;VERICUT SAMPLE CONTROL MCD SUBROUTINE FILE: sin840d.sub
+
+; ******************************************************************** 
+%SPF6
+;Tool Change Subroutine
+G17
+M6
+G17 M58 M9 M5
+M17
+
+; ******************************************************************** 
+; Internal Subroutines for Tool Axis/Hole Cycles 
+%SPF8017
+; Initial cycle motion in G17 XY plane 
+G00 Z=R2
+M17
+
+%SPF8018
+; Initial cycle motion in G18 ZX plane 
+G00 Y=R2
+M17
+
+%SPF8019
+; Initial cycle motion in G19 YZ plane 
+G00 X=R2
+M17
+
+; ******************************************************************** 
+%SPF81
+; L81/G81 Drilling Cycle Subroutine 
+@111 R190 K1 K8118 K2 K8119
+; G17 XY plane 
+L8017
+G01 Z=R3 
+G00 Z=R10
+G90 G00
+M17
+
+:8118
+; G18 ZX plane 
+L8018
+G01 Y=R3 
+G00 Y=R10
+G90 G00
+M17
+
+:8119
+; G19 YZ plane 
+L8019
+G01 X=R3 
+G00 X=R10
+G90 G00
+M17
+
+; ******************************************************************** 
+%SPF82
+; L82/G82 Drilling Cycle Subroutine 
+@111 R190 K1 K8218 K2 K8219
+; G17 XY plane 
+L8017
+G01 Z=R3 
+G04 X=R04
+G00 Z=R10
+G90 G00
+M17
+
+:8218
+; G18 ZX plane 
+L8018
+G01 Y=R3 
+G04 X=R04
+G00 Y=R10
+G90 G00
+M17
+
+:8219
+; G19 YZ plane 
+L8019
+G01 X=R3 
+G04 X=R04
+G00 X=R10
+G90 G00
+M17
+
+; ******************************************************************** 
+%SPF83
+; L83/G83 Deep Hole Drilling Cycle Subroutine 
+R51=R2
+R52=R1
+R53=0
+R54=0
+R55=0
+R56=2*R05
+@111 R190 K1 K8318 K2 K8319
+
+; G17 XY plane 
+L8017
+R51=R51-R52
+R50=-8301
+@125 R51 R3 K8301
+R51=R3
+
+:8301
+G01 Z=R51 
+R54=R51+1
+G00 Z=R54
+@111 R11 K1 K8302
+G04 X=R04 
+:8302
+@111 R11 K0 K8303
+G00 Z=R02
+G04 S=R00
+:8303
+@121 R51 R3 K8304
+G00 Z=R10
+G90 
+M17
+:8304
+@100 K8300
+
+; G18 ZX plane L8018
+:8318
+R51=R51-R52
+R50=-8311
+@125 R51 R3 K8311
+R51=R3
+
+:8311
+G01 Y=R51 
+R54=R51+1
+G00 Y=R54
+@111 R11 K1 K8312
+G04 X=R04 
+:8312
+@111 R11 K0 K8313
+G00 Y=R02
+G04 S=R00
+:8313
+@121 R51 R3 K8314
+G00 Y=R10
+G90 
+M17
+:8314
+@100 K8300
+
+; G19 YZ plane L8018
+:8319
+L8019
+R51=R51-R52
+R50=-8321
+@125 R51 R3 K8321
+R51=R3
+
+:8321
+G01 X=R51 
+R54=R51+1
+G00 X=R54
+@111 R11 K1 K8322
+G04 X=R04 
+:8322
+@111 R11 K0 K8323
+G00 X=R02
+G04 S=R00
+:8323
+@121 R51 R3 K8324
+G00 X=R10
+G90 
+M17
+:8324
+@100 K8300
+
+; Calculate new depth for L83/G83 Deep Hole Drilling Cycle Subroutine
+:8300
+R53=R51-R3+R55
+R52=R52-R5
+@125 R52 R5 K8331
+R52=R5
+:8331
+@125 R53 R56 K8332
+R52=R53*0.5
+R55=R52
+:8332
+R51=R51-R52
+@125 R51 R3 K8333
+R51=R3
+:8333
+@100 R50
+
+; ******************************************************************** 
+%SPF84
+; L84/G84 Tapping Cycle Subroutine 
+M=R7
+@111 R190 K1 K8418 K2 K8419
+
+; G17 XY plane 
+L8017
+G01 Z=R3 
+G04 X=R04
+G01 Z=R2 M=-R07
+M=R7
+G00 Z=R10
+G90 G00
+M17
+
+:8418
+; G18 ZX plane 
+L8018
+G01 Y=R3 
+G04 X=R04
+G01 Y=R2 M=-R07
+M=R7
+G00 Y=R10
+G90 G00
+M17
+
+:8419
+; G19 YZ plane 
+L8019
+G01 X=R3 
+G04 X=R04
+G01 X=R2 M=-R07
+M=R7
+G00 X=R10
+G90 G00
+M17
+
+; ******************************************************************** 
+%SPF85
+; L85/G85 Boring Cycle Subroutine, Feed Retract 
+@111 R190 K1 K8518 K2 K8519
+; G17 XY plane 
+L8017
+G01 Z=R3 F=R16
+G04 X=R04
+G01 Z=R2 F=R17
+G00 Z=R10
+G90 G00
+M17
+
+:8518
+; G18 ZX plane 
+L8018
+G01 Y=R3 F=R16
+G04 X=R04
+G01 Y=R2 F=R17
+G00 Y=R10
+G90 G00
+M17
+
+:8519
+; G19 YZ plane 
+L8019
+G01 X=R3 F=R16
+G04 X=R04
+G01 X=R2 F=R17
+G00 X=R10
+G90 G00
+M17
+
+; ******************************************************************** 
+%SPF86
+; L86/G86 Boring Cycle Subroutine, Spindle Stop, Rapid Retract 
+M=R7
+@111 R190 K1 K8618 K2 K8619
+; G17 XY plane 
+L8017
+G01 Z=R3 
+G04 X=R04 M5
+G00 Z=R10
+M=R7
+G90 G00
+M17
+
+:8618
+; G18 ZX plane 
+L8018
+G01 Y=R3 
+G04 X=R04 M5
+G00 Y=R10
+M=R7
+G90 G00
+M17
+
+:8619
+; G19 YZ plane 
+L8019
+G01 X=R3 
+G04 X=R04 M5
+G00 X=R10
+M=R7
+G90 G00
+M17
+
+; ******************************************************************** 
+%SPF87
+; L87/G87 Boring Cycle Subroutine, Orient, Offset, Rapid Retract 
+M=R7
+@111 R190 K1 K8718 K2 K8719
+; G17 XY plane 
+L8017
+G01 Z=R3 
+M5
+G00 Z=R10
+M=R7
+G90 G00
+M17
+
+:8718
+; G18 ZX plane 
+L8018
+G01 Y=R3 
+M5
+G00 Y=R10
+M=R7
+G90 G00
+M17
+
+:8719
+; G19 YZ plane 
+L8019
+G01 X=R3 
+M5
+G00 X=R10
+M=R7
+G90 G00
+M17
+
+; ******************************************************************** 
+%SPF88
+; L88/G88 Backboring Cycle Subroutine 
+M=R7
+@111 R190 K1 K8818 K2 K8819
+; G17 XY plane 
+L8017
+G01 Z=R3 
+G04 X=R04 M5
+G00 Z=R10
+M=R7
+G90 G00
+M17
+
+:8818
+; G18 ZX plane 
+L8018
+G01 Y=R3 
+G04 X=R04 M5
+G00 Y=R10
+M=R7
+G90 G00
+M17
+
+:8819
+; G19 YZ plane 
+L8019
+G01 X=R3 
+G04 X=R04 M5
+G00 X=R10
+M=R7
+G90 G00
+M17
+
+; ******************************************************************** 
+%SPF89
+; L89/G89 Boring Cycle Subroutine, Feedrate Programmed Retract 
+@111 R190 K1 K8918 K2 K8919
+; G17 XY plane 
+L8017
+G01 Z=R3 
+G01 Z=R10
+G90 G00
+M17
+
+:8918
+; G18 ZX plane 
+L8018
+G01 Y=R3 
+G01 Y=R10
+G90 G00
+M17
+
+:8919
+; G19 YZ plane 
+L8019
+G01 X=R3 
+G01 X=R10
+G90 G00
+M17

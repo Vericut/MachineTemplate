@@ -1,0 +1,133 @@
+;(VERICUT CONTROL MCD SUBROUTINE FILE: hei530.sub)
+
+; NOTE! Commas cannot be used with CGTech_VAR because they are used as a decimal point if Heidenhain MP7280 = 0
+
+CGTECH_MACRO "SubroutineSequence" "CGT_GAGE_ADJUST_SUB"
+CGTECH_MACRO "TableIndex" "" #CGT_TOOL_ID
+CGTECH_MACRO "TableValues" "" 0
+CGTECH_MACRO "TableValues" "" 0
+CGTECH_MACRO "TableValues" "" #300114 + #CGT_GAGE_ADJUST_VALUE
+CGTECH_MACRO "SetTableValues" "Gage Offset"
+CGTECH_MACRO "SetGageOffsetSubValue" "" 1
+CGTECH_MACRO "EndSub"
+
+
+
+
+CGTECH_MACRO "SubroutineSequence" "CGT_DEF7_WORK_OFFSET"
+                                                               ; Write the Work Offset values to the Shift Offset Registers
+                                                               ; so that DEF 7.1 X# etc will use the same offsets
+CGTech_VAR REAL CGT_DEF7_X
+CGTech_VAR REAL CGT_DEF7_Y
+CGTech_VAR REAL CGT_DEF7_Z
+CGTech_VAR REAL CGT_DEF7_A
+CGTech_VAR REAL CGT_DEF7_B
+CGTech_VAR REAL CGT_DEF7_C
+
+
+CGT_DEF7_X=Q(((CGT_DEF7_INDEX -1) * 20) + 7001)
+CGT_DEF7_Y=Q(((CGT_DEF7_INDEX -1) * 20) + 7002)
+CGT_DEF7_Z=Q(((CGT_DEF7_INDEX -1) * 20) + 7003)
+CGT_DEF7_A=Q(((CGT_DEF7_INDEX -1) * 20) + 7004)
+CGT_DEF7_B=Q(((CGT_DEF7_INDEX -1) * 20) + 7005)
+CGT_DEF7_C=Q(((CGT_DEF7_INDEX -1) * 20) + 7006)
+
+CGTech_Macro "WorkCoordXValue" "MIRROR" #CGT_DEF7_X
+CGTech_Macro "WorkCoordYValue" "MIRROR" #CGT_DEF7_Y
+CGTech_Macro "WorkCoordZValue" "MIRROR" #CGT_DEF7_Z
+CGTech_Macro "WorkCoordAValue" "MIRROR" #CGT_DEF7_A
+CGTech_Macro "WorkCoordBValue" "MIRROR" #CGT_DEF7_B
+CGTech_Macro "WorkCoordCValue" "MIRROR" #CGT_DEF7_C
+
+
+CGTech_Macro "SiemensShiftOffsetA"
+
+CGTECH_MACRO "EndSub"
+
+
+
+CGTECH_MACRO "SubroutineSequence" "CGT_CYCL_DEF208"
+                                                             ; CYCL DEF 208 & G208 Helical Milling Subroutine
+
+IF[CGT_TOOLDIAM LT Q335]GOTO1
+CGTECH_MACRO "ErrorMacro" "Tool larger than Bore"
+1
+IF[Q335LT[CGT_TOOLDIAM*2]]GOTO2
+IF[Q342GT0]GOTO2
+CGTECH_MACRO "ErrorMacro" "Large Bore programmed without Q342 being set"
+
+2
+;Q200   Sicherheitsabstand - setup clearance
+;Q201   Taschentiefe - Bore depth
+;Q203   Werkstückoberfläche - part surface position
+;Q334   Zustelltiefe - depth step
+;Q335   Bohrungs-Durchmesser - bore diameter
+;Q204   2.Sicherheitsabstand - secondary clearance
+;Q206   Bearbeitungsvorschub - Plunge feedrate
+;Q143   aktuelle Tiefe - current depth
+;Q97    Werkzeugnummer - Tool Number
+;Q98    Korregierter Radius - radius
+;Q99    Werkzeugdurchmesser - Tool Diameter
+;Q111   Startposition X
+;Q112   Startposition Y
+;CGT_TOOLDIAM  Tool Diameter
+
+; From Heidenhain manual - If Depth is positive, Reverse the Clearance planes!!!!
+
+IF [Q201 LT 0] GOTO 5
+
+CGTECH_MACRO "ErrorMacro" "CYCL DEF 208 or G208 Depth programmed as positive"
+
+Q200=-1*Q200
+Q204=-1*Q204
+
+
+5
+
+Q111=CGT_LOCAL_X
+Q112=CGT_LOCAL_Y
+
+;CYCL DEF 7.0               ;Shift zero point to bore center Commented until use RotationPlane else doesn't woth with SiemensShiftOffsetA
+;CYCL DEF 7.1 IX Q111
+;CYCL DEF 7.2 IY Q112
+;CYCL DEF 7.3 IZ Q203
+
+L XQ111 YQ112
+L Z Q204 FMAX
+L Z Q200
+L Z 0 FQ206
+CC X Q111 Y Q112
+L X [[[Q335 /2]- [CGT_TOOLDIAM/2]]+Q111] Y Q112 RL
+Q143 = 0
+
+10
+Q143 = Q143 - Q334
+IF[Q143 LE [Q201] GOTO20
+CR X -[[[Q335 / 2] - [CGT_TOOLDIAM/2]]]+Q111 Y Q112 R [[Q335 / 2] - [CGT_TOOLDIAM/2]] Z [Q143+[Q334/2] DR+
+CR X [[[Q335 / 2] - [CGT_TOOLDIAM/2]]]+Q111 Y Q112 R [[Q335 / 2] - [CGT_TOOLDIAM/2]] Z [Q143] DR+
+GOTO10
+
+20
+Q143=Q143+Q334
+CR X -[[[Q335 / 2] - [CGT_TOOLDIAM/2]]]+Q111 Y Q112 R -[[Q335 / 2] - [CGT_TOOLDIAM/2]] R [[Q335 / 2] - [CGT_TOOLDIAM/2]] Z [Q201-[[Q201-Q143]/2]]] DR+
+CR X [[[Q335 / 2] - [CGT_TOOLDIAM/2]]]+Q111 Y Q112 R -[[Q335 / 2] - [CGT_TOOLDIAM/2]] R [[Q335 / 2] - [CGT_TOOLDIAM/2]] Z Q201 DR+
+
+30
+CR X -[[[Q335 / 2] - [CGT_TOOLDIAM/2]]]+Q111 Y Q112 R -[[Q335 / 2] - [CGT_TOOLDIAM/2]] R [[Q335 / 2] - [CGT_TOOLDIAM/2]] DR+
+CR X [[[Q335 / 2] - [CGT_TOOLDIAM/2]]]+Q111 Y Q112 R -[[Q335 / 2] - [CGT_TOOLDIAM/2]] R [[Q335 / 2] - [CGT_TOOLDIAM/2]] DR+
+
+; Move to centre of the hole
+
+L X Q111 Y Q112 R0
+L Z Q204 FMAX
+
+
+;CYCL DEF 7.0               ;Shift Zero Point to bore center
+;CYCL DEF 7.1 IX -Q111
+;CYCL DEF 7.2 IY -Q112
+;CYCL DEF 7.3 IZ -Q203
+
+
+CGTECH_MACRO "EndSub"
+
+

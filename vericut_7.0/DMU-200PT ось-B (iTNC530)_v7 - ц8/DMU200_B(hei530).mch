@@ -1,0 +1,900 @@
+<?xml version="1.0"?>
+<VcMachine Version="7.0" Unit="millimeter">
+  <PriorityType>single</PriorityType>
+  <Table Name="Tool Change Retraction">
+    <Row Index="1" SubIndex="1" Auto="manual">
+      <System>1</System>
+      <Value>1</Value>
+      <Value>1</Value>
+      <Value>1</Value>
+    </Row>
+  </Table>
+  <Table Name="Initial Machine Location">
+    <Row Index="1" SubIndex="1" Auto="manual">
+      <System>1</System>
+      <Value>-900</Value>
+      <Value>1200</Value>
+      <Value>0</Value>
+    </Row>
+  </Table>
+  <Table Name="Tool Change Location">
+    <Row Index="1" SubIndex="1" Auto="manual">
+      <System>1</System>
+      <Value>-900</Value>
+      <Value>1200</Value>
+      <Value>-537</Value>
+    </Row>
+  </Table>
+  <Collision>
+    <Between Sub1="off" Sub2="off" Tol="1.5">
+      <Component>Tool</Component>
+      <Component>C</Component>
+    </Between>
+    <Between Sub1="off" Sub2="off" Tol="1.5">
+      <Component>Tool</Component>
+      <Component>Base</Component>
+    </Between>
+    <Between Sub1="off" Sub2="off" Tol="1.5">
+      <Component>B</Component>
+      <Component>C</Component>
+    </Between>
+    <Between Sub1="off" Sub2="off" Tol="1.5">
+      <Component>B</Component>
+      <Component>Base</Component>
+    </Between>
+    <Between Sub1="off" Sub2="off" Tol="1.5">
+      <Component>X</Component>
+      <Component>C</Component>
+    </Between>
+    <Between Sub1="off" Sub2="off" Tol="1.5">
+      <Component>Base</Component>
+      <Component>C</Component>
+    </Between>
+  </Collision>
+  <Component Name="Base"
+   Subsystem="1"
+   Type="base" Visible="machine" Draw="shaded" Hue="0">
+    <Attach></Attach>
+    <Position X="0" Y="0" Z="0"/>
+    <Rotation I="0" J="0" K="0"/>
+    <Poly Unit="millimeter" Visible="on" Mirror="Off" MirrorCsys="0" Hue="6">
+      <File>V:\vericut_6.2\DMU-200PT ось-B (iTNC530)_6 - ц8\baza1.ply</File>
+      <Position X="0" Y="0" Z="0"/>
+      <Rotation I="0" J="0" K="0"/>
+    </Poly>
+    <Poly Unit="millimeter" Visible="on" Mirror="Off" MirrorCsys="0" Hue="8">
+      <File>V:\vericut_6.2\DMU-200PT ось-B (iTNC530)_6 - ц8\baza2.ply</File>
+      <Position X="0" Y="0" Z="0"/>
+      <Rotation I="0" J="0" K="0"/>
+    </Poly>
+    <Poly Unit="millimeter" Visible="on" Mirror="Off" MirrorCsys="0" Hue="6">
+      <File>V:\vericut_6.2\DMU-200PT ось-B (iTNC530)_6 - ц8\STENKA1.ply</File>
+      <Position X="0" Y="0" Z="0"/>
+      <Rotation I="0" J="0" K="0"/>
+    </Poly>
+    <Poly Unit="millimeter" Visible="off" Mirror="Off" MirrorCsys="0" Hue="7">
+      <File>V:\vericut_6.2\DMU-200PT ось-B (iTNC530)_6 - ц8\STENKA2.ply</File>
+      <Position X="0" Y="0" Z="0"/>
+      <Rotation I="0" J="0" K="0"/>
+    </Poly>
+    <Poly Unit="millimeter" Visible="off" Mirror="Off" MirrorCsys="0" Hue="7">
+      <File>V:\vericut_6.2\DMU-200PT ось-B (iTNC530)_6 - ц8\STENKA3.ply</File>
+      <Position X="0" Y="0" Z="0"/>
+      <Rotation I="0" J="0" K="0"/>
+    </Poly>
+  </Component>
+  <Component Name="Y"
+   Subsystem="1"
+   Type="linear" Visible="machine" Draw="shaded" Hue="1">
+    <Attach>Base</Attach>
+    <Position X="0" Y="0" Z="0"/>
+    <Rotation I="0" J="0" K="0"/>
+    <Link Axis="Y" DisableAuto="off" Register="Y"
+     RapidRate="5000" Accel="125" Decel="125" MaxLinearVelocity="5000" MaxCornerVelocity="600">
+      <AxisPriority PriorityGroup="0" PriorityPos="1" InterpolatedPos="on" PriorityNeg="1" InterpolatedNeg="on"/>
+      <TlRecord TlGroup="0" TlComp="Y" TlMin="-800" TlMax="1200" TlCompCond="" TlMinCond="0" TlMaxCond="0" TlIgnore="off"/>
+    </Link>
+    <Poly Unit="millimeter" Visible="on" Mirror="Off" MirrorCsys="0" Hue="3">
+      <File>V:\vericut_6.2\DMU-200PT ось-B (iTNC530)_6 - ц8\y.ply</File>
+      <Position X="0" Y="0" Z="0"/>
+      <Rotation I="0" J="0" K="0"/>
+    </Poly>
+  </Component>
+  <Component Name="C"
+   Subsystem="1"
+   Type="rotary" Visible="machine" Draw="shaded" Hue="1">
+    <Attach>Y</Attach>
+    <Position X="0" Y="0" Z="0"/>
+    <Rotation I="0" J="0" K="0"/>
+    <Link Axis="Z" DisableAuto="off" Register="C"
+     RapidRate="5000" Accel="125" Decel="125" MaxLinearVelocity="5000" MaxCornerVelocity="600">
+      <AxisPriority PriorityGroup="0" PriorityPos="1" InterpolatedPos="on" PriorityNeg="1" InterpolatedNeg="on"/>
+      <TlRecord TlGroup="0" TlComp="C" TlMin="-29999" TlMax="29999" TlCompCond="" TlMinCond="0" TlMaxCond="0" TlIgnore="off"/>
+    </Link>
+    <Poly Unit="millimeter" Visible="on" Mirror="Off" MirrorCsys="0" Hue="1">
+      <File>V:\vericut_6.2\DMU-200PT ось-B (iTNC530)_6 - ц8\c.ply</File>
+      <Position X="0" Y="0" Z="0"/>
+      <Rotation I="0" J="0" K="0"/>
+    </Poly>
+  </Component>
+  <Component Name="Attach"
+   Subsystem="1"
+   Type="attach" Visible="machine" Draw="shaded" Hue="0">
+    <Attach>C</Attach>
+    <Position X="0" Y="0" Z="0"/>
+    <Rotation I="0" J="0" K="0"/>
+  </Component>
+  <Component Name="Z"
+   Subsystem="1"
+   Type="linear" Visible="machine" Draw="shaded" Hue="5">
+    <Attach>Base</Attach>
+    <Position X="0" Y="0" Z="1250"/>
+    <Rotation I="0" J="0" K="0"/>
+    <Link Axis="Z" DisableAuto="off" Register="Z"
+     RapidRate="5000" Accel="125" Decel="125" MaxLinearVelocity="5000" MaxCornerVelocity="600">
+      <AxisPriority PriorityGroup="0" PriorityPos="1" InterpolatedPos="on" PriorityNeg="1" InterpolatedNeg="on"/>
+      <TlRecord TlGroup="0" TlComp="Z" TlMin="-1100" TlMax="0" TlCompCond="" TlMinCond="0" TlMaxCond="0" TlIgnore="off"/>
+    </Link>
+    <Poly Unit="millimeter" Visible="on" Mirror="Off" MirrorCsys="0" Hue="5">
+      <File>V:\vericut_6.2\DMU-200PT ось-B (iTNC530)_6 - ц8\z.ply</File>
+      <Position X="0" Y="0" Z="-1250"/>
+      <Rotation I="0" J="0" K="0"/>
+    </Poly>
+  </Component>
+  <Component Name="X"
+   Subsystem="1"
+   Type="linear" Visible="machine" Draw="shaded" Hue="1">
+    <Attach>Z</Attach>
+    <Position X="0" Y="0" Z="0"/>
+    <Rotation I="0" J="0" K="0"/>
+    <Link Axis="X" DisableAuto="off" Register="X"
+     RapidRate="5000" Accel="125" Decel="125" MaxLinearVelocity="5000" MaxCornerVelocity="600">
+      <AxisPriority PriorityGroup="0" PriorityPos="1" InterpolatedPos="on" PriorityNeg="1" InterpolatedNeg="on"/>
+      <TlRecord TlGroup="0" TlComp="X" TlMin="-900" TlMax="900" TlCompCond="" TlMinCond="0" TlMaxCond="0" TlIgnore="off"/>
+    </Link>
+    <Poly Unit="millimeter" Visible="on" Mirror="Off" MirrorCsys="0" Hue="3">
+      <File>V:\vericut_6.2\DMU-200PT ось-B (iTNC530)_6 - ц8\x.ply</File>
+      <Position X="0" Y="0" Z="-1250"/>
+      <Rotation I="0" J="0" K="0"/>
+    </Poly>
+  </Component>
+  <Component Name="B"
+   Subsystem="1"
+   Type="rotary" Visible="machine" Draw="shaded" Hue="1">
+    <Attach>X</Attach>
+    <Position X="0" Y="0" Z="0"/>
+    <Rotation I="45" J="0" K="0"/>
+    <Link Axis="Y" DisableAuto="off" Register="B"
+     RapidRate="5000" Accel="125" Decel="125" MaxLinearVelocity="5000" MaxCornerVelocity="600">
+      <AxisPriority PriorityGroup="0" PriorityPos="1" InterpolatedPos="on" PriorityNeg="1" InterpolatedNeg="on"/>
+      <TlRecord TlGroup="0" TlComp="B" TlMin="-7" TlMax="180" TlCompCond="" TlMinCond="0" TlMaxCond="0" TlIgnore="off"/>
+    </Link>
+    <Poly Unit="millimeter" Visible="on" Mirror="Off" MirrorCsys="0" Hue="2">
+      <File>V:\vericut_6.2\DMU-200PT ось-B (iTNC530)_6 - ц8\B.ply</File>
+      <Position X="0" Y="-883.883476483" Z="-883.883476483"/>
+      <Rotation I="-45" J="0" K="0"/>
+    </Poly>
+    <Poly Unit="millimeter" Visible="on" Mirror="Off" MirrorCsys="0" Hue="2">
+      <File>V:\vericut_6.2\DMU-200PT ось-B (iTNC530)_6 - ц8\B2.ply</File>
+      <Position X="0" Y="-883.883476483" Z="-883.883476483"/>
+      <Rotation I="-45" J="0" K="0"/>
+    </Poly>
+  </Component>
+  <Component Name="Spindle"
+   Subsystem="1"
+   Type="spindle" Visible="machine" Draw="shaded" Hue="1">
+    <Attach>B</Attach>
+    <Position X="0" Y="0" Z="0"/>
+    <Rotation I="-45" J="0" K="0"/>
+    <Link Axis="Z" DisableAuto="off" Register="Spindle">
+    </Link>
+  </Component>
+  <Component Name="Tool"
+   Subsystem="1"
+   Type="tool" Visible="all" Draw="translucent" Hue="1">
+    <Attach>Spindle</Attach>
+    <Position X="0" Y="0" Z="0"/>
+    <Rotation I="0" J="0" K="0"/>
+    <Tool TurretIndex="1"/>
+    <Link Axis="Z" DisableAuto="off" Register="Tool">
+    </Link>
+  </Component>
+  <Thumbnail Width="128" Height="87" Format="rrggbb">
+383f47373e47383f47383f47383f47383f47383f47383f47383f47383f47383f47383f47383f47383f47383f47373e47
+383f47383f47383f47383f47383f47383f47383f47383f47383f47383f47383f47383f4742484e575a5d6a6a6b6f6f6f
+888888a4a4a4babababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababa9ba4b342639e42639e42639e42639e42639e42639e42639e42639e42639e486aaa496cad
+506d9d787042787042756d4071693e756d40787042787042787042787042787042756d406c643b665e37665e37665e37
+665e37665e37665e37665e37665e37665e37665e37665e37665e375c56374441363535353535353535353333332f2f2f
+2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d
+394049394049394049394049394049394049394049394049394049394049394049394049394049394049394049394049
+3940493940493940493940493940493940493940493940493940493d444c5054586465676d6d6d7a7a7a999999b3b3b3
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababa7487aa42639e42639e42639e42639e42639e42639e42639e42639e4567a5496cad496cad
+4c6ca6787042787042787042787042746c40726a3e766e41787042787042787042787042787042756d406b633a665e37
+665e37665e37665e37665e37665e37665e37665e37665e37665e37665e37665e375a5437403e35353535353535353535
+3232322e2e2e2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d303030
+3b424b3b424b3b424b3b424b3b424b3b424b3b424b3b424b3b424b3b424b3b424b3b424b3b424b3a414a3b424b3b424b
+3b424b3b424a3b424b3b424b3b424b3a414a3b424b494e555c5e616b6c6c7272728c8c8caaaaaabababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababaaaabac757a81
+676d749b9d9fbabababababa506da142639e42639e42639e42639e42639e42639e42639e43649f496bac496cad496cad
+4a6caa767047787042787042787042787042787042736b3f71693e766e41787042787042787042787042787042746c3f
+6b633a665e37665e37665e37665e37665e37665e37665e37665e37665e37665e37665e37665e375853363f3d35353535
+3535353434342e2e2e2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2e2e2e3737374242424b4b4b
+3c434c3c434c3c434c3c434c3c434c3c434c3c434c3c434c3c434c3c434c3c434c3c434c3c434c3c434c3c434c3c434c
+3c434c3c434c3c434c3c434c42485055585d6768696e6e6e8181819d9d9db7b7b7bababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+bababababababababababababababababababababababababababababababababababababababab9b9b95f656d4b545f
+4b545f4a535e646a728b939f42639e42639e42639e42639e42639e42639e42639e42639e4668a6486bab496cad496cad
+496cad75704a787042787042787042787042787042787042787042736b3f71693e766e41787042787042787042787042
+787042736b3f6a6239665e37665e37665e37665e37665e37665e37665e37665e37665e37665e37665e37655d37555036
+3d3c353535353434343131313535352e2e2e2d2d2d2d2d2d2d2d2d2d2d2d3232323e3e3e4949494c4c4c4c4c4c4c4c4c
+3e454e3e454e3e454e3e454e3e454e3d444e3e454e3d444e3e454e3e454e3e454e3e454e3e454e3e454e3e454e3e454e
+3e454e3f464f4e52586162656c6c6c757575929292aeaeaebabababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+bababababababababababababababababababababababababababababababababababababababa8b8d914a535e4b545f
+4b545f4b545f4b545f4a545f44546e415d8f42639e42639e42639e42639e42639e4668a6476aa9476aa9486baa496cad
+496cad6f6f55787042787042787042787042787042787042787042787042787042726a3e726a3e776f41787042787042
+787042787042787042736b3f6a6239665e37665e37665e37665e37665e37665e37665e37665e37665e37665e37665e37
+655d374d49363535353838384646463535353131312f2f2f3838384444444c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c
+3f46503f46503f46503f46503f46503f46503f46503f46503f46503f46503f46503f46503f46503f46503f4650484e55
+595c606a6a6b6f6f6f858585a3a3a3b8b8b8babababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababab5b6b75f68734c55604b545f
+4b545f4b545f4b545f4b545f4b545f4a535e45567244629742639e42639e4668a6476aa9476aa9476aa9476aa9476aa9
+486bac6e6f59787042787042787042787042787042787042787042787042787042787042787042726a3e71693e776f42
+78704278704278704278704278704271693e696139665e37665e37665e37665e37665e37665e37665e37665e37665e37
+665e37615a374542363737374747473535353535353f3f3f4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c
+414852404751414852414852404751414852414852404751414851414852414852414852434a5353575d6465676d6d6d
+7a7a7a969696b3b3b3bababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababaaaacae5f6977657180596471
+4d56624b545f4b545f4c5560555f6c6d798a8392a5748397354f7d4365a1476aa9476aa9476aa9476aa9476aa9476aa9
+476aa96c6f5c787042787042787042787042787042787042787042787042787042787042787042787042776f42726a3e
+726a3f78704278704278704278704278704278704271693e686038665e37665e37665e37665e37665e37665e37665e37
+665e37665e37665e375d56375e583c4e4a363938353d3d3d4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c
+4249534249534249534249534249534249534249534249534249534249534d525a5e60646b6b6c7171718b8b8ba8a8a8
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababab8b8b8596370596370687483
+8695a98d9db293a3b997a9bf95a6bb8393a6808fa27d8c9e4868a23f5f974365a1476aa9476aa9476aa9476aa9476aa9
+476aa96f6f54787042787042787042787042787042787042787042787042787042787042787042787042787042787042
+776f4171693e736b3f787042787042787042787042787042776f4270683d686038665e37665e37665e37665e37665e37
+665e37665e37665e37665e37665e37665e37635c375b57424c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c
+434a55434a55434a55434a55434a55434b55434a55484f57585b6068696a6d6d6d7e7e7e9c9c9cb6b6b6babababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababab8b8b95b6571596370616c7b
+8190a294a5bb9caec59badc491a2b88190a3808fa27f8ea149679b4d72b74b70b3476aa9476aa9476aa9476aa9476aa9
+476aa9757049787042787042787042787042787042787042787042787042787042787042787042787042787042787042
+787042787042776f41726a3e726a3f787042787042787042787042787042776f416f673c675f38665e37665e37665e37
+665e37665e37665e37665e376f673c897f4aa599599c925b4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c
+444c57444c57444c57444c57454d5752575e6163666d6d6d757575909090afafafbababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+bababababababababababababababababababababababababababababababababababababababa656d795963705e6977
+7e8d9f92a3b99caec59badc492a3b88291a4808fa2808fa25977aa5077be4a6eaf43649f3c5a9041629c476aa9476aa9
+4e6a98776f42787042787042787042787042787042787042787042787042787042787042787042787042787042787042
+787042787042787042787042766e4171693e746c3f787042787042787042787042787042776f416f673c675f37665e37
+665e376960387f7545998f53aca05eada15eada15e9f955b4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c
+454d58464e584c535c5c5f64696a6b6e6e6e848484a1a1a1b9b9b9bababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+bababababababababababababababababababababababababababababababababababababababa69717c5963705e6876
+7c8b9d92a3b99badc49caec593a4b98392a6808fa2808fa27b8a9c627ba54566a1304871404e6762697442567a4669a8
+5e6c7771693e726a3e787042787042787042787042787042787042787042787042787042787042787042787042787042
+787042787042787042787042787042787042766e4171693e746c3f787042787042787042787042787042766e4172693e
+90854ea79c5bada15eada15eada15eada15eada15eaca05e4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c
+565b616566696d6d6d787878969696b1b1b1babababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+bababababababababababababababababababababababababababababababababababababababa727a835963705c6674
+79879990a1b69badc49caec593a4ba8494a7808fa2808fa2808fa2808fa26a798d868b92babababababab7b7b7727a8a
+4b5f7c787042776f41726a3e726a3e787042787042787042787042787042787042787042787042787042787042787042
+787042787042787042787042787042787042787042787042756d40726a3e756d40787042787042787042787042807846
+ada15eada15eada15eada15eada15eada15eada15eaca05e4e4e4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c
+717171898989a8a8a8b9b9b9babababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+bababababababababababababababababababababababababababababababababababababababa7980885963705b6573
+77849690a1b69aacc39caec595a6bc8595a8808fa2808fa2808fa2808fa2808fa27c8a9c858c94b4b4b5bababa8e8e8e
+353535424035635d3b787042766e4171693e736b3f787042787042787042787042787042787042787042787042787042
+787042787042787042787042787042787042787042787042787042787042746c4071693e756d407870427870427e7545
+ada15eada15eada15eada15eada15eada15eada15eada15e59574e4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c
+b5b5b5bababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+bababababababababababababababababababababababababababababababababababababababa80868e5963705b6572
+7582938e9eb39aacc39caec595a7bd8696aa808fa2808fa2808fa2808fa2808fa2808fa27f8ea17e8895b6b6b69c9c9c
+3535353535353535354644386d6742787042766e4171693e736b3f787042787042787042787042787042787042787042
+787042787042787042787042787042787042787042787042787042787042787042787042746c4071693e756d40797142
+ada15eada15eada15eada15eada15eada15eada15eada15e5e5c4f4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+bababababababababababababababababababababababababababababababababababababababa898e955963705a6471
+717e8f8d9db299abc29caec596a8be8797ab808fa2808fa2808fa2808fa2808fa28d99a7a1a7aeb7b8b9bababaa0a0a0
+3535353535353535353535354848484643356b643f787042766e41726a3e746c40787042787042787042787042787042
+787042787042787042787042787042787042787042787042787042787042787042787042787042787042736b3f766d40
+ab9f5dada15eada15eada15eada15eada15eada15eada15e6663514c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+bababababababababababababababababababababababababababababababababababababababa9a9ea25c66725a6471
+707c8d8b9baf99abc29caec598aac08998ac808fa2808fa28492a39aa2acaeb1b4babababababababababababab2b2b2
+3535353535353535353535354949493535354747475b58466e6840787042756d4071693e756d40787042787042787042
+787042787042787042787042787042787042787042787042787042787042787042787042787042787042787042807846
+a99e5cada15eada15eada15eada15eada15eada15eada15e6e6a524c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababaafb0b26e757e
+6b77878a9aae98aac19caec598aac18797aa7583948e939bb9b9b9babababababababababababababababababab4b4b4
+3737373535353535353535354848483535354646464c4c4c4b4b4a595644746d43787042756d4071693e756d40787042
+787042787042787042787042787042787042787042787042787042787042787042787042787042787042787042787042
+a19658ada15eada15eada15eada15eada15eada15eada15e746f534c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+bababababababababababababababababababababababababababababababababababababababababababababa9fa0a2
+6a75838594a897a8be9badc496a8be8594a78e959db8b8b8babababababababababababababababababababababababa
+4141413535353535353535354747473737374343434c4c4c4c4c4c4c4c4c4d4c4b5b5843716a40787042746c3f726a3e
+766e41787042787042787042787042787042787042787042787042787042787042787042787042787042787042787042
+9f9457ada15eada15eada15eada15eada15eada15eada15e7d77554c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+b8b8b98b939d8e9eb39badc493a3b7959ba2babababababababababababababababababababababababababababababa
+4646463535353535353535354545453838384343434c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4b4b49615d45746d41787042
+736b3f71693d766e41787042787042787042787042787042787042787042787042787042787042787042787042787042
+998e53ada15eada15eada15eada15eada15eada15eada15e827b564c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababab3b5b8b2b7bcb7b8babababababababababababababababababababababababababababababababababa
+5353533535353535353535354343433b3b3b4040404c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4d4c495e5942
+746d41787042736b3f726a3e776f41787042787042787042787042787042787042787042787042787042787042787042
+978d53ada15eada15eada15eada15eada15eada15eada15e8f87584c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+5c5c5c3535353535353535354242423c3c3c3f3f3f4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c
+51504b615d41756e41787042726a3e726a3e776f41787042787042787042787042787042787042787042787042787042
+90864fada15eada15eada15eada15eada15eada15eada15e9289594c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+6666663535353535353535353f3f3f3f3f3f3c3c3c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c
+4c4c4c4c4c4c4e4d47656043777042787042726a3f726a3e776f42787042787042787042787042787042787042787042
+8f854eada15eada15eada15eada15eada15eada15eada15e9d935b4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+7575753535353535353535353f3f3f4040403b3b3b4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c
+4c4c4c4c4c4c4c4c4c4c4c4c504e46656041776f41776f41726a3e736b3f787042787042787042787042787042787042
+897f4bada15eada15eada15eada15eada15eada15eada15ea2975c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+7979793535353535353535353b3b3b4242423939394c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c
+4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c5150476a6442787042776f4171693e726a3f787042787042787042787042
+867d49ada15eada15eada15eada15eada15eada15eada15eab9f5e4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+8b8b8b3535353535353535353b3b3b4343433737374c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c
+4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c525045696341787042766e41726a3e736b3f787042787042
+817947ada15eada15eada15eada15eada15eada15eada15eaca05e52514d4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+8e8e8e3535353535353535353838384545453636364c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c
+4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c5855486b6540787042766e4170683d746c40
+7d7545ada15eada15eada15eada15eada15eada15eada15eada15e57564e4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+9e9e9e3535353535353535353737374747473535354a4a4a4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c
+4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4b4b4b555244726b43787042766e41
+7d7544ada15eada15eada15eada15eada15eaa9e5d877f515653404949484c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+a4a4a43535353535353535353535354848483535354949494c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c
+4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4b4b5754436f6840
+7e7645a99d5cada15eada15e988e57706a4d4847423535353535354646464c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+b1b1b13535353535353535353535354949493535354747474c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c
+4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4b4b
+5d5a46998f57857e57504e3f3535353b3b3b4242423535353535354343434c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+b5b5b53a3a3a3535353535353535354848483535354646464c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c
+4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c
+4c4c4c4c4c4c4c4c4c3838383535353a3a3a4545453535353535354343434c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+bababa3e3e3e3535353535353535354747473838384343434c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c
+4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c
+4c4c4c4c4c4c4c4c4c3a3a3a3535353838384646463535353535354040404c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+bababa4b4b4b3535353535353535354545453838384242424c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c
+4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c
+4c4c4c4c4c4c4c4c4c3c3c3c3535353636364848483535353535353f3f3f4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+bababa5151513535353535353535354343433b3b3b4040404c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c
+4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c
+4c4c4c4c4c4c4c4c4c3d3d3d3535353535354848483535353535353c3c3c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+bababa6161613535353535353535354242423c3c3c3e3e3e4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c
+4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c
+4c4c4c4c4c4c4c4c4c4040403535353535354949493535353535353b3b3b4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c
+b4b4b4bababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+bababa6464643535353535353535353f3f3f3e3e3e3c3c3c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c
+4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c
+4c4c4c4c4c4c4c4c4c4242423535353535354848483636363535353939394c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c
+b2b2b2bababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+bababa7777773535353535353535353e3e3e4040403b3b3b4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c
+4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c
+4f4f4f5a5a5a7272726d6d6d3535353535354545453838383535353737374c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c
+b2b2b2bababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+bababa7a7a7a3535353535353535353c3c3c4242423939394c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c
+4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c565656656565
+878787a5a5a5b9b9b98d8d8d3535353535354545453939393535353636364c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c
+b0b0b0bababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+bababa8989893535353535353535353b3b3b4444443737374c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c
+4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c5050505d5d5d777777999999b4b4b4
+bababababababababa9c9c9c3535353535354242423c3c3c3535353535354a4a4a4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c
+aaaaaabababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+bababa9090903535353535353535353838384545453636364c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c
+4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4d4d4d5757576a6a6a8c8c8cabababbababababababababa
+bababababababababaa5a5a53535353535354141413d3d3d3535353535354a4a4a4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c
+a7a7a7bababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+bababa9c9c9c3535353535353535353636364141413535354a4a4a4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c
+4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c5353536060607f7f7f9e9e9eb7b7b7bababababababababababababababa
+bababababababababaafafaf3535353535353f3f3f3f3f3f3535353535354646464c4c4c4c4c4c4c4c4c4c4c4c4c4c4c
+a2a2a2bababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+bababaa6a6a63535353535353535353535353535353535354949494c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c
+4c4c4c4c4c4c4c4c4c4e4e4e5a5a5a6f6f6f929292afafafbabababababababababababababababababababababababa
+babababababaa8a8a88888883737373535353d3d3d4141413535353535354646464c4c4c4c4c4c4c4c4c4c4c4c4c4c4c
+9e9e9ebababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+bababaafafaf3535353535353535353535353535353535354747474c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c
+4c4c4c545454636363848484a4a4a4b9b9b9bababababababababababababababababababababababababababab3b3b3
+9696967a7a7a6d6d6d6d6d6d3838383535353b3b3b4242423535353535354343434c4c4c4c4c4c4c4c4c4c4c4c4c4c4c
+9a9a9abababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+bababab8b8b83b3b3b3535353535353535353535353535354545454c4c4c4c4c4c4c4c4c4c4c4c4c4c4c5050505c5c5c
+767676979797b4b4b4bababababababababababababababababababababababababababab9b9b9a2a2a28585856e6e6e
+6d6d6d6d6d6d6d6d6d6d6d6d3f3f3f3535353939394545453535353535354242424c4c4c4c4c4c4c4c4c4c4c4c4c4c4c
+949494bababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababa3c3c3c3535353535353535353535353535354343434c4c4c4c4c4c4d4d4d5757576767678b8b8ba9a9a9
+babababababababababababababababababababababababababababababaafafaf9292927575756d6d6d6d6d6d6d6d6d
+6d6d6d6d6d6d6d6d6d6d6d6d4040403535353838384545453535353535354040404c4c4c4c4c4c4c4c4c4c4c4c4c4c4c
+929292bababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababa4f4f4f3535353535353535353535353535354141415151515f5f5f7c7c7c9d9d9db7b7b7babababababa
+bababababababababababababababababababababab7b7b79d9d9d8080806d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d
+6d6d6d6d6d6d6d6d6d6d6d6d4848483535353636364848483535353535353e3e3e4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c
+8b8b8bbababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababa5252523535353535353535353939394b4b4b6a6a6a919191afafafbababababababababababababababa
+bababababababababababababababaa9a9a98c8c8c7171716d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d
+6d6d6d6d6d6d6d6d6d6d6d6d4949493535353535354949493535353535353d3d3d4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c
+898989bababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababa626262353535434343595959828282a2a2a2b8b8b8bababababababababababababababababababababa
+babababababab3b3b39898987b7b7b6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d
+6d6d6d6d6d6d7474748e8e8e6a6a6a3535353535354949493535353535353a3a3a4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c
+828282bababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+bababab2b2b26d6d6d717171969696b2b2b2bababababababababababababababababababababababababababab9b9b9
+a4a4a48787876f6f6f6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6e6e6e
+8383839f9f9fb0b0b09696965d5d5d3535353535354848483636363535353a3a3a4c4c4c4c4c4c4c4c4c4c4c4c4c4c4c
+828282b8b8b8babababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababab8b8b8a2a2a2
+8888888b8b8ba8a8a8b9b9b9bababababababababababababababababababababababababababab0b0b0929292767676
+6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d767676949494adadad
+a3a3a38585856f6f6f6d6d6d5858583535353535354545453838383535353737374c4c4c4c4c4c4c4c4c4c4c4c4c4c4c
+818181b3b3b3babababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababaadadad9191918585859c9c9c
+b6b6b6bababababababababababababababababababababababababababab7b7b79f9f9f8181816e6e6e6d6d6d6d6d6d
+6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d707070878787a5a5a5aeaeae929292747474
+6d6d6d6d6d6d6d6d6d6d6d6d5c5c5c3535353535354444443a3a3a3535353636364c4c4c4c4c4c4c4c4c4c4c4c4c4c4c
+818181b0b0b0babababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+bababababababababababababababababababababababababababab6b6b69c9c9c8585858f8f8fadadadbabababababa
+babababababababababababababababababababababababaaaaaaa8e8e8e7272726d6d6d6d6d6d6d6d6d6d6d6d6d6d6d
+6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d7c7c7c999999b1b1b19d9d9d8181816d6d6d6d6d6d6d6d6d
+6d6d6d6d6d6d6d6d6d6d6d6d6060603535353535354242423b3b3b3535353535354a4a4a4c4c4c4c4c4c4c4c4c4c4c4c
+818181abababbabababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+bababababababababababababababababababababaa9a9a98c8c8c878787a2a2a2b7b7b7babababababababababababa
+bababababababababababababababab5b5b59999997c7c7c6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d
+6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d7171718d8d8dabababa9a9a98c8c8c7272726d6d6d6d6d6d6d6d6d6d6d6d6d6d6d
+6d6d6d6d6d6d6d6d6d6d6d6d6565653535353535354040403e3e3e3535353535354949494c4c4c4c4c4c4c4c4c4c4c4c
+818181a6a6a6babababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababab3b3b3989898828282959595b2b2b2bababababababababababababababababababababa
+bababababababababaa6a6a68888886f6f6f6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d
+6d6d6d6d6d6d6d6d6d8080809e9e9eb0b0b09898987979796d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d
+6d6d6d6d6d6d6d6d6d6d6d6d6767673535353535353f3f3f3f3f3f3535353535354747474c4c4c4c4c4c4c4c4c4c4c4c
+818283a3a3a3babababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+bababab9b9b9a3a3a38888888a8a8aa6a6a6babababababababababababababababababababababababababababababa
+b0b0b09595957777776d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d
+767676929292afafafa4a4a48787876f6f6f6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d
+6d6d6d6d6d6d6d6d6d6d6d6d6c6c6c3737373535353d3d3d4242423535353535354545454c4c4c4c4c4c4c4c4c4c4c4c
+8183869d9d9dbabababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+bababababababababababababababababababababababababababababababababababababababababababababaafafaf
+9292928585859b9b9bb4b4b4bababababababababababababababababababababababababababab8b8b8a0a0a0828282
+6e6e6e6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6e6e6e878787a4a4a4
+afafaf9292927676766d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d
+6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d3838383535353c3c3c4242423535353535354444444c4c4c4c4c4c4c4c4c4c4c4c
+8183869b9b9bbabababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababab6b8b7a7afaca1aca8809a916e8e8366897d6d8e825885764d7b6b4374634976664a7465
+4b77685a8274889d96b9b9b9bababababababababababababababababababababaadadad8f8f8f7373736d6d6d6d6d6d
+6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d7a7a7a989898afafaf9f9f9f808080
+6e6e6e6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d
+6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d3f3f3f3535353939394545453535353535354242424c4c4c4c4c4c4c4c4c4c4c4c
+828487949494babababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+b3b6b593a39e718f85648b7d3e7663366d5a366d5a39725e397460376f5c366d5a376e5b3a746039735f366d5a366d5a
+38715e39746037705c4e7b6c90a29cb9b9b9babababababab5b5b59b9b9b7d7d7d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d
+6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d7272728b8b8ba9a9a9aaaaaa8e8e8e7272726d6d6d6d6d6d
+6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d
+6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d4141413535353838384646463535353535354040404c4c4c4c4c4c4c4c4c4c4c4c
+83868b919191babababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+bababababababababababababababababababababababababababababababababababababababab2b6b5869c945a8274
+477a683a7460366e5b366d5a37705c39746038715e366d5a366d5a39735f3a7561376e5b366d5a376f5b39746039725e
+366d5a366d5a38725e3a7561376f5c4e7b6c909e9a8989897070706d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d
+6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d8080809d9d9db1b1b19999997c7c7c6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d
+6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d
+6d6d6d6d6d6d6d6d6d7676769191915959593535353535353d3d3d3535353535353e3e3e4c4c4c4c4c4c4c4c4c4c4c4c
+83878d8b8b8bbabababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+bababababababababababababababababababababababababababababababababaa2aca9688a7e4578663a756137705c
+366d5a366e5b39735f397460366e5b366d5a38705d3a756138705d366d5a366d5a39735f397460376e5b366d5a376f5c
+3a756138715e366d5a366d5a38725e3a7460376f5c446d5f5f6d686d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d
+6d6d6d6d6d6d6d6d6d747474919191acacaca6a6a68787877070706d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d
+6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d
+6e6e6e868686a3a3a3afafaf9393935252523535353535353535353535353535353d3d3d4c4c4c4c4c4c4c4c4c4c4c4c
+848b93888888babababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+bababababababababababababababababababababababababababaa7afac678a7e3f776439725e366d5a366d5a38715e
+3a746037705c366d5a376e5b3a756139735f366d5a366d5a38715d3a746038715d366d5a366e5b3a746039735f366e5a
+366d5a37705c3a746038725e366d5a366d5a397460397460376e5b476d60636d696d6d6d6d6d6d6d6d6d6d6d6d6d6d6d
+6f6f6f848484a3a3a3afafaf9595957777776d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d
+6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d787878989898
+b1b1b19f9f9f8181816e6e6e6d6d6d4f4f4f3535353535353535353535353535353a3a3a4c4c4c4c4c4c4c4c4c4c4c4c
+858c95838383babababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+bababababababababababababababababababababab8b9b9829a923e7663366e5b366d5a376f5c3a746039725f366d5a
+366d5a39735f397460376f5b366d5a376e5b3a746039735f366d5a366d5a38725e3a7460376f5c366d5a366e5b39735f
+3a7460366e5a366d5a38715d3a746038705d366d5a366d5a39735f3a7561376e5b486d60646d6a6d6d6d797979969696
+b0b0b0a0a0a08383836e6e6e6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d
+6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d7171718b8b8ba9a9a9aaaaaa8e8e8e
+7272726d6d6d6d6d6d6d6d6d8080806d6d6d3535353535353535353535353535353939394c4c4c4c4c4c4c4c4c4c4c4c
+87909c828282b6b6b6bababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababab7b8b75e8679366d5a366d5a39735f3a7560366d5a366d5a37705d397460
+38715d366d5a366d5a39735f3a7561376e5b366d5a376f5c3a746038725e366d5a366d5a38715e3a7561376f5c366d5a
+376e5b39746039735f366d5a366d5a38715d3a756138705d366d5a366e5b39746039735f376e5b5a7c70a0a7a58e8e8e
+7373736d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d
+6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d7f7f7f9c9c9cb1b1b19a9a9a7d7d7d6d6d6d6d6d6d
+6d6d6d747474919191aeaeaebababa8585853535353535353535353535353535353737374c4c4c4c4c4c4c4c4c4c4c4c
+89929f818181b4b4b4bababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+bababababababababababababababab4b7b6567f7138715e3a7561376f5c366d5a366e5b39746039735f366d5a366d5a
+38705d3a756138705d366d5a366d5a39735f397460366e5b366d5a376f5c3a756138725e366d5a366d5a39725f397460
+376f5b366d5a376e5b3a756139735f366d5a366d5a38725e3a7460376f5c366d5a366e5b3a7561397460376d5b4e6d62
+686d6b6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d
+6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d747474919191adadada6a6a68888887070706d6d6d6d6d6d6e6e6e848484
+a2a2a2b8b8b8bababababababababa9696963535353535353535353535353535353636364b4b4b4c4c4c4c4c4c4c4c4c
+8b96a5818181aeaeaebababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+bababababababababababababababa78968b38725e366d5a366d5a38725e397460376f5c366d5a366e5b3a756139735f
+366d5a366d5a38715d3a746038705d366d5a366e5b3a7460397460366d5a366d5a38705d39746038715e366d5a366d5a
+3974603a7460366e5b366d5a376f5c3a746038725e366d5a366d5a39735f3a7561376f5b366d5a376e5b39746039735f
+3c6d5c6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d
+6d6d6d6d6d6d6d6d6d6e6e6e848484a2a2a2aeaeae9595957777776d6d6d6d6d6d6d6d6d797979959595b2b2b2bababa
+bababababababababababababababa9999993535353535353535353535353535353535354a4a4a4c4c4c4c4c4c4c4c4c
+8d99aa818181acacacbababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababaa7afad376e5b376f5c39746038725e366d5a366d5a39735f3a7460376e5b366d5a376f5b
+39746039735f366d5a366d5a39725f3a7560376f5c366d5a366e5b39736040816b397460366d5a38715e3a756137705d
+366d5a366d5a39735f3a7460366e5b366d5a38705d3a756138715d366d5a366d5a39725f3a7560376f5b366d5a376f5c
+376e5b6667676d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d
+6d6d6d797979959595b0b0b0a0a0a08484846e6e6e6d6d6d6d6d6d7070708a8a8aa7a7a7babababababababababababa
+bababababababababababababababaababab3535353535353535353535353535353535354848484c4c4c4c4c4c4c4c4c
+8f9daf818181a4a4a4bababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababab8b8b8a1a1a16a81793a7460366e5b366d5a38705d3a756038715d366d5a366d5a39735f3a7561376e5b
+366d5a376f5c3a746038725e366d5a366d5a38725e3a7561376f5c366d5a3974603c796439725e366d5a366d5a38715d
+3a756137705c366d5a376e5b39746039735f366d5a366d5a38705d3a756138715d366d5a366d5a39735f39735f366e5b
+254b3e6566656d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d7070708a8a8a
+a7a7a7acacac8f8f8f7474746d6d6d6d6d6d6d6d6d7d7d7d9b9b9bb4b4b4babababababababababababababababababa
+bababababababababababababababaaeaeae3636363535353535353535353535353535354747474c4c4c4c4c4c4c4c4c
+92a1b6818181a3a3a3bababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+adadad9191918686869c9c9c79948b376e5b39746039735f366d5a366d5a38705d3a756138715d366d5a366e5b39735f
+397360366e5b366d5a376f5c3a756138725e366d5a366d5a39735f397460376e5b366d5a376f5b3a756139725f366d5a
+366d5a38725e3a7460376f5c366d5a366e5b3a746039735f366d5a366d5a38715e39746038705d366d5a366d5a39735f
+1d3b315859596d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d7d7d7d9b9b9bafafaf9c9c9c
+7d7d7d6d6d6d6d6d6d6d6d6d7474748e8e8eacacacbababababababababababababababababababababababababababa
+babababababababababababababababababa3838383535353535353535353535353535354545454c4c4c4c4c4c4c4c4c
+94a5ba8181819c9c9cbababababababababababababababababababababababababababababababababababababababa
+bababababababababababababababababababababababababababababababababababababababab6b6b69b9b9b858585
+919191adadadbabababababa819f953e7d6839735f376e5b3a756139735f366d5a366d5a38715e39746037705c366d5a
+366e5b3a7460397460366d5a366d5a38705d3a746038715d366d5a366d5a3974603a7460366e5b366d5a376f5c3a7460
+38725e366d5a366d5a39735f3a7561376e5b366d5a376f5b39746039725f366d5a366d5a38725e3a7561376e5b2e5c4c
+1c382f595c5b6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d7474748e8e8eadadada7a7a78b8b8b7070706d6d6d
+6d6d6d6e6e6e838383a0a0a0b8b8b8bababababababababababababababababababababababababababababababababa
+babababababababababababababababababa4040403535353535353535353535353535354444444c4c4c4c4c4c4c4c4c
+96a7bd8385879a9a9abababababababababababababababababababababababababababababababababababababababa
+bababababababababababababababababababababababababababababababababaa7a7a78a8a8a888888a3a3a3b9b9b9
+babababababababababababa8fa69e40816b40816b3e7c6739725e376f5c39746039725f366d5a366d5a39725e3a7561
+376f5c366d5a376e5b39746039735f366d5a366d5a38715e3a756137705c366d5a366e5b39735f397460366e5b366d5a
+38705d3a756138715d366d5a366d5a39735f397460376e5b366d5a376f5c3a756138715e366d5a376f5c38725e2c594a
+1d3a305c5f5e6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d838383a0a0a0b1b1b19696967979796d6d6d6d6d6d6d6d6d767676
+949494b0b0b0babababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababa4b4b4b3535353535353535353535353535354141414c4c4c4c4c4c4c4c4c
+97a9bf84878a949494bababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababab2b2b2969696848484959595b3b3b3bababababababababa
+babababababababababababa92a7a040816b40816b40816b40816b3d7b6638715d37705c3a756138715e366d5a366d5a
+39725f3a7460376f5c366d5a376f5c3a756139725e366d5a366d5a38715e3a756037705c366d5a376e5b3a756039735f
+366d5a366d5a38715d3a746038715d366d5a366e5a3a746039735f366e5b366d5a37705c3d7b663e7e6837705d2c594a
+29453c6b6b6b6d6d6d6d6d6d767676949494b0b0b0a3a3a38484846e6e6e6d6d6d6d6d6d707070888888a6a6a6bababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababa5656563535353535353535353535353535354040404c4c4c4c4c4c4c4c4c
+98aac0878c92909090bababababababababababababababababababababababababababababababababababababababa
+bababababababababababababababab8b8b8a2a2a28989898c8c8ca6a6a6babababababababababababababababababa
+babababababababababababa9ea9a540816b40816b40816b40816b40816b40816b3d7b6638705d37705c3a756038715e
+366d5a366d5a39735f397460376e5b366d5a376f5c3a746039735f366d5a366d5a39735f397460376f5c366d5a376e5b
+3a7460397460366d5a366d5a38725e3a746037705c366d5a366e5a3974603d7c67489078468d7540806b38715e2e5c4c
+505d59707070888888a6a6a6aeaeae9292927474746d6d6d6d6d6d6d6d6d7c7c7c999999b5b5b5bababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababa5e5e5e3535353535353535353535353535353e3e3e4c4c4c4c4c4c4c4c4c
+9aacc2898e958c8c8cbababababababababababababababababababababababababababababababababababababababa
+bababababababababaaeaeae9090908585859c9c9cb5b5b5babababababababababababababababababababababababa
+bababab7b7b7a0a0a08080806e6e6e62726c497d6b40816b40816b40816b40816b40816b40816b3c796437705c38715d
+3a746038705d366d5a366d5a39735f3a7560366e5a366d5a37705c39746038715e366d5a366d5a39725f3a7561376e5b
+366d5a376f5c3a746038725e366d5a366d5a38725e3b766242866f50a1854d9b814d9a8048927941836d38715e56746a
+9a9a9ab1b1b19d9d9d8080806d6d6d6d6d6d6d6d6d7272728d8d8daaaaaababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababa6b6b6b3535353535353535353535353535353d3d3d4c4c4c4c4c4c4c4c4c
+9badc48c939c878787bababababababababababababababababababababababababababababababababababababababa
+b6b6b69d9d9d8585858e8e8eacacacbabababababababababababababababababababababababababababababaacacac
+8d8d8d7373736d6d6d6d6d6d6d6d6d6d6d6d6d6d6d5f736c487d6b40816b40816b40816b40816b40816b40816b3c7964
+376f5b38715d3a7561376f5c366d5a366e5b39746039735f366e5a366d5a37705c3a756138705d366d5a366d5a39735f
+397460376e5b366d5a376f5c3d7a6542856e50a28756ad9055ab8e58b19352a5894d9b8148917942856f6c8e83a8a9a8
+8b8b8b7272726d6d6d6d6d6d6e6e6e8181819f9f9fb7b7b7babababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababa7070703535353535353535353535353535353a3a3a4c4c4c4c4c4c4c4c4c
+9dafc68e97a2848484babababababababababababababababababababababababababababababababababababaaeaeae
+787878747474a7a7a7bababababababababababababababababababababababababababab4b4b49a9a9a7c7c7c6d6d6d
+6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d696a6a2441443c766740816b40816b40816b40816b40816b
+40806a3b7863376f5b38725e397460376f5c366d5a366e5b3a756139735f366d5a366d5a38715d3a746038705d376f5b
+3d7b6649937a478f775bb79862c7a558b29361c3a25fc09f59b59658b19352a5894d9c81468d77415d5a7a7a7a6d6d6d
+6d6d6d6d6d6d777777929292b0b0b0bababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababa8181813535353535353535353535353535353939394c4c4c4c4c4c4c4c4c
+9eb0c7919ba7828282b6b6b6bababababababababababababababababababababababababababababababababab1b1b1
+8181817c7c7c737373878787adadadbabababababababababababab9b9b9a6a6a68787877070706d6d6d6d6d6d6d6d6d
+6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d141d2d2335533359673d796a40816b40816b40816b
+40816b40816b40806a458b7349947b4d9c8140816b4b987e4b987e4c9a7f478f774d9b8056ae905cba9a4f9f8466ceab
+6edeb968d1ae62c5a368d2ae67d0ac64caa861c4a260c2a15ab59658b29451a389407877243b523c414b6d6d6d6f6f6f
+878787a3a3a3b9b9b9bababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababa8585853535353535353535353535353535353737374c4c4c4c4c4c4c4c4c
+a0b2c995a0af818181b5b5b5bababababababababababababababababababababababababababababababababab3b3b3
+8181818181818181817c7c7c727272888888b1b1b1b2b2b29494947878786d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d
+6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d757575939393272f3d2231502b406630497036616d3e7b6a40816b
+40816b40816b40816b52a5896ad6b26bd7b35fc09f6ddcb770e2bc70e2bc63c9a769d5b170e2bc70e2bc70e2bc6edfba
+6edeb96ddbb66bd8b368d2ae67d0ac64caa861c4a360c2a159b2974b8a8e36577a33466948505f747576989898b3b3b3
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababa9696963535353535353535353535353535353636364b4b4b4c4c4c4c4c4c
+a1b3cb97a4b4818181adadadbabababababababababababababababababababababababababababababababababababa
+8282828181818181818181818181817b7b7b7272726e6e6e6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d
+6d6d6d6d6d6d6d6d6d6d6d6d6f6f6f868686a4a4a4afafaf939393303743202f4c2a3f65324b773854853a5a8a407082
+40806e40816b40816b4c9a806ad6b26cd9b56edeb96fe0ba70e2bc70e2bc70e2bc70e2bc70e2bc70e2bc70e1bb6edeb9
+6edeb96cdab56ad7b268d2ae67d0ac63c7a85bada64e88a14264964b5e806269768b8b8babababbababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababa9999993535353535353535353535353535353535354b4b4b4c4c4c4c4c4c
+a3b5cd9cabbe818181acacacbabababababababababababababababababababababababababababababababababababa
+8383838181818181818181818181818181818181817979797070706d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d
+6d6d6d6d6d6d797979979797b1b1b19e9e9e8282826e6e6e6d6d6d53565c1e2d482a3e64324a773753843d5c9243649f
+466ba245798b40806e4b977d6ad6b26bd8b36edeb96edfba70e2bc70e2bc70e2bc70e2bc70e2bc70e2bc6fe1bb6edeb9
+6eddb86cd9b566c6b65dabb55691b44c74b04e6ba05b6a847c7f839c9c9cb7b7b7bababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababaa8a8a88b8b8b7171715e5e5e4242423535353535353535353535354848484c4c4c4c4c4c
+a4b6ce9eadc1818181a5a5a5babababababababababababababababababababababababababababababababababababa
+8a8a8a8181818181818181818181818181818181818181818181817979796f6f6f6d6d6d6d6d6d6d6d6d6d6d6d707070
+8c8c8ca8a8a8acacac8d8d8d7272726d6d6d6d6d6d6d6d6d6d6d6d6d6d6d414a5a293d623149753753833d5c9243639e
+4668a64a6fb04c74b14b869466c8b467c9b56ad0bc6edcba6fdebd6cd4bf6cd4bf6bd0c069c7c266bdc563b2c65fa1c7
+5b94ca557fc7547cc65177ba5b719a6e7582919191aeaeaebabababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+bababab4b4b49797977a7a7a6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d5e5e5e4040403535353535354848484c4c4c4c4c4c
+a5b8d0a4b6cd818181a1a1a1babababababababababababababababababababababababababababababababababababa
+8c8c8c8181818181818181818181818181818181818181818181818181818080807878786f6f6f6f6f6f9a9a9ab1b1b1
+9a9a9a7c7c7c6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d535b6a344b743752833c5a9042629c
+4668a64a6eaf4d72b64f77bd5179c1537bc5557eca5681cd5884d15884d25884d25884d25884d25884d25884d25782cf
+5782cd5a79b166758f838588a4a4a4b9b9b9babababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababab9b9b9a4a4a4
+8686866e6e6e6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d5a5a5a3f3f3f4444445b5b5b868686
+a6b9d2a5b8d08282839d9d9dbabababababababababababababababababababababababababababababababababababa
+929292818181818181818181818181818181818181818181818181818181818181818181808080777777747474707070
+6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d686a6e515f79415b8b41609b
+4669a7496dae4c71b44f77bd5078c0537cc5547ec95681cd5883d05884d25884d25884d25884d25884d25a82c762789f
+767d88969696b3b3b3bababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababaaeaeae9292927575756d6d6d
+6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6f6f6f8888889f9f9fbabababababa
+a8bbd4a8bbd485878a989898babababababababababababababababababababababababababababababababababababa
+9696968181818181818181818181818181818181818181818181818181818181818181818181818181817f7f7f767676
+6e6e6e6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6c6d6e626a79
+576b8e506da14d71b25274b35e73976e81a36687c45781cd5783cf5884d25884d25884d05f7db16b788e8a8b8da8a8a8
+b9b9b9bababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+bababababababababababababababababababababababababababab7b7b79d9d9d8181816d6d6d6d6d6d6d6d6d6d6d6d
+6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d7d7d7d9a9a9ab5b5b5babababababababababababa
+a9bcd5a9bcd5878a8e959595babababababababababababababababababababababababababababababababababababa
+9a9a9a818181818181818181818181818181818181818181818181818181818181818181818181818181818181818181
+7f7f7f7575756d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d
+6d6d6d6d6d6d7071738a8a8ca8a8a8ababab75829962779d62789e6279a06578997c80889d9d9db5b5b5babababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+bababababababababababababababababababababaaaaaaa8c8c8c7171716d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d
+6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d7373738f8f8fabababbababababababababababababababababababababa
+abbed7abbed78b90968e8e8ebabababababababababababababababababababababababababababababababababababa
+9f9f9f818181818181818181818181818181818181818181818181818181818181818181818181818181818181818181
+8181818181817e7e7e7575756d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6e6e6e
+7e7e7e9d9d9db0b0b09b9b9b7c7c7c6d6d6d6d6d6d6d6d6d747474909090adadadbababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababab3b3b39999997b7b7b6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d
+6d6d6d6d6d6d6d6d6d6e6e6e828282a0a0a0b8b8b8bababababababababababababababababababababababababababa
+acbfd9acbfd98f959d8d8d8dbabababababababababababababababababababababababababababababaacacac909090
+7b7b7b818181818181818181818181818181818181818181818181818181818181818181818181818181818181818181
+8181818181818181818181817d7d7d7474746d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d747474909090adadad
+a6a6a68989897070706d6d6d6d6d6d6f6f6f848484a1a1a1b8b8b8bababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+bababab9b9b9a4a4a48787876f6f6f6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d
+6d6d6d777777939393b0b0b0babababababababababababababababababababababababababababababababababababa
+aec1dbaec1db929aa4858585bababababababababababababababababababababab6b6b69b9b9b7e7e7e6d6d6d6d6d6d
+737373818181818181818181818181818181818181818181818181818181818181818181818181818181818181818181
+8181818181818181818181818181818181817d7d7d7272726d6d6d6d6d6d6e6e6e838383a1a1a1b0b0b0949494787878
+6d6d6d6d6d6d6d6d6d777777969696b1b1b1babababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+bababababababababababababababababababababababababababababababababababababababababababababab0b0b0
+9393937676766d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d707070888888
+a4a4a4b9b9b9babababababababababababababababababababababababababababababababababababababababababa
+afc3ddafc3dd97a1ae848484b9b9b9babababababababababababaa7a7a78989897070706d6d6d6d6d6d6d6d6d6d6d6d
+737373818181818181818181818181818181818181818181818181818181818181818181818181818181818181818181
+8181818181818181818181818181818181818181818181817c7c7c7272728080809e9e9e8383836d6d6d6d6d6d6d6d6d
+707070898989a7a7a7bababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababababababababababababababa
+babababababababababababababababababababababababababababababababababababab7b7b7a0a0a08282826d6d6d
+6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d6d7b7b7b999999b4b4b4bababa
+bababababababababababababababababababababababababababababababababababababababababababababab8bcc3
+  </Thumbnail>
+</VcMachine>

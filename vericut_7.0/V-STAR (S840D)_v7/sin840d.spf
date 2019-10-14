@@ -1,0 +1,1646 @@
+PROC CYCLE_974; By CGTech
+M5
+;Save current state:
+DEF INT ABSINC_ = $P_GG[14],INCHMM_ = $P_GG[13]
+DEF REAL XPOS_ = $AA_IW[X], YPOS_ = $AA_IW[Y], ZPOS_ = $AA_IW[Z]
+
+IF (Probe_Touch == 1) GOTOF NEXT
+MSG("Probe not initialized! Use M50.",1)
+GOTOF END
+NEXT:
+D (_PRNUM + 10)
+X (XPOS_ * 2) Z ZPOS_
+G71 G90
+
+;Store Theoretical values for measurement:
+_OVR [0] = _SETVAL _OVR [1] = XPOS_ _OVR [2] = YPOS_
+
+DEF REAL MESURE_DIST  = 10
+CASE (_MVAR) OF 0 GOTOF _MVAR_0 100 GOTOF _MVAR_100 1000 GOTOF _MVAR_1000
+MSG("Not supported yet! Contact your CGTech representative.",1)
+GOTOF END
+
+;_MVAR value:
+;0 1-point measurement and tool offset
+;100 1-point measurement and ZO determination
+;1000 1-point measurement with reversal and tool offset
+
+;Depending on the measuring variant, measuring
+;cycle CYCLE974 returns the following result values
+;in the GUD5 block:
+;_OVR [0] REAL Setpoint value for measuring axis
+;_OVR [1] REAL Setpoint for abscissa
+;_OVR [2] REAL Setpoint for ordinate
+;_OVR [3] REAL Setpoint for applicate
+;_OVR [4] REAL Actual value for measuring axis
+;_OVR [8]1) REAL Upper tolerance limit for measuring axis
+;_OVR [12]1) REAL Lower tolerance limit for measuring axis
+;_OVR [16] REAL Difference for measuring axis
+;_OVR [20]1) REAL Offset value
+;_OVR [27]1) REAL Zero offset area
+;_OVR [28] REAL Safe area
+;_OVR [29]1) REAL Dimensional difference
+;_OVR [30] REAL Empirical value
+;_OVR [31]1) REAL Mean value
+;_OVI [0] INTEGER D number or ZO number
+;_OVI [2] INTEGER Measuring cycle number
+;_OVI [4]1) INTEGER Weighting factor
+;_OVI [5] INTEGER Probe number
+;_OVI [6]1) INTEGER Mean value memory number
+;_OVI [7] INTEGER Empirical value memory number
+;_OVI [8] INTEGER Tool number
+;_OVI [9] INTEGER Alarm number
+;_OVI [11]2) INTEGER Status offset request
+;1) For workpiece measurement with tool offset only
+;2) For ZO correction only
+
+_MVAR_0: ;1-point measurement and tool offset *******************************************************************************************_MVAR_0
+DEF REAL DIFF_ = (XPOS_ - _SETVAL/2) ; To know if Interior or Exterior diameter
+CASE (_MA) OF 1 GOTOF _MVAR_0_MA_1 2 GOTOF _MVAR_0_MA_2
+MSG("Not supported for this machine! See value of _MA; Contact your CGTech representative.",1)
+GOTOF END
+
+_MVAR_0_MA_1:
+G1 MEAS Z (_SETVAL - MESURE_DIST)
+IF (PROBE_HIT == 0) GOTOF AL0
+PROBING_SOUND("VALID")
+DEF REAL MEAS_Z_1 = $AA_IW[Z]
+G0 Z ($AA_IW[Z] + _FA)
+
+;Save values
+_OVR [4] = MEAS_Z_1
+;Send messages to info window, no modification of cutter comp. (Models and cutters are perfect in VERICUT)
+DEF STRING MESSAGE
+MESSAGE = "Theoretical face = " + _SETVAL + " | Measured face = " + _OVR [4] 
+MSG(MESSAGE,2)
+GOTOF END
+
+_MVAR_0_MA_2:
+G1 MEAS X _SETVAL
+IF (PROBE_HIT == 0) GOTOF AL0
+PROBING_SOUND("VALID")
+DEF REAL MEAS_X_1 = $AA_IW[X]
+
+;Save values
+IF (ABS(DIFF_) > 0) GOTOF  _MVAR_0_MA_2_POS
+_OVR [4] = (MEAS_X_1 * 2) + $TC_DP6
+GOTOF _MVAR_0_MA_2_SECURITY_POS
+_MVAR_0_MA_2_POS:
+_OVR [4] = (MEAS_X_1 * 2) - $TC_DP6
+
+;Go to security position (_FA)
+_MVAR_0_MA_2_SECURITY_POS:
+IF (ABS(DIFF_) > 0) GOTOF  _MVAR_0_MA_2_POS
+G0 X ($AA_IW[X] - _FA) * 2
+GOTOF _MVAR_0_MA_2_SEND_MESSAGE
+_MVAR_0_MA_2_POS:
+G0 X ($AA_IW[X] + _FA) * 2
+
+;Send messages to info window
+_MVAR_0_MA_2_SEND_MESSAGE:
+IF (ABS(DIFF_) > 0) GOTOF  _MVAR_0_MA_2_POS_MESSAGE
+DEF STRING MESSAGE
+MESSAGE = "Theoretical interior diameter = " + _SETVAL + " | Measured interior diameter = " + _OVR [4] 
+MSG(MESSAGE,2)
+GOTOF END
+
+_MVAR_0_MA_2_POS_MESSAGE:
+DEF STRING MESSAGE
+MESSAGE = "Theoretical exterior diameter = " + _SETVAL + " | Measured exterior diameter = " + _OVR [4] 
+MSG(MESSAGE,2)
+GOTOF END
+
+_MVAR_100: ;1-point measurement and ZO determination ********************************************************************************_MVAR_100
+DEF REAL DIFF_ = (XPOS_ - _SETVAL/2) ; To know if Interior or Exterior diameter
+CASE (_MA) OF 1 GOTOF _MVAR_100_MA_1 2 GOTOF _MVAR_100_MA_2
+MSG("Not supported for this machine! Verify _MA value or/and Contact your CGTech representative.",1)
+GOTOF END
+
+_MVAR_100_MA_1:
+DEF REAL CNT_ = _NMSP
+BEFORE:
+G1 MEAS Z (_SETVAL - MESURE_DIST)
+IF (PROBE_HIT == 0) GOTOF AL0
+PROBING_SOUND("VALID")
+DEF REAL MEAS_Z_1 = $AA_IW[Z]
+G0 Z ($AA_IW[Z] + _FA)
+CNT_ = CNT_ - 1
+IF (CNT_ > 0) GOTOB BEFORE
+
+;Save values
+_OVR [4] = MEAS_Z_1
+;Send messages to info window, no modification of cutter comp. (Models and cutters are perfect in VERICUT)
+DEF STRING MESSAGE
+MESSAGE = "Theoretical face = " + _SETVAL + " | Measured face = " + _OVR [4] 
+MSG(MESSAGE,2)
+GOTOF END
+
+_MVAR_100_MA_2:
+G1 MEAS X _SETVAL
+IF (PROBE_HIT == 0) GOTOF AL0
+PROBING_SOUND("VALID")
+DEF REAL MEAS_X_1 = $AA_IW[X]
+
+;Save values
+IF (ABS(DIFF_) > 0) GOTOF  _MVAR_100_MA_2_POS
+_OVR [4] = (MEAS_X_1 * 2) + $TC_DP6
+GOTOF _MVAR_100_MA_2_SECURITY_POS
+_MVAR_100_MA_2_POS:
+_OVR [4] = (MEAS_X_1 * 2) - $TC_DP6
+
+;Go to security position (_FA)
+_MVAR_100_MA_2_SECURITY_POS:
+IF (ABS(DIFF_) > 0) GOTOF  _MVAR_100_MA_2_POS
+G0 X ($AA_IW[X] - _FA) * 2
+GOTOF _MVAR_100_MA_2_SEND_MESSAGE
+_MVAR_100_MA_2_POS:
+G0 X ($AA_IW[X] + _FA) * 2
+
+;Send messages to info window
+_MVAR_100_MA_2_SEND_MESSAGE:
+IF (ABS(DIFF_) > 0) GOTOF  _MVAR_100_MA_2_POS_MESSAGE
+DEF STRING MESSAGE
+MESSAGE = "Theoretical interior diameter = " + _SETVAL + " | Measured interior diameter = " + _OVR [4] 
+MSG(MESSAGE,2)
+GOTOF END
+
+_MVAR_100_MA_2_POS_MESSAGE:
+DEF STRING MESSAGE
+MESSAGE = "Theoretical exterior diameter = " + _SETVAL + " | Measured exterior diameter = " + _OVR [4] 
+MSG(MESSAGE,2)
+GOTOF END
+
+_MVAR_1000: ;1-point measurement with reversal and tool offset  *********************************************************************_MVAR_1000
+DEF REAL DIFF_ = (XPOS_ - _SETVAL/2) ; To know if Interior or Exterior diameter
+CASE (_MA) OF 1 GOTOF _MVAR_1000_MA_1 2 GOTOF _MVAR_1000_MA_2
+MSG("Not supported for this machine! Verify _MA value or/and Contact your CGTech representative.",1)
+GOTOF END
+
+_MVAR_1000_MA_1:
+G1 MEAS Z _SETVAL 
+IF (PROBE_HIT == 0) GOTOF AL0
+PROBING_SOUND("VALID")
+DEF REAL MEAS_Z_1 = $AA_IW[Z]
+G0 Z ($AA_IW[Z] + _FA)
+
+;Save values
+_OVR [4] = MEAS_Z_1
+;Send messages to info window, no modification of cutter comp. (Models and cutters are perfect in VERICUT)
+DEF STRING MESSAGE
+MESSAGE = "Theoretical face = " + _SETVAL + " | Measured face = " + _OVR [4] 
+MSG(MESSAGE,2)
+GOTOF END
+
+_MVAR_1000_MA_2:
+C _STA1
+G1 MEAS X _SETVAL
+IF (PROBE_HIT == 0) GOTOF AL0
+PROBING_SOUND("VALID")
+DEF REAL MEAS_X_1 = $AA_IW[X]
+;Go to security position (_FA)
+IF (ABS(DIFF_) > 0) GOTOF  NEXT
+G0 X ($AA_IW[X] - _FA) * 2
+GOTOF NEXT1
+NEXT:
+G0 X ($AA_IW[X] + _FA) * 2
+NEXT1:
+C (_STA1 + 180)
+G1 MEAS X _SETVAL
+IF (PROBE_HIT == 0) GOTOF AL0
+PROBING_SOUND("VALID")
+DEF REAL MEAS_X_1 = $AA_IW[X]
+;Go to security position (_FA)
+IF (ABS(DIFF_) > 0) GOTOF  NEXT
+G0 X ($AA_IW[X] - _FA) * 2
+GOTOF NEXT1
+NEXT:
+G0 X ($AA_IW[X] + _FA) * 2
+NEXT1:
+C0
+
+;Save values
+IF (ABS(DIFF_) > 0) GOTOF  _MVAR_1000_MA_2_POS
+_OVR [4] = (MEAS_X_1 * 2) + $TC_DP6
+GOTOF _MVAR_1000_MA_2_SECURITY_POS
+_MVAR_1000_MA_2_POS:
+_OVR [4] = (MEAS_X_1 * 2) - $TC_DP6
+
+;Go to security position (_FA)
+_MVAR_1000_MA_2_SECURITY_POS:
+IF (ABS(DIFF_) > 0) GOTOF  _MVAR_1000_MA_2_POS
+G0 X ($AA_IW[X] - _FA) * 2
+GOTOF _MVAR_1000_MA_2_SEND_MESSAGE
+_MVAR_1000_MA_2_POS:
+G0 X ($AA_IW[X] + _FA) * 2
+
+;Send messages to info window
+_MVAR_1000_MA_2_SEND_MESSAGE:
+IF (ABS(DIFF_) > 0) GOTOF  _MVAR_1000_MA_2_POS_MESSAGE
+DEF STRING MESSAGE
+MESSAGE = "Theoretical interior diameter = " + _SETVAL + " | Measured interior diameter = " + _OVR [4] 
+MSG(MESSAGE,2)
+GOTOF END
+
+_MVAR_1000_MA_2_POS_MESSAGE:
+DEF STRING MESSAGE
+MESSAGE = "Theoretical exterior diameter = " + _SETVAL + " | Measured exterior diameter = " + _OVR [4] 
+MSG(MESSAGE,2)
+GOTOF END
+
+AL0:
+PROBING_SOUND("INVALID")
+MSG("Probe did not hit! Verify parameters",1)
+
+END:
+;Restore states:
+G(89 + ABSINC_) G(69 + INCHMM_)
+D1
+M17
+
+
+PROC CYCLE_977; By CGTech
+
+;Save current state:
+DEF INT ABSINC_ = $P_GG[14],INCHMM_ = $P_GG[13]
+DEF REAL XPOS_ = $AA_IW[X], YPOS_ = $AA_IW[Y], ZPOS_ = $AA_IW[Z]
+
+G71 G90
+
+;Store Theoretical values for measurement:
+_OVR [0] = _SETVAL _OVR [1] = XPOS_ OVR [2] = YPOS_
+
+CASE (_MVAR) OF 1 GOTOF _MVAR_1 4 GOTOF _MVAR_4 102 GOTOF _MVAR_102 103 GOTOF _MVAR_103
+MSG("Not supported yet! Contact your CGTech representative.",1)
+GOTOF END
+
+;_MVAR value:
+;1 Measure hole with tool offset
+;2 Measure shaft with tool offset
+;3 Measure groove with tool offset
+;4 Measure web with tool offset
+;5 Measure rectangle inside with tool offset
+;6 Measure rectangle outside with tool offset
+;101 ZO determination in hole with ZO correction
+;102 ZO determination on shaft with ZO correction
+;103 ZO determination in groove with ZO correction
+;104 ZO determination on web with ZO correction
+;105 ZO determination in inside rectangle with ZO correction
+;106 ZO determination in outside rectangle with ZO correction
+
+;Mesured values: _MVAR=xxx1 to _MVAR=xxx4, not with rectangle measurement, see next table:
+;_OVR [0] REAL Setpoint diameter/width hole, shaft, groove, web
+;_OVR [1] REAL Setpoint center point/center hole, shaft, groove, web in abscissa
+;_OVR [2] REAL Setpoint center point/center hole, shaft, groove, web in ordinate
+;_OVR [4] REAL Actual value diameter/width hole, shaft, groove, web
+;_OVR [5] REAL Actual value center point/center hole, shaft, groove, web in abscissa
+;_OVR [6] REAL Actual value center point/center hole, shaft, groove, web in ordinate
+;_OVR [8]1) REAL Upper tolerance limit for diameter/width hole, shaft, groove, web
+;_OVR [12]1) REAL Lower tolerance limit for diameter/width hole, shaft, groove, web
+;_OVR [16] REAL Difference diameter/width hole, shaft, groove, web
+;_OVR [17] REAL Difference center point/center hole, shaft, groove, web in abscissa
+;_OVR [18] REAL Difference center point/center hole, shaft, groove, web in ordinate
+;_OVR [20]1) REAL Offset value
+;_OVR [27]1) REAL Zero offset area
+;_OVR [28] REAL Safe area
+;_OVR [29]1) REAL Dimensional difference
+;_OVR [30]1) REAL Empirical value
+;_OVR [31]1) REAL Mean value
+;_OVI [0] INTEGER D number or ZO number
+;_OVI [2] INTEGER Measuring cycle number
+;_OVI [4]1) INTEGER Weighting factor
+;_OVI [5] INTEGER Probe number
+;_OVI [6]1) INTEGER Mean value memory number
+;_OVI [7]1) INTEGER Empirical value memory number
+;_OVI [8] INTEGER Tool number
+;_OVI [9] INTEGER Alarm number
+;_OVI [11]2) INTEGER Status offset request
+;_OVI [13]1) INTEGER DL number (as from measuring cycle version SW 6.3)
+;1) For workpiece measurement with tool offset only
+;2) For ZO correction only
+
+;Mesured values, rectangle measurement (_MVAR= xxx5, =xxx6):
+;_OVR [0] REAL Setpoint value rectangle length (in the abscissa)
+;_OVR [1] REAL Setpoint value rectangle length (in the ordinate)
+;_OVR [2] REAL Setpoint for rectangle center point, abscissa
+;_OVR [3] REAL Setpoint for rectangle center point, ordinate
+;_OVR [4] REAL Actual value for rectangle length (in the abscissa)
+;_OVR [5] REAL Actual value for rectangle length (in the ordinate)
+;_OVR [6] REAL Actual value for rectangle center point, abscissa
+;_OVR [7] REAL Actual value for rectangle center point, ordinate
+;_OVR [8]1) REAL Upper tolerance limit for rectangle length (in the abscissa)
+;_OVR [9]1) REAL Upper tolerance limit for rectangle length (in the ordinate)
+;_OVR [12]1) REAL Lower tolerance limit for rectangle length (in the abscissa)
+;_OVR [13]1) REAL Lower tolerance limit for rectangle length (in the ordinate)
+;_OVR [16] REAL Difference of rectangle length (in the abscissa)
+;_OVR [17] REAL Difference of rectangle length (in the ordinate)
+;_OVR [18] REAL Difference of rectangle center point, abscissa
+;_OVR [19] REAL Difference of rectangle center point, ordinate
+;_OVR [20]1) REAL Offset value
+;_OVR [27]1) REAL Zero offset area
+;_OVR [28] REAL Safe area
+;_OVR [29]1) REAL Dimensional difference
+;_OVR [30]1) REAL Empirical value
+;_OVR [31]1) REAL Mean value
+;_OVI [0] INTEGER D number or ZO number
+;_OVI [2] INTEGER Measuring cycle number
+;_OVI [4]1) INTEGER Weighting factor
+;_OVI [5] INTEGER Probe number
+;_OVI [6]1) INTEGER Mean value memory number
+;_OVI [7]1) INTEGER Empirical value memory number
+;_OVI [8] INTEGER Tool number
+;_OVI [9] INTEGER Alarm number
+;_OVI [11]2) INTEGER Status offset request
+;_OVI [13]1) INTEGER DL number (as from measuring cycle version SW 6.3)
+;1) for workpiece measurement with tool offset only
+;2) For ZO correction only
+
+_MVAR_1: ;Measure hole with tool offset *******************************************************************************************_MVAR_1
+;Probe X 
+G1 MEAS X (XPOS_  + _SETVAL/2)
+IF (PROBE_HIT == 0) GOTOF AL0
+PROBING_SOUND("VALID")
+DEF REAL MEAS_X_1 = $AA_IW[X]
+G0 X XPOS_
+G1 MEAS X (XPOS_ - _SETVAL/2)
+IF (PROBE_HIT == 0) GOTOF AL0
+PROBING_SOUND("VALID")
+DEF REAL MEAS_X_2 = $AA_IW[X]
+G0 X XPOS_
+
+;Probe Y
+G1 MEAS Y (YPOS_  + _SETVAL/2)
+IF (PROBE_HIT == 0) GOTOF AL0
+PROBING_SOUND("VALID")
+DEF REAL MEAS_Y_1 = $AA_IW[Y]
+G0 Y YPOS_
+G1 MEAS Y (YPOS_ - _SETVAL/2)
+IF (PROBE_HIT == 0) GOTOF AL0
+PROBING_SOUND("VALID")
+DEF REAL MEAS_Y_2 = $AA_IW[Y]
+G0 Y YPOS_
+
+;Save values
+_OVR [4] = (abs(MEAS_X_1) - abs(MEAS_X_2)) + $TC_DP6
+_OVR [5] = (MEAS_X_1 + MEAS_X_2) / 2
+_OVR [6] = (MEAS_Y_1 + MEAS_Y_2) / 2
+
+;Send messages to info window
+DEF STRING MESSAGE
+MESSAGE = "Theoretical diameter = " + _SETVAL + " | Measured diameter = " + _OVR [4] 
+MSG(MESSAGE,2)
+MESSAGE = "Theoretical center X = " + XPOS_ + " ; Theoretical center Y = " + YPOS_ + " | Measured center X = " + _OVR [5] + " ; Measured center Y = " + _OVR [6] 
+MSG(MESSAGE,2)
+
+GOTOF END
+
+_MVAR_4: ;Measure web with tool offset  *******************************************************************************************_MVAR_4
+DEF REAL MESURE_DIST = 8
+CASE (_MA) OF 1 GOTOF _MVAR_4_MA_1 OF 2 GOTOF _MVAR_4_MA_2
+MSG("Not supported yet! Contact your CGTech representative. Also verify _MA value!",1)
+
+_MVAR_4_MA_1:
+;Probe X
+G0 X (XPOS_ + _SETVAL/2 + _FA + $TC_DP6/2)
+Z (ZPOS_ + _ID)
+G1 MEAS X (XPOS_ + _SETVAL/2 + _FA + $TC_DP6/2) - MESURE_DIST 
+IF (PROBE_HIT == 0) GOTOF AL0
+PROBING_SOUND("VALID")
+DEF REAL MEAS_X_1 = $AA_IW[X]
+G0 X (XPOS_ + _SETVAL/2 + _FA + $TC_DP6/2)
+Z ZPOS_
+X XPOS_
+G0 X (XPOS_ - _SETVAL/2 - _FA - $TC_DP6/2)
+Z (ZPOS_ + _ID)
+G1 MEAS X (XPOS_ - _SETVAL/2 - _FA - $TC_DP6/2) + MESURE_DIST 
+IF (PROBE_HIT == 0) GOTOF AL0
+PROBING_SOUND("VALID")
+DEF REAL MEAS_X_2 = $AA_IW[X]
+G0 X (XPOS_ - _SETVAL/2 - _FA - $TC_DP6/2)
+Z ZPOS_
+X XPOS_
+
+;Save values
+_OVR [4] = (abs(MEAS_X_1) - abs(MEAS_X_2)) - $TC_DP6
+_OVR [5] = (MEAS_X_1 + MEAS_X_2) / 2
+
+;Send messages to info window, no modification of cutter comp. (Models and cutters are perfect in VERICUT)
+DEF STRING MESSAGE
+MESSAGE = "Theoretical web = " + _SETVAL + " | Measured web = " + _OVR [4] 
+MSG(MESSAGE,2)
+MESSAGE = "Theoretical center X = " + XPOS_ + " | Measured center X = " + _OVR [5]
+MSG(MESSAGE,2)
+
+GOTOF END_MVAR_4
+_MVAR_4_MA_2:
+;Probe Y
+G0 Y (YPOS_ + _SETVAL/2 + _FA + $TC_DP6/2)
+Z (ZPOS_ + _ID)
+G1 MEAS Y (YPOS_ + _SETVAL/2 + _FA + $TC_DP6/2) - MESURE_DIST 
+IF (PROBE_HIT == 0) GOTOF AL0
+PROBING_SOUND("VALID")
+DEF REAL MEAS_Y_1 = $AA_IW[Y]
+G0 Y (YPOS_ + _SETVAL/2 + _FA + $TC_DP6/2)
+Z ZPOS_
+Y YPOS_
+G0 Y (YPOS_ - _SETVAL/2 - _FA - $TC_DP6/2)
+Z (ZPOS_ + _ID)
+G1 MEAS Y (YPOS_ - _SETVAL/2 - _FA - $TC_DP6/2) + MESURE_DIST 
+IF (PROBE_HIT == 0) GOTOF AL0
+PROBING_SOUND("VALID")
+DEF REAL MEAS_Y_2 = $AA_IW[Y]
+G0 Y (YPOS_ - _SETVAL/2 - _FA - $TC_DP6/2)
+Z ZPOS_
+Y YPOS_
+;Save values
+_OVR [4] = (abs(MEAS_Y_1) - abs(MEAS_Y_2)) - $TC_DP6
+_OVR [6] = (MEAS_Y_1 + MEAS_Y_2) / 2
+;Send messages to info window, no modification of cutter comp. (Models and cutters are perfect in VERICUT)
+DEF STRING MESSAGE
+MESSAGE = "Theoretical web = " + _SETVAL + " | Measured web = " + _OVR [4] 
+MSG(MESSAGE,2)
+MESSAGE = "Theoretical center Y = " + YPOS | Measured center Y = " + _OVR [6] + "
+MSG(MESSAGE,2)
+
+
+END_MVAR_4:
+GOTOF END
+
+_MVAR_102: ;ZO determination on shaft with ZO correction  *************************************************************************_MVAR_102
+DEF REAL MESURE_DIST = 12
+;Probe X
+G0 X (XPOS_ + _SETVAL/2 + _FA + $TC_DP6/2)
+Z (ZPOS_ + _ID)
+G1 MEAS X (XPOS_ + _SETVAL/2 + _FA + $TC_DP6/2) - MESURE_DIST 
+IF (PROBE_HIT == 0) GOTOF AL0
+PROBING_SOUND("VALID")
+DEF REAL MEAS_X_1 = $AA_IW[X]
+G0 X (XPOS_ + _SETVAL/2 + _FA + $TC_DP6/2)
+Z ZPOS_
+X XPOS_
+G0 X (XPOS_ - _SETVAL/2 - _FA - $TC_DP6/2)
+Z (ZPOS_ + _ID)
+G1 MEAS X (XPOS_ - _SETVAL/2 - _FA - $TC_DP6/2) + MESURE_DIST 
+IF (PROBE_HIT == 0) GOTOF AL0
+PROBING_SOUND("VALID")
+DEF REAL MEAS_X_2 = $AA_IW[X]
+G0 X (XPOS_ - _SETVAL/2 - _FA - $TC_DP6/2)
+Z ZPOS_
+X XPOS_
+
+;Probe Y
+G0 Y (YPOS_ + _SETVAL/2 + _FA + $TC_DP6/2)
+Z (ZPOS_ + _ID)
+G1 MEAS Y (YPOS_ + _SETVAL/2 + _FA + $TC_DP6/2) - MESURE_DIST 
+IF (PROBE_HIT == 0) GOTOF AL0
+PROBING_SOUND("VALID")
+DEF REAL MEAS_Y_1 = $AA_IW[Y]
+G0 Y (YPOS_ + _SETVAL/2 + _FA + $TC_DP6/2)
+Z ZPOS_
+Y YPOS_
+G0 Y (YPOS_ - _SETVAL/2 - _FA - $TC_DP6/2)
+Z (ZPOS_ + _ID)
+G1 MEAS Y (YPOS_ - _SETVAL/2 - _FA - $TC_DP6/2) + MESURE_DIST 
+IF (PROBE_HIT == 0) GOTOF AL0
+PROBING_SOUND("VALID")
+DEF REAL MEAS_Y_2 = $AA_IW[Y]
+G0 Y (YPOS_ - _SETVAL/2 - _FA - $TC_DP6/2)
+Z ZPOS_
+Y YPOS_
+
+;Save values
+_OVR [4] = (abs(MEAS_X_1) - abs(MEAS_X_2)) - $TC_DP6
+_OVR [5] = (MEAS_X_1 + MEAS_X_2) / 2
+_OVR [6] = (MEAS_Y_1 + MEAS_Y_2) / 2
+
+;Send messages to info window and modify G54
+DEF STRING MESSAGE
+MESSAGE = "Theoretical diameter = " + _SETVAL + " | Measured diameter = " + _OVR [4] 
+MSG(MESSAGE,2)
+MESSAGE = "Theoretical center X = " + XPOS_ + " ; Theoretical center Y = " + YPOS_ + " | Measured center X = " + _OVR [5] + " ; Measured center Y = " + _OVR [6] 
+MSG(MESSAGE,2)
+DEF REAL NEWX_ = $P_UIFR[1,X,TR] + (_OVR [5] - XPOS_)
+DEF REAL NEWY_ = $P_UIFR[1,Y,TR] + (_OVR [6] - YPOS_)
+MESSAGE = "G54 X modified to X = " + NEWX_ + " ; G54 Y modified to Y = " + NEWY_ + " | Were G54 X = " + $P_UIFR[1,X,TR] + " ; G54 Y = " + $P_UIFR[1,Y,TR]
+MSG(MESSAGE,2)
+$P_UIFR[1] = CTRANS(X,NEWX_)
+$P_UIFR[1] = CTRANS(Y,NEWY_)
+
+
+GOTOF END
+_MVAR_103: ;ZO determination in groove with ZO correction *************************************************************************_MVAR_103
+DEF REAL MESURE_DIST = 12
+CASE (_MA) OF 1 GOTOF _MVAR_103_MA_1 OF 2 GOTOF _MVAR_103_MA_2
+MSG("Not supported yet! Contact your CGTech representative. Also verify _MA value!",1)
+
+_MVAR_103_MA_1:
+;Probe X 
+G1 MEAS X (XPOS_  + _SETVAL/2)
+IF (PROBE_HIT == 0) GOTOF AL0
+PROBING_SOUND("VALID")
+DEF REAL MEAS_X_1 = $AA_IW[X]
+G0 X XPOS_
+G1 MEAS X (XPOS_ - _SETVAL/2)
+IF (PROBE_HIT == 0) GOTOF AL0
+PROBING_SOUND("VALID")
+DEF REAL MEAS_X_2 = $AA_IW[X]
+G0 X XPOS_
+
+;Save values
+_OVR [4] = (abs(MEAS_X_1) - abs(MEAS_X_2)) + $TC_DP6
+_OVR [5] = (MEAS_X_1 + MEAS_X_2) / 2
+
+;Send messages to info window
+DEF STRING MESSAGE
+MESSAGE = "Theoretical groove = " + _SETVAL + " | Measured groove = " + _OVR [4] 
+MSG(MESSAGE,2)
+MESSAGE = "Theoretical center X = " + XPOS_ + " ; Theoretical center Y = " + YPOS_ + " | Measured center X = " + _OVR [5]
+MSG(MESSAGE,2)
+GOTOF _MVAR_103_END
+
+_MVAR_103_MA_2:
+;Probe Y
+G1 MEAS Y (YPOS_  + _SETVAL/2)
+IF (PROBE_HIT == 0) GOTOF AL0
+PROBING_SOUND("VALID")
+DEF REAL MEAS_Y_1 = $AA_IW[Y]
+G0 Y YPOS_
+G1 MEAS Y (YPOS_ - _SETVAL/2)
+IF (PROBE_HIT == 0) GOTOF AL0
+PROBING_SOUND("VALID")
+DEF REAL MEAS_Y_2 = $AA_IW[Y]
+G0 Y YPOS_
+
+;Save values
+_OVR [4] = (abs(MEAS_Y_1) - abs(MEAS_Y_2)) + $TC_DP6
+_OVR [6] = (MEAS_Y_1 + MEAS_Y_2) / 2
+;Send messages to info window
+DEF STRING MESSAGE
+MESSAGE = "Theoretical groove = " + _SETVAL + " | Measured groove = " + _OVR [4] 
+MSG(MESSAGE,2)
+MESSAGE = "Theoretical center Y = " + YPOS_ + " ; Theoretical center Y = " + YPOS_ + " | Measured center Y = " + _OVR [6]
+MSG(MESSAGE,2)
+
+_MVAR_103_END:
+GOTOF END
+
+AL0:
+MSG("Probe did not hit! Verify parameters",1)
+
+END:
+;Restore states:
+G(89 + ABSINC_) G(69 + INCHMM_)
+M17
+
+
+PROC CYCLE_978; By CGTech
+
+;Save current state:
+DEF INT ABSINC_ = $P_GG[14],INCHMM_ = $P_GG[13]
+DEF REAL XPOS_ = $AA_IW[X], YPOS_ = $AA_IW[Y], ZPOS_ = $AA_IW[Z]
+
+G71 G90
+
+;Store Theoretical values for measurement:
+_OVR [0] = _SETVAL _OVR [1] = XPOS_ OVR [2] = YPOS_
+
+CASE (_MVAR) OF 0 GOTOF _MVAR_0 100 GOTOF _MVAR_100
+MSG("Not supported yet! Contact your CGTech representative.",1)
+GOTOF END
+
+;_MVAR value:
+;0 Measure surface and tool offset
+;100 ZO determination on surface and ZO correction
+
+;Depending on the measuring variant, CYCLE978
+;makes the following values available as results in
+;the block GUD5:
+;_OVR [0] REAL Setpoint value for measuring axis:
+;_OVR [1] REAL Setpoint for abscissa
+;_OVR [2] REAL Setpoint for ordinate
+;_OVR [3] REAL Setpoint for applicate
+;_OVR [4] REAL Actual value for measuring axis
+;_OVR [8]1) REAL Upper tolerance limit for measuring axis
+;_OVR [12]1) REAL Lower tolerance limit for measuring axis
+;_OVR [16] REAL Difference for measuring axis
+;_OVR [20]1) REAL Offset value
+;_OVR [27]1) REAL Zero offset area
+;_OVR [28] REAL Safe area
+;_OVR [29]1) REAL Dimensional difference
+;_OVR [30] REAL Empirical value
+;_OVR [31]1) REAL Mean value
+;_OVI [0] INTEGER D number or ZO number
+;_OVI [2] INTEGER Measuring cycle number
+;_OVI [4]1) INTEGER Weighting factor
+;_OVI [5] INTEGER Probe number
+;_OVI [6]1) INTEGER Mean value memory number
+;_OVI [7] INTEGER Empirical value memory number
+;_OVI [8] INTEGER Tool number
+;_OVI [9] INTEGER Alarm number
+;_OVI [11]2) INTEGER Status offset request
+;_OVI [13]1) INTEGER DL number (as from measuring cycle version SW 6.3)
+;1) For 1-point measurement with automatic tool offset only
+;2) For ZO correction only
+
+_MVAR_0: ;Measure surface and tool offset *******************************************************************************************_MVAR_0
+CASE (_MA) OF 1 GOTOF _MVAR_0_MA_1 OF 2 GOTOF _MVAR_0_MA_2 OF 3 GOTOF _MVAR_0_MA_3
+MSG("Not supported yet! Contact your CGTech representative. Also verify _MA value!",1)
+
+_MVAR_0_MA_1:
+;Probe X 
+G1 MEAS X _SETVAL
+IF (PROBE_HIT == 0) GOTOF AL0
+PROBING_SOUND("VALID")
+DEF REAL MEAS_X_1 = $AA_IW[X]
+;Save values
+DEF REAL DIFF_ = MEAS_X_1 - _SETVAL
+IF (ABS(DIFF_) > 1) GOTOF _MVAR_0_MA_1_DIFF_POS
+_OVR [4] = MEAS_X_1 - $TC_DP6 / 2
+G91 X _FA
+G90
+GOTOF _MVAR_0_MA_1_MESSAGES
+_MVAR_0_MA_1_DIFF_POS:
+_OVR [4] = MEAS_X_1 + $TC_DP6 / 2
+G91 X -_FA
+G90
+_MVAR_0_MA_1_MESSAGES:
+;Send messages to info window
+DEF STRING MESSAGE
+MESSAGE = "Theoretical surface X = " + _SETVAL + " | Measured surface X = " + _OVR [4] 
+MSG(MESSAGE,2)
+GOTOF _MVAR_0_END
+
+_MVAR_0_MA_2:
+;Probe Y 
+G1 MEAS Y _SETVAL
+IF (PROBE_HIT == 0) GOTOF AL0
+PROBING_SOUND("VALID")
+DEF REAL MEAS_Y_1 = $AA_IW[Y]
+;Save values
+DEF REAL DIFF_ = MEAS_Y_1 - _SETVAL
+IF (ABS(DIFF_) > 1) GOTOF _MVAR_0_MA_2_DIFF_POS
+_OVR [4] = MEAS_Y_1 - $TC_DP6 / 2
+G91 Y _FA
+G90
+GOTOF _MVAR_0_MA_2_MESSAGES
+_MVAR_0_MA_2_DIFF_POS:
+_OVR [4] = MEAS_Y_1 + $TC_DP6 / 2
+G91 Y -_FA
+G90
+_MVAR_0_MA_2_MESSAGES:
+;Send messages to info window
+DEF STRING MESSAGE
+MESSAGE = "Theoretical surface Y = " + _SETVAL + " | Measured surface Y = " + _OVR [4] 
+MSG(MESSAGE,2)
+GOTOF _MVAR_0_END
+
+_MVAR_0_MA_3:
+;Probe Z 
+G1 MEAS Z _SETVAL
+IF (PROBE_HIT == 0) GOTOF AL0
+PROBING_SOUND("VALID")
+DEF REAL MEAS_Z_1 = $AA_IW[Z]
+;Save values
+DEF REAL DIFF_ = MEAS_Z_1 - _SETVAL
+IF (ABS(DIFF_) > 1) GOTOF _MVAR_0_MA_3_DIFF_POS
+_OVR [4] = MEAS_Z_1 - $TC_DP6 / 2
+G91 Z _FA
+G90
+GOTOF _MVAR_0_MA_3_MESSAGES
+_MVAR_0_MA_3_DIFF_POS:
+_OVR [4] = MEAS_Z_1 + $TC_DP6 / 2
+G91 Z -_FA
+G90
+_MVAR_0_MA_3_MESSAGES:
+;Send messages to info window
+DEF STRING MESSAGE
+MESSAGE = "Theoretical surface Z = " + _SETVAL + " | Measured surface Z = " + _OVR [4] 
+MSG(MESSAGE,2)
+GOTOF _MVAR_0_END
+
+_MVAR_0_END:
+GOTOF END
+
+_MVAR_100: ;ZO determination on surface and ZO correction  ****************************************************************************_MVAR_100
+CASE (_MA) OF 1 GOTOF _MVAR_100_MA_1 OF 2 GOTOF _MVAR_100_MA_2 OF 3 GOTOF _MVAR_100_MA_3
+MSG("Not supported yet! Contact your CGTech representative. Also verify _MA value!",1)
+
+_MVAR_100_MA_1:
+;Probe X 
+G1 MEAS X _SETVAL
+IF (PROBE_HIT == 0) GOTOF AL0
+PROBING_SOUND("VALID")
+DEF REAL MEAS_X_1 = $AA_IW[X]
+;Save values
+DEF REAL DIFF_ = MEAS_X_1 - _SETVAL
+IF (ABS(DIFF_) > 1) GOTOF _MVAR_100_MA_1_DIFF_POS
+_OVR [4] = MEAS_X_1 - $TC_DP6 / 2
+G91 X _FA
+G90
+GOTOF _MVAR_100_MA_1_MESSAGES
+_MVAR_100_MA_1_DIFF_POS:
+_OVR [4] = MEAS_X_1 + $TC_DP6 / 2
+G91 X -_FA
+G90
+_MVAR_100_MA_1_MESSAGES:
+;Send messages to info window and modify G54
+DEF STRING MESSAGE
+MESSAGE = "Theoretical surface X = " + _SETVAL + " | Measured surface X = " + _OVR [4] 
+MSG(MESSAGE,2)
+DEF REAL NEWX_ = $P_UIFR[1,X,TR] + _OVR [4]
+MESSAGE = "G54 X modified to X = " + NEWX_  + " | Was G54 X = " + $P_UIFR[1,X,TR]
+MSG(MESSAGE,2)
+$P_UIFR[1] = CTRANS(X,NEWX_,Y,$P_UIFR[1,Y,TR],Z,$P_UIFR[1,Z,TR])
+GOTOF _MVAR_100_END
+
+_MVAR_100_MA_2:
+;Probe Y 
+G1 MEAS Y _SETVAL
+IF (PROBE_HIT == 0) GOTOF AL0
+PROBING_SOUND("VALID")
+DEF REAL MEAS_Y_1 = $AA_IW[Y]
+;Save values
+DEF REAL DIFF_ = MEAS_Y_1 - _SETVAL
+IF (ABS(DIFF_) > 1) GOTOF _MVAR_100_MA_1_DIFF_POS
+_OVR [4] = MEAS_Y_1 - $TC_DP6 / 2
+G91 Y _FA
+G90
+GOTOF _MVAR_100_MA_1_MESSAGES
+_MVAR_100_MA_1_DIFF_POS:
+_OVR [4] = MEAS_Y_1 + $TC_DP6 / 2
+G91 Y -_FA
+G90
+_MVAR_100_MA_1_MESSAGES:
+;Send messages to info window and modify G54
+DEF STRING MESSAGE
+MESSAGE = "Theoretical surface Y = " + _SETVAL + " | Measured surface Y = " + _OVR [4] 
+MSG(MESSAGE,2)
+DEF REAL NEWY_ = $P_UIFR[1,Y,TR] + _OVR [4]
+MESSAGE = "G54 Y modified to Y = " + NEWY_  + " | Was G54 Y = " + $P_UIFR[1,Y,TR]
+MSG(MESSAGE,2)
+$P_UIFR[1] = CTRANS(X,$P_UIFR[1,X,TR], Y, NEWY_,Z,$P_UIFR[1,Z,TR])
+GOTOF _MVAR_100_END
+
+_MVAR_100_MA_3:
+;Probe Z 
+G1 MEAS Z _SETVAL
+IF (PROBE_HIT == 0) GOTOF AL0
+PROBING_SOUND("VALID")
+DEF REAL MEAS_Z_1 = $AA_IW[Z]
+;Save values
+DEF REAL DIFF_ = MEAS_Z_1 - _SETVAL
+IF (ABS(DIFF_) > 1) GOTOF _MVAR_100_MA_1_DIFF_POS
+_OVR [4] = MEAS_Z_1 - $TC_DP6 / 2
+G91 Z _FA
+G90
+GOTOF _MVAR_100_MA_1_MESSAGES
+_MVAR_100_MA_1_DIFF_POS:
+_OVR [4] = MEAS_Z_1 + $TC_DP6 / 2
+G91 Z -_FA
+G90
+_MVAR_100_MA_1_MESSAGES:
+;Send messages to info window and modify G54
+DEF STRING MESSAGE
+MESSAGE = "Theoretical surface Z = " + _SETVAL + " | Measured surface Z = " + (_OVR [4] + $TC_DP6 / 2) 
+MSG(MESSAGE,2)
+DEF REAL NEWZ_ = $P_UIFR[1,Z,TR] + _OVR [4] + $TC_DP6 / 2
+MESSAGE = "G54 Z modified to Z = " + NEWZ_  + " | Was G54 Z = " + $P_UIFR[1,Z,TR]
+MSG(MESSAGE,2)
+$P_UIFR[1] = CTRANS(X,$P_UIFR[1,X,TR],Y,$P_UIFR[1,Y,TR],Z,NEWZ_)
+GOTOF _MVAR_100_END
+
+_MVAR_100_END:
+GOTOF END
+
+AL0:
+MSG("Probe did not hit! Verify parameters",1)
+
+END:
+;Restore states:
+G(89 + ABSINC_) G(69 + INCHMM_)
+M17
+
+
+PROC CYCLE_979; By CGTech
+
+;Save current state:
+DEF INT ABSINC_ = $P_GG[14],INCHMM_ = $P_GG[13]
+DEF REAL XPOS_ = $AA_IW[X], YPOS_ = $AA_IW[Y], ZPOS_ = $AA_IW[Z]
+
+G71 G90
+
+;Store Theoretical values for measurement:
+_OVR [0] = _SETVAL _OVR [1] = _CPA OVR [2] = _CPO
+
+CASE (_MVAR) OF 1 GOTOF _MVAR_1 4 GOTOF _MVAR_4 102 GOTOF _MVAR_102 103 GOTOF _MVAR_103
+MSG("Not supported yet! Contact your CGTech representative.",1)
+GOTOF END
+
+;_MVAR value:
+;1 Measure hole with tool offset In hole at measuring height
+;2 Measure shaft with tool offset Near P1 at measuring height
+;3 Measure groove with tool offset In groove at measuring height
+;4 Measure web with tool offset Near P1 at measuring height
+;101 ZO calculation in hole with ZO compensation In hole at measuring height
+;102 ZO calculation on shaft with ZO compensation Near P1 at measuring height
+;103 ZO calculation in groove with ZO compensation In groove at measuring height
+;104 ZO calculation on web with ZO compensation Near P1 at measuring height
+
+;Mesured values: _MVAR=xxx1 to _MVAR=xxx4, not with rectangle measurement, see next table:
+;_OVR [0] REAL Setpoint diameter/width hole, shaft, groove, web
+;_OVR [1] REAL Setpoint center point/center in abscissa
+;_OVR [2] REAL Setpoint center point/center in ordinate
+;_OVR [4] REAL Actual value diameter/width hole, shaft, groove, web
+;_OVR [5] REAL Actual value center point/center in abscissa
+;_OVR [6] REAL Actual value center point/center in ordinate
+;_OVR [8]1) REAL Upper tolerance limit for diameter/width hole, shaft, groove, web
+;_OVR [12] 1) REAL Lower tolerance limit for diameter/width hole, shaft, groove, web
+;_OVR [16] REAL Difference diameter/width hole, shaft, groove, web
+;_OVR [17] REAL Difference center point/center in abscissa
+;_OVR [18] REAL Difference center point/center in ordinate
+;_OVR [20] 1) REAL Offset value
+;_OVR [27] 1) REAL Zero offset area
+;_OVR [28] 1) REAL Safe area
+;_OVR [29] 1) REAL Permissible dimension difference
+;_OVR [30] 1) REAL Empirical value
+;_OVR [31] 1) REAL Mean value
+;_OVI [0] INTEGER D number or ZO number
+;_OVI [2] INTEGER Measuring cycle number
+;_OVI [4] 1) INTEGER Weighting factor
+;_OVI [5] INTEGER Measuring probe number
+;_OVI [6] 1) INTEGER Mean value memory number
+;_OVI [7] 1) INTEGER Empirical value memory number
+;_OVI [8] INTEGER Tool number
+;_OVI [9] INTEGER Alarm number
+;1) For workpiece measurement with tool offset only
+
+_MVAR_1: ;Measure hole with tool offset *******************************************************************************************_MVAR_1
+G90 G0 X _CPA Y _CPO
+TRANS X _CPA Y _CPO
+AROT Z _STA1
+
+;Probe X 
+G91 G1 MEAS X _SETVAL/2
+IF (PROBE_HIT == 0) GOTOF AL0
+PROBING_SOUND("VALID")
+DEF REAL MEAS_X_1 = $AA_IW[X]
+G90 G0 X0
+G91 G1 MEAS X -_SETVAL/2
+IF (PROBE_HIT == 0) GOTOF AL0
+PROBING_SOUND("VALID")
+DEF REAL MEAS_X_2 = $AA_IW[X]
+G90 G0 X0
+
+;Probe Y 
+G91 G1 MEAS Y _SETVAL/2
+IF (PROBE_HIT == 0) GOTOF AL0
+PROBING_SOUND("VALID")
+DEF REAL MEAS_Y_1 = $AA_IW[Y]
+G90 G0 Y0
+G91 G1 MEAS Y -_SETVAL/2
+IF (PROBE_HIT == 0) GOTOF AL0
+PROBING_SOUND("VALID")
+DEF REAL MEAS_Y_2 = $AA_IW[Y]
+G90 G0 Y0
+
+;Calculate deviation and save values
+_OVR [4] = (abs(MEAS_X_1) + abs(MEAS_X_2)) + $TC_DP6
+DEF REAL DEVXR_ = (MEAS_X_1 + MEAS_X_2) / 2
+DEF REAL DEVYR_ = (MEAS_Y_1 + MEAS_Y_2) / 2
+DEF REAL HYP_ = SQRT (DEVXR_*DEVXR_ + DEVYR_*DEVYR_)
+DEF REAL ANG_ = ACOS(DEVXR_/HYP_)
+DEF REAL DEVX_ = HYP_*COS(ANG_+_STA1)
+DEF REAL DEVY_ = HYP_*SIN(ANG_+_STA1)
+_OVR [17] = DEVX_
+_OVR [18] = DEVY_
+_OVR [5] = DEVX_ + _CPA
+_OVR [6] = DEVY_ + _CPO
+
+;Send messages to info window
+DEF STRING MESSAGE
+MESSAGE = "Theoretical diameter = " + _SETVAL + " | Measured diameter = " + _OVR [4] 
+MSG(MESSAGE,2)
+MESSAGE = "Theoretical center X = " + _CPA + " ; Theoretical center Y = " + _CPO + " | Measured center X = " + _OVR [5] + " ; Measured center Y = " + _OVR [6] 
+MSG(MESSAGE,2)
+
+GOTOF END
+
+_MVAR_4: ;Measure web with tool offset  *******************************************************************************************_MVAR_4
+DEF REAL MESURE_DIST = 4
+CASE (_MA) OF 1 GOTOF _MVAR_4_MA_1 OF 2 GOTOF _MVAR_4_MA_2
+MSG("Not supported yet! Contact your CGTech representative. Also verify _MA value!",1)
+GOTOF END
+
+_MVAR_4_MA_1:
+;Probe X
+TRANS X _CPA Y _CPO
+AROT Z _STA1
+G91 G1 MEAS X - MESURE_DIST 
+IF (PROBE_HIT == 0) GOTOF AL0
+PROBING_SOUND("VALID")
+DEF REAL MEAS_X_1 = $AA_IW[X]
+G91 G0 X (_FA + $TC_DP6/2)
+Z _ID
+G90 X 0
+X ( - _SETVAL/2 - _FA - $TC_DP6/2)
+Z ZPOS_ 
+G91 G1 MEAS X MESURE_DIST 
+IF (PROBE_HIT == 0) GOTOF AL0
+PROBING_SOUND("VALID")
+DEF REAL MEAS_X_2 = $AA_IW[X]
+G91 X (- _FA - $TC_DP6/2)
+;Calculate deviation and save values
+_OVR [4] = (abs(MEAS_X_1) + abs(MEAS_X_2)) - $TC_DP6
+DEF REAL DEVXR_ = (MEAS_X_1 + MEAS_X_2) / 2
+DEF REAL DEVX_ = DEVXR_ * COS(_STA1)
+_OVR [17] = DEVX_
+_OVR [5] = DEVX_ + _CPA
+;Send messages to info window, no modification of cutter comp. (Models and cutters are perfect in VERICUT)
+DEF STRING MESSAGE
+MESSAGE = "Theoretical web = " + _SETVAL + " | Measured web = " + _OVR [4] 
+MSG(MESSAGE,2)
+MESSAGE = "Theoretical center X = " + _CPA + " | Measured center X = " + _OVR [5]
+MSG(MESSAGE,2)
+GOTOF END_MVAR_4
+
+_MVAR_4_MA_2:
+;Probe X
+TRANS X _CPA Y _CPO
+AROT Z _STA1
+G91 G1 MEAS Y - MESURE_DIST 
+IF (PROBE_HIT == 0) GOTOF AL0
+PROBING_SOUND("VALID")
+DEF REAL MEAS_Y_1 = $AA_IW[Y]
+G91 G0 Y (_FA + $TC_DP6/2)
+Z _ID
+G90 Y 0
+Y ( - _SETVAL/2 - _FA - $TC_DP6/2)
+Z ZPOS_ 
+G91 G1 MEAS Y MESURE_DIST 
+IF (PROBE_HIT == 0) GOTOF AL0
+PROBING_SOUND("VALID")
+DEF REAL MEAS_Y_2 = $AA_IW[Y]
+G91 Y (- _FA - $TC_DP6/2)
+;Calculate deviation and save values
+_OVR [4] = (abs(MEAS_Y_1) + abs(MEAS_Y_2)) - $TC_DP6
+DEF REAL DEVYR_ = (MEAS_Y_1 + MEAS_Y_2) / 2
+DEF REAL DEVY_ = DEVYR_ * COS(_STA1)
+_OVR [18] = DEVY_
+_OVR [6] = DEVY_ + _CPO
+;Send messages to info window, no modification of cutter comp. (Models and cutters are perfect in VERICUT)
+DEF STRING MESSAGE
+MESSAGE = "Theoretical web = " + _SETVAL + " | Measured web = " + _OVR [4] 
+MSG(MESSAGE,2)
+MESSAGE = "Theoretical center Y = " + _CPO + " | Measured center Y = " + _OVR [6]
+MSG(MESSAGE,2)
+GOTOF END_MVAR_4
+
+END_MVAR_4:
+GOTOF END
+
+_MVAR_102: ;ZO determination on shaft with ZO correction  *************************************************************************_MVAR_102
+G90 G0 X _CPA Y _CPO
+TRANS X _CPA Y _CPO
+AROT Z _STA1
+
+;Probe X 
+G91 G1 MEAS X _SETVAL/2
+IF (PROBE_HIT == 0) GOTOF AL0
+PROBING_SOUND("VALID")
+DEF REAL MEAS_X_1 = $AA_IW[X]
+G90 G0 X0
+G91 G1 MEAS X -_SETVAL/2
+IF (PROBE_HIT == 0) GOTOF AL0
+PROBING_SOUND("VALID")
+DEF REAL MEAS_X_2 = $AA_IW[X]
+G90 G0 X0
+
+;Probe Y 
+G91 G1 MEAS Y _SETVAL/2
+IF (PROBE_HIT == 0) GOTOF AL0
+PROBING_SOUND("VALID")
+DEF REAL MEAS_Y_1 = $AA_IW[Y]
+G90 G0 Y0
+G91 G1 MEAS Y -_SETVAL/2
+IF (PROBE_HIT == 0) GOTOF AL0
+PROBING_SOUND("VALID")
+DEF REAL MEAS_Y_2 = $AA_IW[Y]
+G90 G0 Y0
+
+;Calculate deviation and save values
+_OVR [4] = (abs(MEAS_X_1) + abs(MEAS_X_2)) + $TC_DP6
+DEF REAL DEVXR_ = (MEAS_X_1 + MEAS_X_2) / 2
+DEF REAL DEVYR_ = (MEAS_Y_1 + MEAS_Y_2) / 2
+DEF REAL HYP_ = SQRT (DEVXR_*DEVXR_ + DEVYR_*DEVYR_)
+DEF REAL ANG_ = ACOS(DEVXR_/HYP_)
+DEF REAL DEVX_ = HYP_*COS(ANG_+_STA1)
+DEF REAL DEVY_ = HYP_*SIN(ANG_+_STA1)
+_OVR [17] = DEVX_
+_OVR [18] = DEVY_
+_OVR [5] = DEVX_ + _CPA
+_OVR [6] = DEVY_ + _CPO
+
+;Send messages to info window and modify G54
+DEF STRING MESSAGE
+MESSAGE = "Theoretical diameter = " + _SETVAL + " | Measured diameter = " + _OVR [4] 
+MSG(MESSAGE,2)
+MESSAGE = "Theoretical center X = " + _CPA + " ; Theoretical center Y = " + _CPO + " | Measured center X = " + _OVR [5] + " ; Measured center Y = " + _OVR [6] 
+MSG(MESSAGE,2)
+DEF REAL NEWX_ = $P_UIFR[1,X,TR] + (_OVR [5] - _CPA)
+DEF REAL NEWY_ = $P_UIFR[1,Y,TR] + (_OVR [6] - _CPO)
+MESSAGE = "G54 X modified to X = " + NEWX_ + " ; G54 Y modified to Y = " + NEWY_ + " | Were G54 X = " + $P_UIFR[1,X,TR] + " ; G54 Y = " + $P_UIFR[1,Y,TR]
+MSG(MESSAGE,2)
+$P_UIFR[1] = CTRANS(X,NEWX_)
+$P_UIFR[1] = CTRANS(Y,NEWY_)
+
+GOTOF END
+_MVAR_103: ;ZO determination in groove with ZO correction *************************************************************************_MVAR_103
+DEF REAL MESURE_DIST = 4
+CASE (_MA) OF 1 GOTOF _MVAR_103_MA_1 OF 2 GOTOF _MVAR_103_MA_2
+MSG("Not supported yet! Contact your CGTech representative. Also verify _MA value!",1)
+GOTOF END
+
+_MVAR_103_MA_1:
+;Probe X
+TRANS X _CPA Y _CPO
+AROT Z _STA1
+G91 G1 MEAS X MESURE_DIST 
+IF (PROBE_HIT == 0) GOTOF AL0
+PROBING_SOUND("VALID")
+DEF REAL MEAS_X_1 = $AA_IW[X]
+G91 G0 X (-_FA - $TC_DP6/2)
+G90 X 0
+G91 X - ( _SETVAL/2 - _FA - $TC_DP6/2)
+G91 G1 MEAS X -MESURE_DIST 
+IF (PROBE_HIT == 0) GOTOF AL0
+PROBING_SOUND("VALID")
+DEF REAL MEAS_X_2 = $AA_IW[X]
+G91 X (_FA + $TC_DP6/2)
+;Calculate deviation and save values
+_OVR [4] = (abs(MEAS_X_1) + abs(MEAS_X_2)) + $TC_DP6
+DEF REAL DEVXR_ = (MEAS_X_1 + MEAS_X_2) / 2
+DEF REAL DEVX_ = DEVXR_ * COS(_STA1)
+_OVR [17] = DEVX_
+_OVR [5] = DEVX_ + _CPA
+
+;Send messages to info window, no modification of cutter comp. (Models and cutters are perfect in VERICUT)
+DEF STRING MESSAGE
+MESSAGE = "Theoretical web = " + _SETVAL + " | Measured web = " + _OVR [4] 
+MSG(MESSAGE,2)
+MESSAGE = "Theoretical center X = " + _CPA + " | Measured center X = " + _OVR [5]
+MSG(MESSAGE,2)
+GOTOF _MVAR_103_END
+
+_MVAR_103_MA_2:
+;Probe Y
+TRANS Y _CPA Y _CPO
+AROT Z _STA1
+G91 G1 MEAS Y MESURE_DIST 
+IF (PROBE_HIT == 0) GOTOF AL0
+PROBING_SOUND("VALID")
+DEF REAL MEAS_Y_1 = $AA_IW[Y]
+G91 G0 Y (-_FA - $TC_DP6/2)
+G90 Y 0
+G91 Y - ( _SETVAL/2 - _FA - $TC_DP6/2)
+G91 G1 MEAS Y -MESURE_DIST 
+IF (PROBE_HIT == 0) GOTOF AL0
+PROBING_SOUND("VALID")
+DEF REAL MEAS_Y_2 = $AA_IW[Y]
+G91 Y (_FA + $TC_DP6/2)
+
+;Calculate deviation and save values
+_OVR [4] = (abs(MEAS_Y_1) + abs(MEAS_Y_2)) + $TC_DP6
+DEF REAL DEVYR_ = (MEAS_Y_1 + MEAS_Y_2) / 2
+DEF REAL DEVY_ = DEVYR_ * COS(_STA1)
+_OVR [18] = DEVY_
+_OVR [6] = DEVY_ + _CPO
+
+;Send messages to info window, no modification of cutter comp. (Models and cutters are perfect in VERICUT)
+DEF STRING MESSAGE
+MESSAGE = "Theoretical web = " + _SETVAL + " | Measured web = " + _OVR [4] 
+MSG(MESSAGE,2)
+MESSAGE = "Theoretical center Y = " + _CPO + " | Measured center Y = " + _OVR [6]
+MSG(MESSAGE,2)
+GOTOF _MVAR_103_END
+
+_MVAR_103_END:
+GOTOF END
+
+AL0:
+MSG("Probe did not hit! Verify parameters",1)
+
+END:
+;Restore states:
+ROT
+TRANS
+G(89 + ABSINC_) G(69 + INCHMM_)
+M17
+
+
+PROC CYCLE_994; By CGTech
+
+;Save current state:
+DEF INT ABSINC_ = $P_GG[14],INCHMM_ = $P_GG[13]
+DEF REAL XPOS_ = $AA_IW[X], YPOS_ = $AA_IW[Y], ZPOS_ = $AA_IW[Z]
+
+G71 G90
+
+;Store Theoretical values for measurement:
+_OVR [0] = _SETVAL _OVR [1] = XPOS_ _OVR [2] = YPOS_
+
+DEF REAL MESURE_DIST  = 10
+D (_PRNUM + 10)
+CASE (_MVAR) OF 2 GOTOF _MVAR_2
+MSG("Not supported yet! Contact your CGTech representative.",1)
+GOTOF END
+
+
+;_MVAR value:
+;Measuring cycle CYCLE994 permits the following
+;measuring variants that are specified in parameter _MVAR.
+;Value Meaning
+;1 2-point measurement with programmed safety zone (This measuring variant is only for inside measurement!)
+;2 2-point measurement with programmed safety zone (For inside measurement without safety zone in this measuring variant!)
+;Result parameters
+;The measuring cycle CYCLE994 supplies the following values as results in the GUD5 block:
+;_OVR [0] REAL Setpoint diameter or setpoint as radius dimension (note _MA)
+;_OVR [1] REAL Setpoint diameter/radius in abscissa  with _MA= 1only
+;_OVR [2] REAL Setpoint diameter/radius in ordinate  with _MA=2 only
+;_OVR [3] REAL Setpoint diameter/radius in applicate  with _MA=3 only
+;_OVR [4] REAL Actual value for diameter/radius
+;_OVR [5] REAL Actual value diameter/radius in abscissa  with _MA=1 only
+;_OVR [6] REAL Actual value diameter/radius in ordinate  with _MA=2 only
+;_OVR [7] REAL Actual value diameter/radius in applicate  with _MA=3 only
+;_OVR [8] REAL Upper Tolerance limit for diameter/radius
+;_OVR [12] REAL Lower tolerance limit for diameter/radius
+;_OVR [16] REAL Difference for diameter
+;_OVR [17] REAL Difference diameter/radius in abscissa with _MA=1 only
+;_OVR [18] REAL Difference diameter/radius in ordinate  with _MA=2 only
+;_OVR [19] REAL Difference diameter/radius in applicate  with _MA=3 only
+;_OVR [20] REAL Offset value
+;_OVR [27] REAL Zero offset area
+;_OVR [28] REAL Safe area
+;_OVR [29] REAL Dimensional difference
+;_OVR [30] REAL Empirical value
+;_OVR [31] REAL Mean value
+;_OVI [0] INTEGER D number
+;_OVI [2] INTEGER Measuring cycle number
+;_OVI [4] INTEGER Weighting factor
+;_OVI [5] INTEGER Probe number
+;_OVI [6] INTEGER Mean value memory number
+;_OVI [7] INTEGER Empirical value memory number
+;_OVI [8] INTEGER Tool number
+;_OVI [9] INTEGER Alarm number
+
+_MVAR_2: ;2-point measurement with programmed safety zone (For inside measurement without safety zone in this measuring variant!)*************_MVAR_2
+DEF REAL DIFF_ = (XPOS_ - _SETVAL/2) ; To know if Interior or Exterior diameter
+CASE (_MA) OF 2 GOTOF _MVAR_2_MA_2
+MSG("Not supported for this machine! See value of _MA; Contact your CGTech representative.",1)
+GOTOF END
+
+_MVAR_2_MA_2:
+IF (ABS(DIFF_) < 0) GOTOF _MVAR_2_MA_2_INT
+IF (_PRNUM == 7)
+D11
+ENDIF
+G1 MEAS X _SETVAL
+IF (PROBE_HIT == 0) GOTOF AL0
+PROBING_SOUND("VALID")
+DEF REAL MEAS_X_1 = $AA_IW[X]
+;Go to second point
+G0 X _SZO
+Z _SZA
+IF (_PRNUM == 7)
+D12
+ENDIF
+X -_SZO
+Z ZPOS_
+G1 MEAS X -_SETVAL
+IF (PROBE_HIT == 0) GOTOF AL0
+PROBING_SOUND("VALID")
+DEF REAL MEAS_X_2 = $AA_IW[X]
+G0 X ($AA_IW[X] - _FA) * 2
+
+_OVR [4] = MEAS_X_1 - MEAS_X_2 - $TC_DP6
+;Send messages to info window
+DEF STRING MESSAGE
+MESSAGE = "Theoretical exterior diameter = " + _SETVAL + " | Measured exterior diameter = " + _OVR [4] 
+MSG(MESSAGE,2)
+GOTOF END
+
+_MVAR_2_MA_2_INT:
+IF (_PRNUM == 7)
+D12
+ENDIF
+G1 MEAS X _SETVAL
+IF (PROBE_HIT == 0) GOTOF AL0
+PROBING_SOUND("VALID")
+DEF REAL MEAS_X_1 = $AA_IW[X]
+;Go to second point
+G0 X 0
+IF (_PRNUM == 7)
+D11
+ENDIF
+G1 MEAS X -_SETVAL
+IF (PROBE_HIT == 0) GOTOF AL0
+PROBING_SOUND("VALID")
+DEF REAL MEAS_X_2 = $AA_IW[X]
+G0 X ($AA_IW[X] + _FA) * 2
+
+_OVR [4] = MEAS_X_1 - MEAS_X_2 + $TC_DP6
+;Send messages to info window
+DEF STRING MESSAGE
+MESSAGE = "Theoretical interior diameter = " + _SETVAL + " | Measured interior diameter = " + _OVR [4] 
+MSG(MESSAGE,2)
+GOTOF END
+
+AL0:
+MSG("Probe did not hit! Verify parameters",1)
+
+END:
+;Restore states:
+G(89 + ABSINC_) G(69 + INCHMM_)
+D1
+M17
+
+
+PROC CYCLE_998; By CGTech
+
+;Save current state:
+DEF INT ABSINC_ = $P_GG[14],INCHMM_ = $P_GG[13]
+DEF REAL XPOS_ = $AA_IW[X], YPOS_ = $AA_IW[Y], ZPOS_ = $AA_IW[Z]
+
+G71 G90
+
+;Store Theoretical values for measurement:
+_OVR [0] = _SETVAL _OVR [1] = _CPA OVR [2] = _CPO
+
+CASE (_MVAR) OF 105 GOTOF _MVAR_105 
+MSG("Not supported yet! Contact your CGTech representative.",1)
+GOTOF END
+
+;_MVAR value:
+;Value Measuring variant
+;105 Angle measurement and ZO determination, positioning at an angle from measuring point to measuring point
+;106 2-angle measurement and ZO determination, positioning at an angle from measuring point to measuring point in height
+
+;CYCLE998 makes the following values available as
+;results in the GUD5 data block:
+;_OVR [0] REAL Setpoint angle or
+;setpoint angle between workpiece area and 1st axis of the plane
+;(abscissa) of the active WCS1)
+;_OVR [1]1) REAL Setpoint angle between workpiece area and 2nd axis of the plane
+;(ordinate) of the active WCS
+;_OVR [4] REAL Actual value angle or
+;actual value angle between workpiece area and 1st axis of the plane
+;(abscissa) of the active WCS1)
+;_OVR [5]1) REAL Actual value angle between workpiece area and 2nd axis of the plane
+;(ordinate) of the active WCS
+;_OVR [16] REAL Difference angle or
+;difference angle about 1st axis of the plane1)
+;_OVR [17]1) REAL Difference angle about 2nd axis of the plane
+;_OVR [20] REAL Offset value angle
+;_OVR [21]1) REAL Offset value angle about 1st axis of the plane
+;_OVR [22]1) REAL Offset value angle about 2nd axis of the plane
+;_OVR [23]1) REAL Offset value angle about 3rd axis of the plane
+;_OVR [28] REAL Safe area
+;_OVR [30] REAL Empirical value
+;_OVI [0] INTEGER ZO number
+;_OVI [2] INTEGER Measuring cycle number
+;_OVI [5] INTEGER Probe number
+;_OVI [7] INTEGER Empirical value memory number
+;_OVI [9] INTEGER Alarm number
+;_OVI [11]1) INTEGER Status offset request
+;1) For measuring variant _MVAR=x00106 only
+
+_MVAR_105: ;Measure hole with tool offset *******************************************************************************************_MVAR_105
+DEF REAL MESURE_DIST = 5
+CASE (_MA) OF 102 GOTOF _MVAR_105_MA_102
+MSG("Not supported yet! Contact your CGTech representative. Also verify _MA value!",1)
+GOTOF END
+
+_MVAR_105_MA_102:
+;Probe Z 
+G90 G1 MEAS Z (_SETVAL - MESURE_DIST)
+IF (PROBE_HIT == 0) GOTOF AL0
+PROBING_SOUND("VALID")
+DEF REAL MEAS_Z_1 = $AA_IW[Z]
+G90 G0 Z ZPOS_
+G91 G1 X _ID
+G90 G1 MEAS Z (_SETVAL - MESURE_DIST)
+IF (PROBE_HIT == 0) GOTOF AL0
+PROBING_SOUND("VALID")
+DEF REAL MEAS_Z_2 = $AA_IW[Z]
+G90 G0 Z ZPOS_
+
+;Calculate deviation and save values
+DEF REAL DIFF_ = MEAS_Z_1 - MEAS_Z_2
+DEF REAL ANG_ = ATAN (DIFF_/_ID)
+_OVR [4] = ANG_
+
+;Send messages to info window
+DEF STRING MESSAGE
+MESSAGE = "Theoretical angle = " + _STA1 + " | Measured angle = " + _OVR [4] 
+MSG(MESSAGE,2)
+DEF REAL NEWB_ = (R105224 + ANG_)
+MESSAGE = "G54 B modified to B = " + NEWB_ + " | Was G54 B = " + R105224
+MSG(MESSAGE,2)
+$P_UIFR[1] = CROT(B,NEWB_)
+
+GOTOF END
+
+AL0:
+MSG("Probe did not hit! Verify parameters",1)
+
+END:
+;Restore states:
+ROT
+TRANS
+G(89 + ABSINC_) G(69 + INCHMM_)
+M17
+
+
+PROC CYCLE800(INT _FR ,STRING[32] _TC ,INT _ST ,INT _MODE ,REAL _X0 ,REAL _Y0 ,REAL _Z0 ,REAL _A ,REAL _B ,REAL _C ,REAL _X1 ,REAL _Y1 ,REAL _Z1 ,INT _DIR ,INT _LOG_ON) SBLOF DISPLOF
+; started from "dmu160_s840d.sub"
+; enhanced during BIY 2006 by CW
+
+;CGTECH_MACRO "RpcpOff" ""
+CGTECH_MACRO "RtcpOn" ""
+
+; maybe more has to be switch off / on
+
+CGTECH_VAR REAL WP_ANG_1, WP_ANG_2, WP_ANG_3
+
+CASE (_FR) OF 0 GOTOF SWIVEL_CYCLE800 1 GOTOF FR_1 2 GOTOF FR_2 4 GOTOF FR_4 5 GOTOF FR_5 6 GOTOF FR_6
+GOTOF ERROR_CYCL800 
+
+FR_1:
+CGTECH_MACRO "ToolRetract" "" 
+CGTECH_MACRO "ProcessMotion" ""
+GOTOF SWIVEL_CYCLE800
+
+FR_2:
+GOTOF ERROR_CYCL800
+GOTOF SWIVEL_CYCLE800
+
+FR_4:
+GOTOF ERROR_CYCL800
+GOTOF SWIVEL_CYCLE800
+
+FR_5:
+GOTOF ERROR_CYCL800
+GOTOF SWIVEL_CYCLE800
+
+FR_6:
+GOTOF ERROR_CYCL800
+GOTOF SWIVEL_CYCLE800
+
+SWIVEL_CYCLE800:
+
+CGTECH_MACRO "RotationPlaneXPoint" "" #_X0
+CGTECH_MACRO "RotationPlaneYPoint" "" #_Y0
+CGTECH_MACRO "RotationPlaneZPoint" "" #_Z0
+
+CGTECH_MACRO "RotationPlaneLocal2" ""
+
+CASE (_ST) OF 0 GOTOF ST_000 1 GOTOF ST_001 10 GOTOF ST_010 11 GOTOF ST_011 100 GOTOF ST_100 101 GOTOF ST_101 110 GOTOF ST_110 111 GOTOF ST_111
+GOTOF ERROR_CYCL800 
+
+ST_000:
+CGTECH_MACRO "RtcpContour" "" 0
+CGTECH_MACRO "RotationPlaneAngle1" "Z" 0
+CGTECH_MACRO "RotationPlaneAngle2" "Y" 0
+CGTECH_MACRO "RotationPlaneAngle3" "X" 0
+CGTECH_MACRO "RotationPlane2"
+GOTOF CALC_CYCLE800
+
+ST_001:
+CGTECH_MACRO "RtcpContour" "" 0
+GOTOF CALC_CYCLE800
+
+ST_010:
+CGTECH_MACRO "RtcpContour" "" 1
+CGTECH_MACRO "RotationPlaneAngle1" "Z" 0
+CGTECH_MACRO "RotationPlaneAngle2" "Y" 0
+CGTECH_MACRO "RotationPlaneAngle3" "X" 0
+CGTECH_MACRO "RotationPlane2"
+GOTOF CALC_CYCLE800
+
+ST_011:
+CGTECH_MACRO "RtcpContour" "" 1
+GOTOF CALC_CYCLE800
+
+ST_100:
+CGTECH_MACRO "RtcpContour" "" 0
+CGTECH_MACRO "RotationPlaneAngle1" "Z" 0
+CGTECH_MACRO "RotationPlaneAngle2" "Y" 0
+CGTECH_MACRO "RotationPlaneAngle3" "X" 0
+CGTECH_MACRO "RotationPlane2"
+GOTOF CALC_CYCLE800
+
+ST_101:
+CGTECH_MACRO "RtcpContour" "" 0
+GOTOF CALC_CYCLE800
+
+ST_110:
+CGTECH_MACRO "RtcpContour" "" 1
+CGTECH_MACRO "RotationPlaneAngle1" "Z" 0
+CGTECH_MACRO "RotationPlaneAngle2" "Y" 0
+CGTECH_MACRO "RotationPlaneAngle3" "X" 0
+CGTECH_MACRO "RotationPlane2"
+GOTOF CALC_CYCLE800
+
+ST_111:
+CGTECH_MACRO "RtcpContour" "" 1
+GOTOF CALC_CYCLE800
+
+CALC_CYCLE800:
+IF _MODE > 63 GOTOF ERROR_CYCL800 ; Not supported with this SUB: Solid angle (_A, _B) or Angle of projection (_A, _B, _C) only Swivel angle per axis (_A, _B, _C)
+CASE (_MODE) OF 57 GOTOF MODE_57 54 GOTOF MODE_54 45 GOTOTF MODE_45 39 GOTOF MODE_39 30 GOTOF MODE 30 27 GOTOF MODE_27 0 GOTOF MOVE_CYCLE800
+GOTOF ERROR_CYCL800 
+
+MODE_57:
+CGTECH_MACRO "RotationPlaneIncAngle1" "Z" #_C
+CGTECH_MACRO "RotationPlaneIncAngle2" "Y" #_B
+CGTECH_MACRO "RotationPlaneIncAngle3" "X" #_A
+
+CGTECH_MACRO "WorkingPlane2Abc" "WP_ANG_1 WP_ANG_2 WP_ANG_3" 0
+
+CGTECH_MACRO "RotationPlaneXPoint" "" #_X1 
+CGTECH_MACRO "RotationPlaneYPoint" "" #_Y1 
+CGTECH_MACRO "RotationPlaneZPoint" "" #_Z1 
+
+CGTECH_MACRO "RotationPlaneLocal2" ""
+
+GOTOF MOVE_CYCLE800
+
+MODE_54:
+CGTECH_MACRO "RotationPlaneIncAngle1" "Y" #_C
+CGTECH_MACRO "RotationPlaneIncAngle2" "X" #_B
+CGTECH_MACRO "RotationPlaneIncAngle3" "Z" #_A
+
+CGTECH_MACRO "WorkingPlane2Abc" "WP_ANG_1 WP_ANG_2 WP_ANG_3" 0
+
+CGTECH_MACRO "RotationPlaneXPoint" "" #_X1 
+CGTECH_MACRO "RotationPlaneYPoint" "" #_Y1 
+CGTECH_MACRO "RotationPlaneZPoint" "" #_Z1 
+
+CGTECH_MACRO "RotationPlaneLocal2" ""
+
+GOTOF MOVE_CYCLE800
+
+MODE_45:
+CGTECH_MACRO "RotationPlaneIncAngle1" "Z" #_C
+CGTECH_MACRO "RotationPlaneIncAngle2" "X" #_B
+CGTECH_MACRO "RotationPlaneIncAngle3" "Y" #_A
+
+CGTECH_MACRO "WorkingPlane2Abc" "WP_ANG_1 WP_ANG_2 WP_ANG_3" 0
+
+CGTECH_MACRO "RotationPlaneXPoint" "" #_X1 
+CGTECH_MACRO "RotationPlaneYPoint" "" #_Y1 
+CGTECH_MACRO "RotationPlaneZPoint" "" #_Z1 
+
+CGTECH_MACRO "RotationPlaneLocal2" ""
+GOTOF MOVE_CYCLE800
+
+MODE_39:
+CGTECH_MACRO "RotationPlaneIncAngle1" "Y" #_C
+CGTECH_MACRO "RotationPlaneIncAngle2" "X" #_B
+CGTECH_MACRO "RotationPlaneIncAngle3" "Z" #_A 
+
+CGTECH_MACRO "WorkingPlane2Abc" "WP_ANG_1 WP_ANG_2 WP_ANG_3" 0
+
+CGTECH_MACRO "RotationPlaneXPoint" "" #_X1 
+CGTECH_MACRO "RotationPlaneYPoint" "" #_Y1 
+CGTECH_MACRO "RotationPlaneZPoint" "" #_Z1 
+
+CGTECH_MACRO "RotationPlaneLocal2" ""
+
+GOTOF MOVE_CYCLE800
+
+MODE_30:
+CGTECH_MACRO "RotationPlaneIncAngle1" "X" #_C
+CGTECH_MACRO "RotationPlaneIncAngle2" "Z" #_B
+CGTECH_MACRO "RotationPlaneIncAngle3" "Y" #_A
+
+CGTECH_MACRO "WorkingPlane2Abc" "WP_ANG_1 WP_ANG_2 WP_ANG_3" 0
+
+CGTECH_MACRO "RotationPlaneXPoint" "" #_X1 
+CGTECH_MACRO "RotationPlaneYPoint" "" #_Y1 
+CGTECH_MACRO "RotationPlaneZPoint" "" #_Z1 
+
+CGTECH_MACRO "RotationPlaneLocal2" ""
+GOTOF MOVE_CYCLE800
+
+MODE_27:
+CGTECH_MACRO "RotationPlaneIncAngle1" "X" #_C
+CGTECH_MACRO "RotationPlaneIncAngle2" "Y" #_B
+CGTECH_MACRO "RotationPlaneIncAngle3" "Z" #_A 
+
+CGTECH_MACRO "WorkingPlane2Abc" "WP_ANG_1 WP_ANG_2 WP_ANG_3" 0
+
+CGTECH_MACRO "RotationPlaneXPoint" "" #_X1 
+CGTECH_MACRO "RotationPlaneYPoint" "" #_Y1 
+CGTECH_MACRO "RotationPlaneZPoint" "" #_Z1 
+
+CGTECH_MACRO "RotationPlaneLocal2" ""
+
+GOTOF MOVE_CYCLE800
+
+MOVE_CYCLE800:
+IF _DIR == 0 GOTOF END_CYCLE800
+A WP_ANG_1 B WP_ANG_2 C WP_ANG_3
+GOTOF END_CYCLE800
+
+ERROR_CYCL800:
+CGTECH_MACRO "ErrorMacro" " with parameters of CYCLE800" 
+
+END_CYCLE800:
+M17
+
+PROC MSG (STRING _MSG, INT TYPE);
+    cgtech_macro "MessageMacro" "{#_MSG}" #TYPE
+M17
+
+PROC PROBING_SOUND(STRING _VALID);
+CASE (_VALID) OF "VALID" GOTOF PLAY_VALID_SOUND "INVALID" GOTOF PLAY_INVALID_SOUND
+;Status not reconnized
+GOTOF END
+PLAY_VALID_SOUND:
+    PLAY_SOUND probing_ding.wav
+GOTOF END
+PLAY_INVALID_SOUND:
+    PLAY_SOUND probing_dong.wav
+GOTOF END
+END:
+M17
+
+PROC GEOAX(int _AxisId1, AXIS _Axis1, int _AxisId2, AXIS _Axis2, int _AxisId3, AXIS _Axis3) SBLOF DISPLOF
+;cgtech_macro "LinkOffset" "" 1
+cgtech_var int SaveCurOffset = $P_UIFRNUM + 53
+cgtech_var int SaveCurDrivenPointNumber = $P_TOOL
+cgtech_var real SaveLocalPos[12] = set($AA_IW[X],$AA_IW[Y],$AA_IW[Z],$AA_IW[A],$AA_IW[B],$AA_IW[C],$AA_IW[U],$AA_IW[V],$AA_IW[W])
+cgtech_macro "GageOffsetDrivenPoint" "" 1
+cgtech_macro "TurnOnOffGageOffset" "" 1
+
+GeoaxOff:
+cgtech_macro "RotationPlaneCancelReset" ""
+cgtech_macro "SetAxisCompLink" "CLEARALL"
+cgtech_macro "LinkFormula" "NONE"
+cgtech_macro "ActivateAxis" "ALL"
+cgtech_macro "UpdateAxisValues" ""
+cgtech_var int Axis_numbers[12] = (1,2,3,4,5,6,7,8,9)
+cgtech_var string Axis_names[12] = ("","X","Y","Z","A","B","C","U","V","W")
+cgtech_var string StrAxisLink
+cgtech_var string StrAxisLinkTo
+cgtech_var real RealAxisLinkPos
+cgtech_var real RealFormula
+cgtech_var int IntAxis
+
+if (_AxisId1 == 0) gotof End
+intAxis = Axis_numbers [_Axis1]
+StrAxisLinkTo = Axstring(_Axis1)
+StrAxisLink = Axis_names [_AxisId1]
+RealFormula = -SaveLocalPos [_AxisId1]
+RealAxisLinkPos = SaveLocalPos[intAxis]
+cgtech_macro "InActivateAxis" "" #intAxis
+cgtech_macro "LinkAxisId" "" #_AxisId1
+cgtech_macro "LinkCompName" "{#StrAxisLinkTo}"
+cgtech_macro "LinkFormula" "{#RealFormula} + $" 
+;cgtech_macro "LinkFormula" "NONE" 
+cgtech_macro "SetAxisCompLink" "ADD"
+cgtech_macro "AxisMachineMotion" "{#StrAxisLink}" #RealAxisLinkPos
+
+if (_AxisId2 == 0) gotof End
+intAxis = Axis_numbers [_Axis2]
+StrAxisLinkTo = Axstring(_Axis2)
+StrAxisLink = Axis_names [_AxisId2]
+RealFormula = -SaveLocalPos [_AxisId2]
+RealAxisLinkPos = SaveLocalPos[intAxis]
+cgtech_macro "InActivateAxis" "" #intAxis
+cgtech_macro "LinkAxisId" "" #_AxisId2
+cgtech_macro "LinkCompName" "{#StrAxisLinkTo}"
+;cgtech_macro "LinkFormula" "{#RealFormula} + $" 
+cgtech_macro "LinkFormula" "NONE"
+cgtech_macro "SetAxisCompLink" "ADD"
+cgtech_macro "AxisMachineMotion" "{#StrAxisLink}" #RealAxisLinkPos
+
+if (_AxisId3 == 0) gotof End
+intAxis = Axis_numbers [_Axis3]
+StrAxisLinkTo = Axstring(_Axis3)
+StrAxisLink = Axis_names [_AxisId3]
+RealFormula = -SaveLocalPos [_AxisId3]
+RealAxisLinkPos = SaveLocalPos[intAxis]
+cgtech_macro "InActivateAxis" "" #intAxis
+cgtech_macro "LinkAxisId" "" #_AxisId3
+cgtech_macro "LinkCompName" "{#StrAxisLinkTo}"
+;cgtech_macro "LinkFormula" "{#RealFormula} + $" 
+cgtech_macro "LinkFormula" "NONE"
+cgtech_macro "SetAxisCompLink" "ADD"
+cgtech_macro "AxisMachineMotion" "{#StrAxisLink}" #RealAxisLinkPos
+
+End:
+cgtech_macro "ZToolOffsetCompName" "Z"
+cgtech_macro "GageOffsetDrivenPoint" "" #SaveCurDrivenPointNumber
+cgtech_macro "TurnOnOffGageOffset" "" 1
+cgtech_macro "WorkCoord" "" #SaveCurOffset 
+M17

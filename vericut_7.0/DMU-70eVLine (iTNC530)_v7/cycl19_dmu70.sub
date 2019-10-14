@@ -1,0 +1,41 @@
+LBL19
+
+;CGT_LBL CGT_SUB19
+
+IF[WINA EQ 0. AND WINB EQ 0. AND WINC EQ 0. OR WINC EQ 360.] GOTO 1
+IF[WINA GT 90. AND WINB EQ 0. AND WINC EQ 0.) Q122=Q122-360
+;Q122=Q122+38.621
+;CGTECH_MACRO "RotationPlaneCancel2" "" 
+;CGTECH_MACRO "RotationPlaneEnable2" "" 
+CGTECH_MACRO "RotationPlaneAngle1" "X" -38
+CGTECH_MACRO "RotationPlane2" "" 0
+CGTECH_MACRO "RotationPlaneAngle3" "Z" -38.621
+CGTECH_MACRO "RotationPlane2" "" 0
+CGTECH_MACRO "RotationPlaneAngle2" "Y" (-1)*#121
+CGTECH_MACRO "RotationPlaneLocal2" "" 0
+CGTECH_MACRO "RotationPlaneAngle1" "X" 38
+CGTECH_MACRO "RotationPlaneLocal2" "" 0
+CGTECH_MACRO "RotationPlaneAngle3" "Z" 38.621
+CGTECH_MACRO "RotationPlaneLocal2" "" 0
+CGTECH_MACRO "RotationPlaneAngle3" "Z" (-1)*#122 
+CGTECH_MACRO "RotationPlaneLocal2" "" 0
+CGTECH_MACRO "RotationPlaneAngle3" "Z" #winc
+CGTECH_MACRO "RotationPlaneLocal2" "" 0
+CGTECH_MACRO "RotationPlaneAngle2" "Y" #winb
+CGTECH_MACRO "RotationPlaneLocal2" "" 0
+CGTECH_MACRO "RotationPlaneAngle1" "X" #wina
+CGTECH_MACRO "RotationPlaneLocal2" "" 0
+GOTO 900
+N1 ; *********************************** Final cycl19 (A0B0C0)
+Q120=0
+Q121=0
+Q122=0
+N900 ; *********************************** Final processing of all machines
+wina=0
+winb=0
+winc=0
+LBL 0
+
+
+
+

@@ -1,0 +1,2032 @@
+<?xml version="1.0"?>
+<VcProject Version="7.0" Unit="millimeter" Composite="false">
+  <Log>vericut.log</Log>
+  <Display Resolution="auto"/>
+  <Export Process="features">
+    <Output Type="IGES" Format="binary" Color="green" ACISSolid="off"
+     Axes="stock" Unit="millimeter"/>
+    <File></File>
+    <Stock></Stock>
+    <Grid Count="1" Angle="30" Tol="0.05" ByColor="off" Scallop="off" Preview="on"
+     Plane="33" Cone="33" Cylinder="33" Sphere="33" Torus="33"
+     TorusSweep="33" Ellipse="33"/>
+    <Slice Direction="X" Count="100" Angle="30" Tol="0.13"/>
+  </Export>
+  <STLOutput Type="STL" Format="binary" Axes="active" Unit="millimeter">
+    <File></File>
+    <Stock></Stock>
+  </STLOutput>
+  <Color Hues="7" Shades="standard" Wrap="on" Method="next">
+    <Hue R="255" G="0" B="0">Red</Hue>
+    <Hue R="127" G="255" B="212">Aquamarine</Hue>
+    <Hue R="176" G="196" B="222">Light Steel Blue</Hue>
+    <Hue R="100" G="149" B="237">Cornflower Blue</Hue>
+    <Hue R="221" G="160" B="221">Plum</Hue>
+    <Hue R="238" G="221" B="130">Light Goldenrod</Hue>
+    <Hue R="255" G="255" B="255">White</Hue>
+    <Hue R="255" G="228" B="225">Misty Rose</Hue>
+    <Hue R="152" G="251" B="152">Pale Green</Hue>
+    <Hue R="245" G="245" B="220">Beige</Hue>
+    <Hue R="95" G="158" B="160">Cadet Blue</Hue>
+    <Hue R="0" G="206" B="209">Dark Turquoise</Hue>
+    <Hue R="0" G="255" B="255">Cyan</Hue>
+    <Hue R="0" G="255" B="0">Green</Hue>
+    <Hue R="0" G="0" B="255">Blue</Hue>
+    <Hue R="255" G="255" B="0">Yellow</Hue>
+    <Hue R="255" G="0" B="255">Magenta</Hue>
+    <Hue R="255" G="165" B="0">Orange</Hue>
+    <Hue R="255" G="69" B="0">Orange Red</Hue>
+    <Hue R="255" G="140" B="0">Dark Orange</Hue>
+    <Hue R="255" G="215" B="0">Gold</Hue>
+    <Hue R="127" G="255" B="0">Chartreuse</Hue>
+    <Hue R="0" G="255" B="127">Spring Green</Hue>
+    <Hue R="0" G="191" B="255">Deep Sky Blue</Hue>
+    <Hue R="124" G="252" B="0">Lawn Green</Hue>
+    <Hue R="0" G="250" B="154">Medium Spring Green</Hue>
+    <Hue R="255" G="20" B="147">Deep Pink</Hue>
+    <Hue R="30" G="144" B="255">Dodger Blue</Hue>
+    <Hue R="148" G="0" B="211">Dark Violet</Hue>
+    <Hue R="0" G="206" B="209">Dark Turquoise</Hue>
+    <Hue R="160" G="32" B="240">Purple</Hue>
+    <Hue R="173" G="255" B="47">Green Yellow</Hue>
+    <Hue R="0" G="0" B="205">Medium Blue</Hue>
+    <Hue R="218" G="165" B="32">Goldenrod</Hue>
+    <Hue R="255" G="99" B="71">Tomato</Hue>
+    <Hue R="138" G="43" B="226">Blue Violet</Hue>
+    <Hue R="210" G="105" B="30">Chocolate</Hue>
+    <Hue R="199" G="21" B="133">Medium Violet Red</Hue>
+    <Hue R="208" G="32" B="144">Violet Red</Hue>
+    <Hue R="184" G="134" B="11">Dark Goldenrod</Hue>
+    <Hue R="64" G="224" B="208">Turquoise</Hue>
+    <Hue R="65" G="105" B="225">Royal Blue</Hue>
+    <Hue R="154" G="205" B="50">Yellow Green</Hue>
+    <Hue R="50" G="205" B="50">Lime Green</Hue>
+    <Hue R="153" G="50" B="204">Dark Orchid</Hue>
+    <Hue R="255" G="105" B="180">Hot Pink</Hue>
+    <Hue R="244" G="164" B="96">Sandy Brown</Hue>
+    <Hue R="32" G="178" B="170">Light Sea Green</Hue>
+    <Hue R="178" G="34" B="34">Firebrick</Hue>
+    <Hue R="132" G="112" B="255">Light Slate Blue</Hue>
+    <Hue R="205" G="133" B="63">Peru</Hue>
+    <Hue R="72" G="209" B="204">Medium Turquoise</Hue>
+    <Hue R="250" G="128" B="114">Salmon</Hue>
+    <Hue R="123" G="104" B="238">Medium Slate Blue</Hue>
+    <Hue R="255" G="160" B="122">Light Salmon</Hue>
+    <Hue R="0" G="0" B="128">Navy Blue</Hue>
+    <Hue R="0" G="0" B="128">Navy</Hue>
+    <Hue R="186" G="85" B="211">Medium Orchid</Hue>
+    <Hue R="165" G="42" B="42">Brown</Hue>
+    <Hue R="139" G="69" B="19">Saddle Brown</Hue>
+    <Hue R="60" G="179" B="113">Medium Sea Green</Hue>
+    <Hue R="160" G="82" B="45">Sienna</Hue>
+    <Hue R="135" G="206" B="250">Light Sky Blue</Hue>
+    <Hue R="106" G="90" B="205">Slate Blue</Hue>
+    <Hue R="205" G="92" B="92">Indian Red</Hue>
+    <Hue R="240" G="128" B="128">Light Coral</Hue>
+    <Hue R="233" G="150" B="122">Dark Salmon</Hue>
+    <Hue R="70" G="130" B="180">Steel Blue</Hue>
+    <Hue R="238" G="130" B="238">Violet</Hue>
+    <Hue R="147" G="112" B="219">Medium Purple</Hue>
+    <Hue R="219" G="112" B="147">Pale Violet Red</Hue>
+    <Hue R="107" G="142" B="35">Olive Drab</Hue>
+    <Hue R="218" G="112" B="214">Orchid</Hue>
+    <Hue R="34" G="139" B="34">Forest Green</Hue>
+    <Hue R="102" G="205" B="170">Medium Aquamarine</Hue>
+    <Hue R="240" G="230" B="140">Khaki</Hue>
+    <Hue R="0" G="100" B="0">Dark Green</Hue>
+    <Hue R="135" G="206" B="235">Sky Blue</Hue>
+    <Hue R="152" G="251" B="152">Pale Green</Hue>
+    <Hue R="46" G="139" B="87">Sea Green</Hue>
+    <Hue R="222" G="184" B="135">Burlywood</Hue>
+    <Hue R="25" G="25" B="112">Midnight Blue</Hue>
+    <Hue R="255" G="222" B="173">Navajo White</Hue>
+    <Hue R="189" G="183" B="107">Dark Khaki</Hue>
+    <Hue R="72" G="61" B="139">Dark Slate Blue</Hue>
+    <Hue R="255" G="228" B="181">Moccasin</Hue>
+    <Hue R="255" G="182" B="193">Light Pink</Hue>
+    <Hue R="255" G="218" B="185">Peach Puff</Hue>
+    <Hue R="210" G="180" B="140">Tan</Hue>
+    <Hue R="238" G="232" B="170">Pale Goldenrod</Hue>
+    <Hue R="245" G="222" B="179">Wheat</Hue>
+    <Hue R="95" G="158" B="160">Cadet Blue</Hue>
+    <Hue R="255" G="192" B="203">Pink</Hue>
+    <Hue R="175" G="238" B="238">Pale Turquoise</Hue>
+    <Hue R="85" G="107" B="47">Dark Olive Green</Hue>
+    <Hue R="255" G="228" B="196">Bisque</Hue>
+    <Hue R="173" G="216" B="230">Light Blue</Hue>
+    <Hue R="176" G="224" B="230">Powder Blue</Hue>
+    <Hue R="255" G="250" B="205">Lemon Chiffon</Hue>
+    <Hue R="255" G="235" B="205">Blanched Almond</Hue>
+    <Hue R="188" G="143" B="143">Rosy Brown</Hue>
+    <Hue R="143" G="188" B="143">Dark Sea Green</Hue>
+    <Hue R="255" G="239" B="213">Papaya Whip</Hue>
+    <Hue R="250" G="250" B="210">Light Goldenrod Yellow</Hue>
+    <Hue R="255" G="248" B="220">Cornsilk</Hue>
+    <Hue R="250" G="235" B="215">Antique White</Hue>
+    <Hue R="119" G="136" B="153">Light Slate Gray</Hue>
+    <Hue R="112" G="128" B="144">Slate Gray</Hue>
+    <Hue R="47" G="79" B="79">Dark Slate Gray</Hue>
+    <Hue R="255" G="255" B="224">Light Yellow</Hue>
+    <Hue R="224" G="255" B="255">Light Cyan</Hue>
+    <Hue R="216" G="191" B="216">Thistle</Hue>
+    <Hue R="253" G="245" B="230">Old Lace</Hue>
+    <Hue R="230" G="230" B="250">Lavender</Hue>
+    <Hue R="250" G="240" B="230">Linen</Hue>
+    <Hue R="255" G="245" B="238">Seashell</Hue>
+    <Hue R="255" G="240" B="245">Lavender Blush</Hue>
+    <Hue R="240" G="248" B="255">Alice Blue</Hue>
+    <Hue R="240" G="255" B="255">Azure</Hue>
+    <Hue R="240" G="255" B="240">Honeydew</Hue>
+    <Hue R="255" G="255" B="240">Ivory</Hue>
+    <Hue R="255" G="250" B="240">Floral White</Hue>
+    <Hue R="245" G="255" B="250">Mint Cream</Hue>
+    <Hue R="248" G="248" B="255">Ghost White</Hue>
+    <Hue R="211" G="211" B="211">Light Gray</Hue>
+    <Hue R="192" G="192" B="192">Gray</Hue>
+    <Hue R="220" G="220" B="220">Gainsboro</Hue>
+    <Hue R="0" G="0" B="192">Background Blue</Hue>
+    <Error Hue="0"/>
+    <Reset Hue="5"/>
+    <Floor Hue="6"/>
+    <Ceiling Hue="2"/>
+    <Wall Hue="6"/>
+    <Background Hue="2"/>
+    <Cut Sequence="1" Hue="6"/>
+    <Cut Sequence="2" Hue="1"/>
+    <Cut Sequence="3" Hue="3"/>
+    <Cut Sequence="4" Hue="4"/>
+    <Cut Sequence="5" Hue="5"/>
+    <Feed Value="0" Hue="1"/>
+    <Back R="0" G="0" B="0">Black</Back>
+    <Fore R="0" G="255" B="255">Cyan</Fore>
+  </Color>
+  <Report>
+    <File></File>
+  </Report>
+  <Record Type="VERICUT">
+    <Snap Error="off" Change="off" Cuts="off" Count="100" End="off"/>
+    <Append Delay="1">off</Append>
+    <Insert Delay="1"/>
+    <Animation>forward</Animation>
+    <AVI Left="0" Top="0" Width="0" Height="0" Rate="0"/>
+  </Record>
+  <Playback Speed="100" Delay="0" Error="off" Change="off"
+   Events="off" Count="1" End="on" Stop="on" Loop="off">
+    <File>DMU70eVLine(iTNC530)</File>
+    <File></File>
+  </Playback>
+  <Picture Type="JPEG" Style="palette" Shading="color"
+   Orientation="portrait" Result="on" Render="off">
+    <File>vericut</File>
+    <Script Margin="off" Left="0" Right="0" Top="0" Bottom="0"
+     Size="A4" Annotate="off"></Script>
+    <Render Size="off" Width="640" Height="480"
+     Shadow="on" Angle="15" Location="2"/>
+  </Picture>
+  <AutoSave>
+    <IP Change="off" Cuts="off" Count="1000" End="off" When="each" Error="off">
+      <Save>autosav.ip</Save>
+      <Oops>autoerr.ip</Oops>
+    </IP>
+    <VcSolid Change="off" Cuts="off" Count="0" End="off" When="each" Error="off">
+      <Save></Save>
+      <Oops></Oops>
+    </VcSolid>
+    <Picture Change="off" Cuts="off" Count="1000" End="off" When="each" Error="off">
+      <Save>autosav</Save>
+      <Oops>autoerr</Oops>
+    </Picture>
+  </AutoSave>
+  <Views OpenGLSkip="36" OpenGLCourse="off">
+  </Views>
+  <Status>
+    <Order>-1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16</Order>
+    <Order>17,18,-19,-20,-21,-22,-23,-24,-25,-26,-27,-28,-29,-30,31,32</Order>
+    <Order>33,34,35,36,-37,-38,39,-40,-41,42,43,44,-45,-46,-47,48</Order>
+    <Order>49,50,51,52,-53,54,-55,-56,57,-58,-59,-60,-61,-62,-63,64</Order>
+    <Order>65,66,67</Order>
+  </Status>
+  <Graphs Tool="off" Cut="off" Interval="20"/>
+  <Start Type="start" Line="1" Tool="" Index="0">
+    <File></File>
+    <Text></Text>
+  </Start>
+  <Stop Type="each setup" Line="999999" Count="99" Index="0">
+    <File></File>
+    <Text>FINI</Text>
+    <Error Check="on" Count="1"/>
+    <Warn Check="on" Count="1"/>
+  </Stop>
+  <Cycles>
+    <Line></Line>
+    <Line>$$ ACL.</Line>
+    <Line></Line>
+    <Line>CYCLE/DRILL,#fedto,IPM,#fedupm,#rapto</Line>
+    <Line>USEWITH:ACL</Line>
+    <Line>CYCLE/REAM,#fedto,IPM,#fedupm,#rapto</Line>
+    <Line>USEWITH:ACL</Line>
+    <Line>CYCLE/FACE,#fedto,IPM,#fedupm,#rapto</Line>
+    <Line>USEWITH:ACL</Line>
+    <Line>CYCLE/TAP,#fedto,IPM,#fedupm,#rapto</Line>
+    <Line>MODALS:retract_mode=fedrat</Line>
+    <Line>USEWITH:ACL</Line>
+    <Line>CYCLE/BORE,#fedto,IPM,#fedupm,#rapto</Line>
+    <Line>MODALS:retract_mode=fedrat</Line>
+    <Line>USEWITH:ACL</Line>
+    <Line>CYCLE/MILL,#fedto,IPM,#fedupm,#rapto</Line>
+    <Line>MODALS:retract_mode=none</Line>
+    <Line>USEWITH:ACL</Line>
+    <Line>CYCLE/CSINK,#fedto,#,IPM,#fedupm,#rapto</Line>
+    <Line>USEWITH:ACL</Line>
+    <Line>CYCLE/CSINK,#cskdia,IPM,#fedupm,#rapto</Line>
+    <Line>MODALS:retract_mode=fedrat</Line>
+    <Line>USEWITH:ACL</Line>
+    <Line>CYCLE/CSINK,#cskdia,RAPTO,#rapto,RTRCTO,#rtrcto,TLANGL,#tlangl, $</Line>
+    <Line>IPM,#fedupm</Line>
+    <Line>MODALS:retract_mode=fedrat</Line>
+    <Line>USEWITH:ACL</Line>
+    <Line>CYCLE/DEEP,#fedlist,IPM,#fedupm,#rapto,#steprap</Line>
+    <Line>USEWITH:ACL</Line>
+    <Line>CYCLE/DEEP,#fedto,INCR,#step,IPM,#fedupm,#rapto,#steprap</Line>
+    <Line>USEWITH:ACL</Line>
+    <Line>CYCLE/THRU,#fedlist,IPM,#fedupm,#rapto</Line>
+    <Line>MODALS:deep_retract=off,thru_mode=on</Line>
+    <Line>USEWITH:ACL</Line>
+    <Line></Line>
+    <Line>$$ VERICUT, CADRA and CV (Generic).</Line>
+    <Line></Line>
+    <Line>CYCLE/DRILL,#fedto,#fedupm,IPM,#rapto</Line>
+    <Line>USEWITH:VERICUT,CADRA,CV</Line>
+    <Line>CYCLE/DRILL,RAPTO,#rapto,FEDTO,#fedto</Line>
+    <Line>USEWITH:VERICUT,CADRA,CV</Line>
+    <Line>CYCLE/DRILL,RAPTO,#rapto,FEDTO,#fedto,IPM,#fedupm</Line>
+    <Line>USEWITH:VERICUT,CADRA,CV</Line>
+    <Line>CYCLE/DRILL,RAPTO,#rapto,FEDTO,#fedto,RTRCTO,#rtrcto</Line>
+    <Line>USEWITH:VERICUT,CADRA,CV</Line>
+    <Line>CYCLE/FACE,#fedto,#fedupm,IPM,#rapto</Line>
+    <Line>USEWITH:VERICUT,CADRA,CV</Line>
+    <Line>CYCLE/FACE,RAPTO,#rapto,FEDTO,#fedto</Line>
+    <Line>USEWITH:VERICUT,CADRA,CV</Line>
+    <Line>CYCLE/FACE,RAPTO,#rapto,FEDTO,#fedto,RTRCTO,#rtrcto</Line>
+    <Line>USEWITH:VERICUT,CADRA,CV</Line>
+    <Line>CYCLE/TAP,#fedto,#fedupm,IPM,#rapto</Line>
+    <Line>MODALS:retract_mode=fedrat</Line>
+    <Line>USEWITH:VERICUT,CADRA,CV</Line>
+    <Line>CYCLE/TAP,RAPTO,#rapto,FEDTO,#fedto</Line>
+    <Line>MODALS:retract_mode=fedrat</Line>
+    <Line>USEWITH:VERICUT,CADRA,CV</Line>
+    <Line>CYCLE/TAP,RAPTO,#rapto,FEDTO,#fedto,RTRCTO,#rtrcto</Line>
+    <Line>MODALS:retract_mode=fedrat</Line>
+    <Line>USEWITH:VERICUT,CADRA,CV</Line>
+    <Line>CYCLE/BORE,#fedto,#fedupm,IPM,#rapto</Line>
+    <Line>MODALS:retract_mode=fedrat</Line>
+    <Line>USEWITH:VERICUT,CADRA,CV</Line>
+    <Line>CYCLE/BORE,RAPTO,#rapto,FEDTO,#fedto</Line>
+    <Line>MODALS:retract_mode=fedrat</Line>
+    <Line>USEWITH:VERICUT,CADRA,CV</Line>
+    <Line>CYCLE/BORE,RAPTO,#rapto,FEDTO,#fedto,RTRCTO,#rtrcto</Line>
+    <Line>MODALS:retract_mode=fedrat</Line>
+    <Line>USEWITH:VERICUT,CADRA,CV</Line>
+    <Line>CYCLE/BORE,DRAG,RAPTO,#rapto,FEDTO,#fedto</Line>
+    <Line>MODALS:retract_mode=fedrat</Line>
+    <Line>USEWITH:VERICUT,CADRA,CV</Line>
+    <Line>CYCLE/BORE,DRAG,RAPTO,#rapto,FEDTO,#fedto,RTRCTO,#rtrcto</Line>
+    <Line>MODALS:retract_mode=fedrat</Line>
+    <Line>USEWITH:VERICUT,CADRA,CV</Line>
+    <Line>CYCLE/BORE,ORIENT,RAPTO,#rapto,FEDTO,#fedto</Line>
+    <Line>MODALS:retract_mode=fedrat</Line>
+    <Line>USEWITH:VERICUT,CADRA,CV</Line>
+    <Line>CYCLE/BORE,ORIENT,RAPTO,#rapto,FEDTO,#fedto,RTRCTO,#rtrcto</Line>
+    <Line>MODALS:retract_mode=fedrat</Line>
+    <Line>USEWITH:VERICUT,CADRA,CV</Line>
+    <Line>CYCLE/MILL,#fedto,#fedupm,IPM,#rapto</Line>
+    <Line>MODALS:retract_mode=none</Line>
+    <Line>USEWITH:VERICUT,CADRA,CV</Line>
+    <Line>CYCLE/MILL,RAPTO,#rapto,FEDTO,#fedto</Line>
+    <Line>MODALS:retract_mode=none</Line>
+    <Line>USEWITH:VERICUT,CADRA,CV</Line>
+    <Line>CYCLE/MILL,RAPTO,#rapto,FEDTO,#fedto,RTRCTO,#rtrcto</Line>
+    <Line>MODALS:retract_mode=none</Line>
+    <Line>USEWITH:VERICUT,CADRA,CV</Line>
+    <Line>CYCLE/DEEP,#fedto,#fedupm,IPM,#rapto,#step</Line>
+    <Line>MODALS:deep_retract=off</Line>
+    <Line>USEWITH:VERICUT,CADRA,CV</Line>
+    <Line>CYCLE/DEEP,RAPTO,#rapto,FEDTO,#fedto</Line>
+    <Line>USEWITH:VERICUT,CADRA,CV</Line>
+    <Line>CYCLE/DEEP,RAPTO,#rapto,FEDTO,#fedto,STEP,#step</Line>
+    <Line>MODALS:deep_retract=off</Line>
+    <Line>USEWITH:VERICUT,CADRA,CV</Line>
+    <Line>CYCLE/DEEP,RAPTO,#rapto,FEDTO,#fedto,RTRCTO,#rtrcto</Line>
+    <Line>USEWITH:VERICUT,CADRA,CV</Line>
+    <Line>CYCLE/DEEP,RAPTO,#rapto,FEDTO,#fedto,STEP,#step,RTRCTO,#rtrcto</Line>
+    <Line>MODALS:deep_retract=off</Line>
+    <Line>USEWITH:VERICUT,CADRA,CV</Line>
+    <Line>CYCLE/THRU,RAPTO,#rapto,FEDTO,#fedto</Line>
+    <Line>USEWITH:VERICUT,CADRA,CV</Line>
+    <Line>CYCLE/THRU,RAPTO,#rapto,FEDTO,#fedto,RTRCTO,#rtrcto</Line>
+    <Line>USEWITH:VERICUT,CADRA,CV</Line>
+    <Line></Line>
+    <Line>$$ Pro/Manufacturing</Line>
+    <Line></Line>
+    <Line>CYCLE/DRILL,#fedto,#fedupm,IPM,#rapto</Line>
+    <Line>USEWITH:PTC</Line>
+    <Line>CYCLE/DRILL,DEPTH,#fedto,IPM,#fedupm</Line>
+    <Line>USEWITH:PTC</Line>
+    <Line>CYCLE/DRILL,DEPTH,#fedto,IPM,#fedupm,CLEAR,#rapto</Line>
+    <Line>USEWITH:PTC</Line>
+    <Line>CYCLE/DRILL,DEPTH,#fedto,IPM,#fedupm,CLEAR,#rapto,RETURN,#rtrcto</Line>
+    <Line>USEWITH:PTC</Line>
+    <Line>CYCLE/DEEP,#fedto,#fedupm,IPM,#rapto,#step</Line>
+    <Line>USEWITH:PTC</Line>
+    <Line>CYCLE/DEEP,DEPTH,#fedlist,IPM,#fedupm</Line>
+    <Line>USEWITH:PTC</Line>
+    <Line>CYCLE/DEEP,DEPTH,#fedlist,IPM,#fedupm,CLEAR,#rapto</Line>
+    <Line>USEWITH:PTC</Line>
+    <Line>CYCLE/DEEP,DEPTH,#fedlist,IPM,#fedupm,CLEAR,#rapto,RETURN,#rtrcto</Line>
+    <Line>USEWITH:PTC</Line>
+    <Line>CYCLE/DEEP,DEPTH,#fedto,STEP,#step,IPM,#fedupm</Line>
+    <Line>USEWITH:PTC</Line>
+    <Line>CYCLE/DEEP,DEPTH,#fedto,STEP,#step,IPM,#fedupm,CLEAR,#rapto</Line>
+    <Line>USEWITH:PTC</Line>
+    <Line>CYCLE/DEEP,DEPTH,#fedto,STEP,#step,IPM,#fedupm,CLEAR,#rapto, $</Line>
+    <Line>RETURN,#rtrcto</Line>
+    <Line>USEWITH:PTC</Line>
+    <Line>CYCLE/BRKCHP,DEPTH,#fedlist,IPM,#fedupm</Line>
+    <Line>MODALS:deep_retract=off</Line>
+    <Line>USEWITH:PTC</Line>
+    <Line>CYCLE/BRKCHP,DEPTH,#fedlist,IPM,#fedupm,CLEAR,#rapto</Line>
+    <Line>MODALS:deep_retract=off</Line>
+    <Line>USEWITH:PTC</Line>
+    <Line>CYCLE/BRKCHP,DEPTH,#fedlist,IPM,#fedupm,CLEAR,#rapto, $</Line>
+    <Line>RETURN,#rtrcto</Line>
+    <Line>MODALS:deep_retract=off</Line>
+    <Line>USEWITH:PTC</Line>
+    <Line>CYCLE/BRKCHP,DEPTH,#fedto,STEP,#step,IPM,#fedupm</Line>
+    <Line>MODALS:deep_retract=off</Line>
+    <Line>USEWITH:PTC</Line>
+    <Line>CYCLE/BRKCHP,DEPTH,#fedto,STEP,#step,IPM,#fedupm,CLEAR,#rapto</Line>
+    <Line>MODALS:deep_retract=off</Line>
+    <Line>USEWITH:PTC</Line>
+    <Line>CYCLE/BRKCHP,DEPTH,#fedto,STEP,#step,IPM,#fedupm,CLEAR,#rapto, $</Line>
+    <Line>RETURN,#rtrcto</Line>
+    <Line>MODALS:deep_retract=off</Line>
+    <Line>USEWITH:PTC</Line>
+    <Line>CYCLE/THRU,DEPTH,#fedlist,IPM,#fedupm</Line>
+    <Line>MODALS:deep_retract=off,thru_mode=on</Line>
+    <Line>USEWITH:PTC</Line>
+    <Line>CYCLE/THRU,DEPTH,#fedlist,IPM,#fedupm,CLEAR,#rapto</Line>
+    <Line>MODALS:deep_retract=off,thru_mode=on</Line>
+    <Line>USEWITH:PTC</Line>
+    <Line>CYCLE/THRU,DEPTH,#fedlist,IPM,#fedupm,CLEAR,#rapto,RETURN,#rtrcto</Line>
+    <Line>MODALS:deep_retract=off,thru_mode=on</Line>
+    <Line>USEWITH:PTC</Line>
+    <Line>CYCLE/FACE,DEPTH,#fedto,IPM,#fedupm</Line>
+    <Line>USEWITH:PTC</Line>
+    <Line>CYCLE/FACE,DEPTH,#fedto,IPM,#fedupm,CLEAR,#rapto</Line>
+    <Line>USEWITH:PTC</Line>
+    <Line>CYCLE/FACE,DEPTH,#fedto,IPM,#fedupm,CLEAR,#rapto,RETURN,#rtrcto</Line>
+    <Line>USEWITH:PTC</Line>
+    <Line>CYCLE/BORE,DEPTH,#fedto,IPM,#fedupm</Line>
+    <Line>MODALS:retract_mode=fedrat</Line>
+    <Line>USEWITH:PTC</Line>
+    <Line>CYCLE/BORE,DEPTH,#fedto,IPM,#fedupm,CLEAR,#rapto</Line>
+    <Line>MODALS:retract_mode=fedrat</Line>
+    <Line>USEWITH:PTC</Line>
+    <Line>CYCLE/BORE,DEPTH,#fedto,IPM,#fedupm,CLEAR,#rapto,RETURN,#rtrcto</Line>
+    <Line>MODALS:retract_mode=fedrat</Line>
+    <Line>USEWITH:PTC</Line>
+    <Line>CYCLE/CSINK,DIAMET,#cskdia,TLANGL,#tlangl,IPM,#fedupm</Line>
+    <Line>USEWITH:PTC</Line>
+    <Line>CYCLE/CSINK,DIAMET,#cskdia,TLANGL,#tlangl,IPM,#fedupm,CLEAR,#rapto</Line>
+    <Line>USEWITH:PTC</Line>
+    <Line>CYCLE/CSINK,DIAMET,#cskdia,TLANGL,#tlangl,IPM,#fedupm,CLEAR,#rapto, $</Line>
+    <Line>RETURN,#rtrcto</Line>
+    <Line>USEWITH:PTC</Line>
+    <Line>CYCLE/REAM,DEPTH,#fedto,IPM,#fedupm</Line>
+    <Line>USEWITH:PTC</Line>
+    <Line>CYCLE/REAM,DEPTH,#fedto,IPM,#fedupm,CLEAR,#rapto</Line>
+    <Line>USEWITH:PTC</Line>
+    <Line>CYCLE/REAM,DEPTH,#fedto,IPM,#fedupm,CLEAR,#rapto,RETURN,#rtrcto</Line>
+    <Line>USEWITH:PTC</Line>
+    <Line>CYCLE/TAP,#fedto,#fedupm,IPM,#rapto</Line>
+    <Line>MODALS:retract_mode=fedrat</Line>
+    <Line>USEWITH:PTC</Line>
+    <Line>CYCLE/TAP,DEPTH,#fedto,IPM,#fedupm</Line>
+    <Line>MODALS:retract_mode=fedrat</Line>
+    <Line>USEWITH:PTC</Line>
+    <Line>CYCLE/TAP,DEPTH,#fedto,IPM,#fedupm,CLEAR,#rapto</Line>
+    <Line>MODALS:retract_mode=fedrat</Line>
+    <Line>USEWITH:PTC</Line>
+    <Line>CYCLE/TAP,DEPTH,#fedto,IPM,#fedupm,CLEAR,#rapto,RETURN,#rtrcto</Line>
+    <Line>MODALS:retract_mode=fedrat</Line>
+    <Line>USEWITH:PTC</Line>
+    <Line></Line>
+    <Line>$$ UniGraphics (CLS).</Line>
+    <Line></Line>
+    <Line>CYCLE/DRILL,RAPTO,#rapto,FEDTO,#-fedto,IPM,#fedupm</Line>
+    <Line>USEWITH:UG</Line>
+    <Line>CYCLE/DRILL,RAPTO,#rapto,FEDTO,#-fedto,A,A,IPM,#fedupm</Line>
+    <Line>USEWITH:UG</Line>
+    <Line>CYCLE/DRILL,RAPTO,#rapto,FEDTO,#-fedto,RTRCTO,#rtrcto,IPM,#fedupm</Line>
+    <Line>USEWITH:UG</Line>
+    <Line>CYCLE/DRILL,DWELL,#,RAPTO,#rapto,FEDTO,#-fedto,IPM,#fedupm</Line>
+    <Line>USEWITH:UG</Line>
+    <Line>CYCLE/DRILL,DWELL,#,RAPTO,#rapto,FEDTO,#-fedto,A,A,IPM,#fedupm</Line>
+    <Line>USEWITH:UG</Line>
+    <Line>CYCLE/DRILL,DWELL,#,RAPTO,#rapto,FEDTO,#-fedto,RTRCTO,#rtrcto, $</Line>
+    <Line>IPM,#fedupm</Line>
+    <Line>USEWITH:UG</Line>
+    <Line>CYCLE/DRILL,DWELL,REV,#,RAPTO,#rapto,FEDTO,#-fedto,A,#, $</Line>
+    <Line>RTRCTO,#rtrcto,IPM,#fedupm</Line>
+    <Line>USEWITH:UG</Line>
+    <Line>CYCLE/DRILL,CSINK,CSKDIA,#cskdia,TLANGL,#tlangl, $</Line>
+    <Line>A,#,RAPTO,#rapto,A,A</Line>
+    <Line>USEWITH:UG</Line>
+    <Line>CYCLE/DRILL,CSINK,CSKDIA,#cskdia,TLANGL,#tlangl, $</Line>
+    <Line>A,#,RAPTO,#rapto,A,A,IPM,#fedupm</Line>
+    <Line>USEWITH:UG</Line>
+    <Line>CYCLE/DRILL,CSINK,CSKDIA,#cskdia,TLANGL,#tlangl,HOLDIA,#holdia, $</Line>
+    <Line>A,#,RAPTO,#rapto,RTRCTO,#rtrcto,IPM,#fedupm</Line>
+    <Line>USEWITH:UG</Line>
+    <Line>CYCLE/DRILL,CSINK,CSKDIA,#cskdia,TLANGL,#tlangl,HOLDIA,#holdia, $</Line>
+    <Line>A,#,RAPTO,#rapto,RTRCTO,#rtrcto,IPM,#fedupm,A</Line>
+    <Line>USEWITH:UG</Line>
+    <Line>CYCLE/DRILL,DEEP,STEP,#step,RAPTO,#rapto,FEDTO,#-fedto,IPM,#fedupm</Line>
+    <Line>USEWITH:UG</Line>
+    <Line>CYCLE/DRILL,DEEP,STEP,#step,RAPTO,#rapto,FEDTO,#-fedto,IPM,#fedupm,A</Line>
+    <Line>USEWITH:UG</Line>
+    <Line>CYCLE/DRILL,DEEP,STEP,#step,RAPTO,#rapto,FEDTO,#-fedto,A,A, $</Line>
+    <Line>IPM,#fedupm</Line>
+    <Line>USEWITH:UG</Line>
+    <Line>CYCLE/DRILL,DEEP,STEP,#step,#,RAPTO,#rapto,FEDTO,#-fedto, $</Line>
+    <Line>IPM,#fedupm</Line>
+    <Line>USEWITH:UG</Line>
+    <Line>CYCLE/DRILL,DEEP,STEP,#step,#,RAPTO,#rapto,FEDTO,#-fedto,A,A, $</Line>
+    <Line>IPM,#fedupm</Line>
+    <Line>USEWITH:UG</Line>
+    <Line>CYCLE/DRILL,DEEP,STEP,#step,#,#,RAPTO,#rapto,FEDTO,#-fedto,A,A</Line>
+    <Line>USEWITH:UG</Line>
+    <Line>CYCLE/DRILL,DEEP,STEP,#step,#,#,RAPTO,#rapto,FEDTO,#-fedto,A,A, $</Line>
+    <Line>IPM,#fedupm</Line>
+    <Line>USEWITH:UG</Line>
+    <Line>CYCLE/DRILL,DEEP,STEP,#step,RAPTO,#rapto,FEDTO,#-fedto, $</Line>
+    <Line>RTRCTO,#rtrcto,IPM,#fedupm</Line>
+    <Line>USEWITH:UG</Line>
+    <Line>CYCLE/DRILL,DEEP,STEP,#step,#,RAPTO,#rapto,FEDTO,#-fedto, $</Line>
+    <Line>RTRCTO,#rtrcto,IPM,#fedupm</Line>
+    <Line>USEWITH:UG</Line>
+    <Line>CYCLE/DRILL,DEEP,STEP,#step,A,RAPTO,#rapto,FEDTO,#-fedto,A,#, $</Line>
+    <Line>RTRCTO,#rtrcto,IPM,#fedupm,A</Line>
+    <Line>USEWITH:UG</Line>
+    <Line>CYCLE/DRILL,BRKCHP,STEP,#step,RAPTO,#rapto,FEDTO,#-fedto, $</Line>
+    <Line>A,A,IPM,#fedupm</Line>
+    <Line>MODALS:deep_retract=off</Line>
+    <Line>USEWITH:UG</Line>
+    <Line>CYCLE/DRILL,BRKCHP,STEP,#step,A,#,RAPTO,#rapto,FEDTO,#-fedto, $</Line>
+    <Line>A,A,IPM,#fedupm</Line>
+    <Line>MODALS:deep_retract=off</Line>
+    <Line>USEWITH:UG</Line>
+    <Line>CYCLE/DRILL,BRKCHP,STEP,#step,A,#,RAPTO,#rapto,FEDTO,#-fedto,A,#, $</Line>
+    <Line>RTRCTO,#rtrcto,IPM,#fedupm,A</Line>
+    <Line>MODALS:deep_retract=off</Line>
+    <Line>USEWITH:UG</Line>
+    <Line>CYCLE/TAP,RAPTO,#rapto,FEDTO,#-fedto,IPM,#fedupm</Line>
+    <Line>MODALS:retract_mode=fedrat</Line>
+    <Line>USEWITH:UG</Line>
+    <Line>CYCLE/TAP,RAPTO,#rapto,FEDTO,#-fedto,A,#,IPM,#fedupm</Line>
+    <Line>MODALS:retract_mode=fedrat</Line>
+    <Line>USEWITH:UG</Line>
+    <Line>CYCLE/TAP,RAPTO,#rapto,FEDTO,#-fedto,A,#,A,A,IPM,#fedupm</Line>
+    <Line>MODALS:retract_mode=fedrat</Line>
+    <Line>USEWITH:UG</Line>
+    <Line>CYCLE/TAP,RAPTO,#rapto,FEDTO,#-fedto,A,#,RTRCTO,#rtrcto,IPM,#fedupm</Line>
+    <Line>MODALS:retract_mode=fedrat</Line>
+    <Line>USEWITH:UG</Line>
+    <Line>CYCLE/TAP,CCLW,RAPTO,#rapto,FEDTO,#-fedto,IPM,#fedupm</Line>
+    <Line>MODALS:retract_mode=fedrat</Line>
+    <Line>USEWITH:UG</Line>
+    <Line>CYCLE/TAP,CCLW,RAPTO,#rapto,FEDTO,#-fedto,A,#,IPM,#fedupm</Line>
+    <Line>MODALS:retract_mode=fedrat</Line>
+    <Line>USEWITH:UG</Line>
+    <Line>CYCLE/TAP,CCLW,RAPTO,#rapto,FEDTO,#-fedto,A,#,A,A,IPM,#fedupm</Line>
+    <Line>MODALS:retract_mode=fedrat</Line>
+    <Line>USEWITH:UG</Line>
+    <Line>CYCLE/TAP,CCLW,RAPTO,#rapto,FEDTO,#-fedto,A,#,RTRCTO,#rtrcto, $</Line>
+    <Line>IPM,#fedupm</Line>
+    <Line>MODALS:retract_mode=fedrat</Line>
+    <Line>USEWITH:UG</Line>
+    <Line>CYCLE/TAP,DWELL,#,RAPTO,#rapto,FEDTO,#-fedto,A,#,RTRCTO,#rtrcto, $</Line>
+    <Line>IPM,#fedupm</Line>
+    <Line>MODALS:retract_mode=fedrat</Line>
+    <Line>USEWITH:UG</Line>
+    <Line>CYCLE/TAP,DWELL,#,RAPTO,#rapto,FEDTO,#-fedto,A,#,RTRCTO,#rtrcto, $</Line>
+    <Line>IPM,#fedupm,A</Line>
+    <Line>MODALS:retract_mode=fedrat</Line>
+    <Line>USEWITH:UG</Line>
+    <Line>CYCLE/BORE,RAPTO,#rapto,FEDTO,#-fedto,IPM,#fedupm</Line>
+    <Line>USEWITH:UG</Line>
+    <Line>CYCLE/BORE,RAPTO,#rapto,FEDTO,#-fedto,A,A,IPM,#fedupm</Line>
+    <Line>USEWITH:UG</Line>
+    <Line>CYCLE/BORE,DWELL,#,RAPTO,#rapto,FEDTO,#-fedto,IPM,#fedupm</Line>
+    <Line>MODALS:retract_mode=fedrat</Line>
+    <Line>USEWITH:UG</Line>
+    <Line>CYCLE/BORE,DWELL,#,RAPTO,#rapto,FEDTO,#-fedto,A,A,IPM,#fedupm</Line>
+    <Line>MODALS:retract_mode=fedrat</Line>
+    <Line>USEWITH:UG</Line>
+    <Line>CYCLE/BORE,DWELL,#,RAPTO,#rapto,FEDTO,#-fedto,RTRCTO,#rtrcto, $</Line>
+    <Line>IPM,#fedupm</Line>
+    <Line>MODALS:retract_mode=fedrat</Line>
+    <Line>USEWITH:UG</Line>
+    <Line>CYCLE/BORE,DWELL,#,RAPTO,#rapto,FEDTO,#-fedto,A,#,RTRCTO,#rtrcto, $</Line>
+    <Line>IPM,#fedupm,A</Line>
+    <Line>MODALS:retract_mode=fedrat</Line>
+    <Line>USEWITH:UG</Line>
+    <Line>CYCLE/BORE,DRAG,RAPTO,#rapto,FEDTO,#-fedto,IPM,#fedupm</Line>
+    <Line>MODALS:retract_mode=fedrat</Line>
+    <Line>USEWITH:UG</Line>
+    <Line>CYCLE/BORE,DRAG,RAPTO,#rapto,FEDTO,#-fedto,A,A,IPM,#fedupm</Line>
+    <Line>MODALS:retract_mode=fedrat</Line>
+    <Line>USEWITH:UG</Line>
+    <Line>CYCLE/BORE,DRAG,DWELL,#,RAPTO,#rapto,FEDTO,#-fedto,A,A, $</Line>
+    <Line>IPM,#fedupm</Line>
+    <Line>MODALS:retract_mode=fedrat</Line>
+    <Line>USEWITH:UG</Line>
+    <Line>CYCLE/BORE,DRAG,DWELL,#,RAPTO,#rapto,FEDTO,#-fedto,RTRCTO,#rtrcto, $</Line>
+    <Line>IPM,#fedupm</Line>
+    <Line>MODALS:retract_mode=fedrat</Line>
+    <Line>USEWITH:UG</Line>
+    <Line>CYCLE/BORE,NODRAG,RAPTO,#rapto,FEDTO,#-fedto,A,A,IPM,#fedupm</Line>
+    <Line>MODALS:retract_mode=fedrat</Line>
+    <Line>USEWITH:UG</Line>
+    <Line>CYCLE/BORE,NODRAG,DWELL,#,RAPTO,#rapto,FEDTO,#-fedto, $</Line>
+    <Line>RTRCTO,#rtrcto,IPM,#fedupm</Line>
+    <Line>MODALS:retract_mode=fedrat</Line>
+    <Line>USEWITH:UG</Line>
+    <Line>CYCLE/BORE,NODRAG,DWELL,#,RAPTO,#rapto,FEDTO,#-fedto,A,#, $</Line>
+    <Line>RTRCTO,#rtrcto,IPM,#fedupm,A</Line>
+    <Line>MODALS:retract_mode=fedrat</Line>
+    <Line>USEWITH:UG</Line>
+    <Line>CYCLE/BORE,BACK,DWELL,#,RAPTO,#rapto,FEDTO,#-fedto,A,#, $</Line>
+    <Line>RTRCTO,#rtrcto,IPM,#fedupm,A</Line>
+    <Line>MODALS:retract_mode=fedrat</Line>
+    <Line>USEWITH:UG</Line>
+    <Line>CYCLE/BORE,MANUAL,DWELL,#,RAPTO,#rapto,FEDTO,#-fedto,IPM,#fedupm</Line>
+    <Line>MODALS:retract_mode=fedrat</Line>
+    <Line>USEWITH:UG</Line>
+    <Line>CYCLE/BORE,MANUAL,DWELL,#,RAPTO,#rapto,FEDTO,#-fedto,A,#, $</Line>
+    <Line>IPM,#fedupm,A</Line>
+    <Line>MODALS:retract_mode=fedrat</Line>
+    <Line>USEWITH:UG</Line>
+    <Line>CYCLE/BORE,MANUAL,DWELL,#,RAPTO,#rapto,FEDTO,#-fedto,A,#, $</Line>
+    <Line>RTRCTO,#rtrcto,IPM,#fedupm,A</Line>
+    <Line>MODALS:retract_mode=fedrat</Line>
+    <Line>USEWITH:UG</Line>
+    <Line></Line>
+    <Line>$$ CATIA.</Line>
+    <Line></Line>
+    <Line>CYCLE/CSINK,#fedto,#rapto</Line>
+    <Line>USEWITH:CATIA</Line>
+    <Line>CYCLE/CSINK,#fedto,#rapto,#,#,#rtrcto,#fedupm,#,A</Line>
+    <Line>USEWITH:CATIA</Line>
+    <Line>CYCLE/DRILL,#fedto,#rapto</Line>
+    <Line>USEWITH:CATIA</Line>
+    <Line>CYCLE/DRILL,#fedto,#rapto,#,#,#rtrcto,#fedupm,#,A</Line>
+    <Line>USEWITH:CATIA</Line>
+    <Line>CYCLE/TAP,#fedto,#rapto</Line>
+    <Line>MODALS:retract_mode=fedrat</Line>
+    <Line>USEWITH:CATIA</Line>
+    <Line>CYCLE/TAP,#fedto,#rapto,#,#,#rtrcto,#fedupm,#,A</Line>
+    <Line>MODALS:retract_mode=fedrat</Line>
+    <Line>USEWITH:CATIA</Line>
+    <Line>CYCLE/BORE,#fedto,#rapto</Line>
+    <Line>MODALS:retract_mode=fedrat</Line>
+    <Line>USEWITH:CATIA</Line>
+    <Line>CYCLE/BORE,#fedto,#rapto,#,#,#rtrcto,#fedupm,#,A</Line>
+    <Line>MODALS:retract_mode=fedrat</Line>
+    <Line>USEWITH:CATIA</Line>
+    <Line>CYCLE/REAM,#fedto,#rapto</Line>
+    <Line>MODALS:retract_mode=fedrat</Line>
+    <Line>USEWITH:CATIA</Line>
+    <Line>CYCLE/REAM,#fedto,#rapto,#,#,#rtrcto,#fedupm,#,A</Line>
+    <Line>MODALS:retract_mode=fedrat</Line>
+    <Line>USEWITH:CATIA</Line>
+    <Line>CYCLE/DEEPHL,#fedto,#rapto,#step,#,#</Line>
+    <Line>USEWITH:CATIA</Line>
+    <Line>CYCLE/DEEPHL,#fedto,#rapto,#,#,#rtrcto,#fedupm,#,A,#step,#,#</Line>
+    <Line>USEWITH:CATIA</Line>
+    <Line>CYCLE/BREAKCHP,#fedto,#rapto,#step,#,#</Line>
+    <Line>MODALS:deep_retract=off</Line>
+    <Line>USEWITH:CATIA</Line>
+    <Line>CYCLE/BREAKCHP,#fedto,#rapto,#,#,#rtrcto,#fedupm,#,A,#step,#,#</Line>
+    <Line>MODALS:deep_retract=off</Line>
+    <Line>USEWITH:CATIA</Line>
+    <Line></Line>
+    <Line>$$ NCL (PostWorks and GEN4AX).</Line>
+    <Line></Line>
+    <Line>CYCLE/AUTO,ON</Line>
+    <Line>MODALS:cycle_op=off</Line>
+    <Line>USEWITH:NCL,POSTWORKS</Line>
+    <Line>CYCLE/AUTO,OFF</Line>
+    <Line>MODALS:cycle_op=off</Line>
+    <Line>USEWITH:NCL,POSTWORKS</Line>
+    <Line>CYCLE/OPTION</Line>
+    <Line>MODALS:cycle_op=off</Line>
+    <Line>USEWITH:NCL,POSTWORKS,GEN4AX</Line>
+    <Line>CYCLE/BORE,FEDTO,#fedto,IPM,#fedupm,RAPTO,#rapto</Line>
+    <Line>MODALS:retract_mode=fedrat</Line>
+    <Line>USEWITH:NCL,POSTWORKS</Line>
+    <Line>CYCLE/BORE,FEDTO,#fedto,IPM,#fedupm,RAPTO,#rapto,A,#</Line>
+    <Line>MODALS:retract_mode=fedrat</Line>
+    <Line>USEWITH:NCL,POSTWORKS</Line>
+    <Line>CYCLE/BORE,FEDTO,#fedto,IPM,#fedupm,RAPTO,#rapto,RTRCTO,#rtrcto</Line>
+    <Line>MODALS:retract_mode=fedrat</Line>
+    <Line>USEWITH:NCL,POSTWORKS</Line>
+    <Line>CYCLE/BORE,FEDTO,#fedto,IPM,#fedupm,RAPTO,#rapto,A,#,RTRCTO,#rtrcto</Line>
+    <Line>MODALS:retract_mode=fedrat</Line>
+    <Line>USEWITH:NCL,POSTWORKS</Line>
+    <Line>CYCLE/BORE7,FEDTO,#fedto,IPM,#fedupm,RAPTO,#rapto</Line>
+    <Line>USEWITH:NCL,POSTWORKS</Line>
+    <Line>CYCLE/BORE7,FEDTO,#fedto,IPM,#fedupm,RAPTO,#rapto,A,#</Line>
+    <Line>USEWITH:NCL,POSTWORKS</Line>
+    <Line>CYCLE/BORE7,FEDTO,#fedto,IPM,#fedupm,RAPTO,#rapto,RTRCTO,#rtrcto</Line>
+    <Line>USEWITH:NCL,POSTWORKS</Line>
+    <Line>CYCLE/BORE7,FEDTO,#fedto,IPM,#fedupm,RAPTO,#rapto,A,#,RTRCTO,#rtrcto</Line>
+    <Line>USEWITH:NCL,POSTWORKS</Line>
+    <Line>CYCLE/BORE7,FEDTO,#fedto,STEP,#step,#,A,#,#,IPM,#fedupm,RAPTO,#rapto</Line>
+    <Line>USEWITH:NCL,POSTWORKS</Line>
+    <Line>CYCLE/BORE8,FEDTO,#fedto,IPM,#fedupm,RAPTO,#rapto</Line>
+    <Line>USEWITH:NCL,POSTWORKS</Line>
+    <Line>CYCLE/BORE8,FEDTO,#fedto,IPM,#fedupm,RAPTO,#rapto,A,#</Line>
+    <Line>USEWITH:NCL,POSTWORKS</Line>
+    <Line>CYCLE/BORE8,FEDTO,#fedto,IPM,#fedupm,RAPTO,#rapto,RTRCTO,#rtrcto</Line>
+    <Line>USEWITH:NCL,POSTWORKS</Line>
+    <Line>CYCLE/BORE8,FEDTO,#fedto,IPM,#fedupm,RAPTO,#rapto,A,#,RTRCTO,#rtrcto</Line>
+    <Line>USEWITH:NCL,POSTWORKS</Line>
+    <Line>CYCLE/BORE8,FEDTO,#fedto,STEP,#step,#,A,#,#,IPM,#fedupm,RAPTO,#rapto</Line>
+    <Line>USEWITH:NCL,POSTWORKS</Line>
+    <Line>CYCLE/BORE9,FEDTO,#fedto,IPM,#fedupm,RAPTO,#rapto</Line>
+    <Line>USEWITH:NCL,POSTWORKS</Line>
+    <Line>CYCLE/BORE9,FEDTO,#fedto,IPM,#fedupm,RAPTO,#rapto,A,#</Line>
+    <Line>USEWITH:NCL,POSTWORKS</Line>
+    <Line>CYCLE/BORE9,FEDTO,#fedto,IPM,#fedupm,RAPTO,#rapto,RTRCTO,#rtrcto</Line>
+    <Line>USEWITH:NCL,POSTWORKS</Line>
+    <Line>CYCLE/BORE9,FEDTO,#fedto,IPM,#fedupm,RAPTO,#rapto,A,#,RTRCTO,#rtrcto</Line>
+    <Line>USEWITH:NCL,POSTWORKS</Line>
+    <Line>CYCLE/BORE9,FEDTO,#fedto,A,#,#,IPM,#fedupm,RAPTO,#rapto</Line>
+    <Line>USEWITH:NCL,POSTWORKS</Line>
+    <Line>CYCLE/DEEP,FEDTO,#fedto,IPM,#fedupm,RAPTO,#rapto</Line>
+    <Line>USEWITH:NCL,POSTWORKS</Line>
+    <Line>CYCLE/DEEP,FEDTO,#fedto,IPM,#fedupm,RAPTO,#rapto,A,#</Line>
+    <Line>USEWITH:NCL,POSTWORKS</Line>
+    <Line>CYCLE/DEEP,FEDTO,#fedto,IPM,#fedupm,RAPTO,#rapto,STEP,#step</Line>
+    <Line>USEWITH:NCL,POSTWORKS</Line>
+    <Line>CYCLE/DEEP,FEDTO,#fedto,IPM,#fedupm,RAPTO,#rapto,STEP,#step,#</Line>
+    <Line>USEWITH:NCL,POSTWORKS</Line>
+    <Line>CYCLE/DEEP,FEDTO,#fedto,IPM,#fedupm,RAPTO,#rapto,RTRCTO,#rtrcto</Line>
+    <Line>USEWITH:NCL,POSTWORKS</Line>
+    <Line>CYCLE/DEEP,FEDTO,#fedto,IPM,#fedupm,RAPTO,#rapto,A,#,STEP,#step</Line>
+    <Line>USEWITH:NCL,POSTWORKS</Line>
+    <Line>CYCLE/DEEP,FEDTO,#fedto,IPM,#fedupm,RAPTO,#rapto,A,#,STEP,#step,#</Line>
+    <Line>USEWITH:NCL,POSTWORKS</Line>
+    <Line>CYCLE/DEEP,FEDTO,#fedto,IPM,#fedupm,RAPTO,#rapto,A,#,RTRCTO,#rtrcto</Line>
+    <Line>USEWITH:NCL,POSTWORKS</Line>
+    <Line>CYCLE/DEEP,FEDTO,#fedto,IPM,#fedupm,RAPTO,#rapto,STEP,#step, $</Line>
+    <Line>RTRCTO,#rtrcto</Line>
+    <Line>USEWITH:NCL,POSTWORKS</Line>
+    <Line>CYCLE/DEEP,FEDTO,#fedto,IPM,#fedupm,RAPTO,#rapto,STEP,#step,#, $</Line>
+    <Line>RTRCTO,#rtrcto</Line>
+    <Line>USEWITH:NCL,POSTWORKS</Line>
+    <Line>CYCLE/DRILL,FEDTO,#fedto,IPM,#fedupm,RAPTO,#rapto</Line>
+    <Line>USEWITH:NCL,POSTWORKS</Line>
+    <Line>CYCLE/DRILL,FEDTO,#fedto,IPM,#fedupm,RAPTO,#rapto,A,#</Line>
+    <Line>USEWITH:NCL,POSTWORKS</Line>
+    <Line>CYCLE/DRILL,FEDTO,#fedto,IPM,#fedupm,RAPTO,#rapto,RTRCTO,#rtrcto</Line>
+    <Line>USEWITH:NCL,POSTWORKS</Line>
+    <Line>CYCLE/DRILL,FEDTO,#fedto,IPM,#fedupm,RAPTO,#rapto,A,#,RTRCTO,#rtrcto</Line>
+    <Line>USEWITH:NCL,POSTWORKS</Line>
+    <Line>CYCLE/DRILL,FEDTO,#cskdia,#tlangl,IPM,#fedupm,RAPTO,#rapto</Line>
+    <Line>USEWITH:NCL,POSTWORKS</Line>
+    <Line>CYCLE/DRILL,FEDTO,#cskdia,#tlangl,IPM,#fedupm,RAPTO,#rapto,A,#</Line>
+    <Line>USEWITH:NCL,POSTWORKS</Line>
+    <Line>CYCLE/FACE,FEDTO,#fedto,IPM,#fedupm,RAPTO,#rapto</Line>
+    <Line>USEWITH:NCL,POSTWORKS</Line>
+    <Line>CYCLE/FACE,FEDTO,#fedto,IPM,#fedupm,RAPTO,#rapto,A,#</Line>
+    <Line>USEWITH:NCL,POSTWORKS</Line>
+    <Line>CYCLE/FACE,FEDTO,#fedto,IPM,#fedupm,RAPTO,#rapto,RTRCTO,#rtrcto</Line>
+    <Line>USEWITH:NCL,POSTWORKS</Line>
+    <Line>CYCLE/FACE,FEDTO,#fedto,IPM,#fedupm,RAPTO,#rapto,A,#,RTRCTO,#rtrcto</Line>
+    <Line>USEWITH:NCL,POSTWORKS</Line>
+    <Line>CYCLE/FACE,FEDTO,#cskdia,#tlangl,IPM,#fedupm,RAPTO,#rapto</Line>
+    <Line>USEWITH:NCL,POSTWORKS</Line>
+    <Line>CYCLE/FACE,FEDTO,#cskdia,#tlangl,IPM,#fedupm,RAPTO,#rapto,A,#</Line>
+    <Line>USEWITH:NCL,POSTWORKS</Line>
+    <Line>CYCLE/MILL,FEDTO,#fedto,IPM,#fedupm,RAPTO,#rapto</Line>
+    <Line>MODALS:retract_mode=none</Line>
+    <Line>USEWITH:NCL,POSTWORKS</Line>
+    <Line>CYCLE/MILL,FEDTO,#fedto,IPM,#fedupm,RAPTO,#rapto,A,#</Line>
+    <Line>MODALS:retract_mode=none</Line>
+    <Line>USEWITH:NCL,POSTWORKS</Line>
+    <Line>CYCLE/REAM,FEDTO,#fedto,IPM,#fedupm,RAPTO,#rapto</Line>
+    <Line>MODALS:retract_mode=fedrat</Line>
+    <Line>USEWITH:NCL,POSTWORKS</Line>
+    <Line>CYCLE/REAM,FEDTO,#fedto,IPM,#fedupm,RAPTO,#rapto,A,#</Line>
+    <Line>MODALS:retract_mode=fedrat</Line>
+    <Line>USEWITH:NCL,POSTWORKS</Line>
+    <Line>CYCLE/REAM,FEDTO,#fedto,IPM,#fedupm,RAPTO,#rapto,RTRCTO,#rtrcto</Line>
+    <Line>MODALS:retract_mode=fedrat</Line>
+    <Line>USEWITH:NCL,POSTWORKS</Line>
+    <Line>CYCLE/REAM,FEDTO,#fedto,IPM,#fedupm,RAPTO,#rapto,A,#,RTRCTO,#rtrcto</Line>
+    <Line>MODALS:retract_mode=fedrat</Line>
+    <Line>USEWITH:NCL,POSTWORKS</Line>
+    <Line>CYCLE/SHIFT,FEDTO,#fedto,IPM,#fedupm,RAPTO,#rapto</Line>
+    <Line>MODALS:retract_mode=fedrat</Line>
+    <Line>USEWITH:NCL,POSTWORKS</Line>
+    <Line>CYCLE/SHIFT,FEDTO,#fedto,IPM,#fedupm,RAPTO,#rapto,A,#</Line>
+    <Line>MODALS:retract_mode=fedrat</Line>
+    <Line>USEWITH:NCL,POSTWORKS</Line>
+    <Line>CYCLE/SHIFT,FEDTO,#fedto,IPM,#fedupm,RAPTO,#rapto,A,#,#</Line>
+    <Line>MODALS:retract_mode=fedrat</Line>
+    <Line>USEWITH:NCL,POSTWORKS</Line>
+    <Line>CYCLE/SHIFT,FEDTO,#fedto,IPM,#fedupm,RAPTO,#rapto,A,#,A,#,#</Line>
+    <Line>MODALS:retract_mode=fedrat</Line>
+    <Line>USEWITH:NCL,POSTWORKS</Line>
+    <Line>CYCLE/SHIFT,FEDTO,#fedto,IPM,#fedupm,RAPTO,#rapto,RTRCTO,#rtrcto</Line>
+    <Line>MODALS:retract_mode=fedrat</Line>
+    <Line>USEWITH:NCL,POSTWORKS</Line>
+    <Line>CYCLE/SHIFT,FEDTO,#fedto,IPM,#fedupm,RAPTO,#rapto,A,#,RTRCTO,#rtrcto</Line>
+    <Line>MODALS:retract_mode=fedrat</Line>
+    <Line>USEWITH:NCL,POSTWORKS</Line>
+    <Line>CYCLE/SHIFT,FEDTO,#fedto,IPM,#fedupm,RAPTO,#rapto,A,#,#,RTRCTO,#rtrcto</Line>
+    <Line>MODALS:retract_mode=fedrat</Line>
+    <Line>USEWITH:NCL,POSTWORKS</Line>
+    <Line>CYCLE/TAP,FEDTO,#fedto,IPM,#fedupm,RAPTO,#rapto</Line>
+    <Line>MODALS:retract_mode=fedrat</Line>
+    <Line>USEWITH:NCL,POSTWORKS</Line>
+    <Line>CYCLE/TAP,FEDTO,#fedto,IPM,#fedupm,RAPTO,#rapto,A,#</Line>
+    <Line>MODALS:retract_mode=fedrat</Line>
+    <Line>USEWITH:NCL,POSTWORKS</Line>
+    <Line>CYCLE/TAP,FEDTO,#fedto,IPM,#fedupm,RAPTO,#rapto,RTRCTO,#rtrcto</Line>
+    <Line>MODALS:retract_mode=fedrat</Line>
+    <Line>USEWITH:NCL,POSTWORKS</Line>
+    <Line>CYCLE/TAP,FEDTO,#fedto,IPM,#fedupm,RAPTO,#rapto,A,#,RTRCTO,#rtrcto</Line>
+    <Line>MODALS:retract_mode=fedrat</Line>
+    <Line>USEWITH:NCL,POSTWORKS</Line>
+    <Line>CYCLE/THRU,FEDTO,#fedto,IPM,#fedupm,STEP,#step</Line>
+    <Line>MODALS:deep_retract=off,thru_mode=on</Line>
+    <Line>USEWITH:NCL,POSTWORKS</Line>
+    <Line>CYCLE/THRU,FEDTO,#fedto,IPM,#fedupm,RAPTO,#rapto</Line>
+    <Line>USEWITH:NCL,POSTWORKS</Line>
+    <Line>CYCLE/THRU,FEDTO,#fedto,IPM,#fedupm,RAPTO,#rapto,A,#</Line>
+    <Line>USEWITH:NCL,POSTWORKS</Line>
+    <Line>CYCLE/THRU,FEDTO,#fedto,IPM,#fedupm,RAPTO,#rapto,STEP,#step</Line>
+    <Line>MODALS:deep_retract=off,thru_mode=on</Line>
+    <Line>USEWITH:NCL,POSTWORKS</Line>
+    <Line>CYCLE/THRU,FEDTO,#fedto,IPM,#fedupm,RAPTO,#rapto,STEP,#step,#</Line>
+    <Line>MODALS:deep_retract=off,thru_mode=on</Line>
+    <Line>USEWITH:NCL,POSTWORKS</Line>
+    <Line>CYCLE/THRU,FEDTO,#fedto,IPM,#fedupm,RAPTO,#rapto,RTRCTO,#rtrcto</Line>
+    <Line>USEWITH:NCL,POSTWORKS</Line>
+    <Line>CYCLE/THRU,FEDTO,#fedto,IPM,#fedupm,RAPTO,#rapto,A,#,STEP,#step</Line>
+    <Line>MODALS:deep_retract=off,thru_mode=on</Line>
+    <Line>USEWITH:NCL,POSTWORKS</Line>
+    <Line>CYCLE/THRU,FEDTO,#fedto,IPM,#fedupm,RAPTO,#rapto,A,#,STEP,#step,#</Line>
+    <Line>MODALS:deep_retract=off,thru_mode=on</Line>
+    <Line>USEWITH:NCL,POSTWORKS</Line>
+    <Line>CYCLE/THRU,FEDTO,#fedto,IPM,#fedupm,RAPTO,#rapto,A,#,RTRCTO,#rtrcto</Line>
+    <Line>MODALS:deep_retract=off,thru_mode=on</Line>
+    <Line>USEWITH:NCL,POSTWORKS</Line>
+    <Line>CYCLE/THRU,FEDTO,#fedto,IPM,#fedupm,RAPTO,#rapto,STEP,#step, $</Line>
+    <Line>RTRCTO,#rtrcto</Line>
+    <Line>MODALS:deep_retract=off,thru_mode=on</Line>
+    <Line>USEWITH:NCL,POSTWORKS</Line>
+    <Line>CYCLE/THRU,FEDTO,#fedto,IPM,#fedupm,RAPTO,#rapto,STEP,#step,#, $</Line>
+    <Line>RTRCTO,#rtrcto</Line>
+    <Line>MODALS:deep_retract=off,thru_mode=on</Line>
+    <Line>USEWITH:NCL,POSTWORKS</Line>
+    <Line>CYCLE/BORE,#fedto,#fedupm,IPM,#rapto</Line>
+    <Line>MODALS:retract_mode=fedrat</Line>
+    <Line>USEWITH:NCL,GEN4AX</Line>
+    <Line>CYCLE/BORE8,#fedto,#,#fedupm,IPM,#rapto</Line>
+    <Line>MODALS:retract_mode=fedrat</Line>
+    <Line>USEWITH:NCL,GEN4AX</Line>
+    <Line>CYCLE/BORE9,#fedto,#,#fedupm,IPM,#rapto</Line>
+    <Line>MODALS:retract_mode=fedrat</Line>
+    <Line>USEWITH:NCL,GEN4AX</Line>
+    <Line>CYCLE/CUTANG,#cskdia,#tlangl,#fedupm,IPM,#rapto</Line>
+    <Line>USEWITH:NCL,GEN4AX</Line>
+    <Line>CYCLE/CUTANG,#cskdia,#tlangl,#,#fedupm,IPM,#rapto</Line>
+    <Line>USEWITH:NCL,GEN4AX</Line>
+    <Line>CYCLE/DEEP,#fedto,#step,#fedupm,IPM,#rapto</Line>
+    <Line>USEWITH:NCL,GEN4AX</Line>
+    <Line>CYCLE/DEEP,#fedto,#step,#,#fedupm,IPM,#rapto</Line>
+    <Line>USEWITH:NCL,GEN4AX</Line>
+    <Line>CYCLE/DEEP,#fedto,#step,#,#,#fedupm,IPM,#rapto</Line>
+    <Line>USEWITH:NCL,GEN4AX</Line>
+    <Line>CYCLE/DRILL,#fedto,#fedupm,IPM,#rapto</Line>
+    <Line>USEWITH:NCL,GEN4AX</Line>
+    <Line>CYCLE/FACE,#fedto,#,#fedupm,IPM,#rapto</Line>
+    <Line>USEWITH:NCL,GEN4AX</Line>
+    <Line>CYCLE/REAM,#fedto,#fedupm,IPM,#rapto</Line>
+    <Line>USEWITH:NCL,GEN4AX</Line>
+    <Line>CYCLE/TAP,#fedto,#fedupm,IPM,#rapto</Line>
+    <Line>MODALS:retract_mode=fedrat</Line>
+    <Line>USEWITH:NCL,GEN4AX</Line>
+    <Line>CYCLE/THRU,#fedto,#step,#fedupm,IPM,#rapto</Line>
+    <Line>MODALS:deep_retract=off,thru_mode=on</Line>
+    <Line>USEWITH:NCL,GEN4AX</Line>
+    <Line>CYCLE/THRU,#fedto,#step,#,#fedupm,IPM,#rapto</Line>
+    <Line>MODALS:deep_retract=off,thru_mode=on</Line>
+    <Line>USEWITH:NCL,GEN4AX</Line>
+    <Line>CYCLE/THRU,#fedto,#step,A,#,#fedupm,IPM,#rapto</Line>
+    <Line>MODALS:deep_retract=off,thru_mode=on</Line>
+    <Line>USEWITH:NCL,GEN4AX</Line>
+    <Line>CYCLE/THRU,#fedto,#step,#,A,#,#fedupm,IPM,#rapto</Line>
+    <Line>MODALS:deep_retract=off,thru_mode=on</Line>
+    <Line>USEWITH:NCL,GEN4AX</Line>
+    <Line></Line>
+    <Line>$$ Converted APT (note that &quot;fedto&quot;s are negative).</Line>
+    <Line></Line>
+    <Line>CYCLE/DRILL,RAPTO,#rapto,FEDTO,#-fedto</Line>
+    <Line>USEWITH:Converted</Line>
+    <Line>CYCLE/DRILL,RAPTO,#rapto,FEDTO,#-fedto,RTRCTO,#rtrcto</Line>
+    <Line>USEWITH:Converted</Line>
+    <Line>CYCLE/FACE,RAPTO,#rapto,FEDTO,#-fedto</Line>
+    <Line>USEWITH:Converted</Line>
+    <Line>CYCLE/FACE,RAPTO,#rapto,FEDTO,#-fedto,RTRCTO,#rtrcto</Line>
+    <Line>USEWITH:Converted</Line>
+    <Line>CYCLE/DEEP,RAPTO,#rapto,FEDTO,#-fedto</Line>
+    <Line>USEWITH:Converted</Line>
+    <Line>CYCLE/DEEP,RAPTO,#rapto,FEDTO,#-fedto,STEP,#step</Line>
+    <Line>MODALS:deep_retract=off</Line>
+    <Line>USEWITH:Converted</Line>
+    <Line>CYCLE/DEEP,RAPTO,#rapto,FEDTO,#-fedto,STEP,#step,A</Line>
+    <Line>USEWITH:Converted</Line>
+    <Line>CYCLE/DEEP,RAPTO,#rapto,FEDTO,#-fedto,RTRCTO,#rtrcto</Line>
+    <Line>USEWITH:Converted</Line>
+    <Line>CYCLE/DEEP,RAPTO,#rapto,FEDTO,#-fedto,STEP,#step,RTRCTO,#rtrcto</Line>
+    <Line>MODALS:deep_retract=off</Line>
+    <Line>USEWITH:Converted</Line>
+    <Line>CYCLE/DEEP,RAPTO,#rapto,FEDTO,#-fedto,STEP,#step,A,RTRCTO,#rtrcto</Line>
+    <Line>USEWITH:Converted</Line>
+    <Line>CYCLE/DEEP,RAPTO,#rapto,FEDTO,#-fedto,STEP,#step,STEPRAP,#steprap</Line>
+    <Line>MODALS:deep_retract=off</Line>
+    <Line>USEWITH:Converted</Line>
+    <Line>CYCLE/DEEP,RAPTO,#rapto,FEDTO,#-fedto,STEP,#step,STEPRAP,#steprap, $</Line>
+    <Line>RTRCTO,#rtrcto</Line>
+    <Line>MODALS:deep_retract=off</Line>
+    <Line>USEWITH:Converted</Line>
+    <Line>CYCLE/TAP,RAPTO,#rapto,FEDTO,#-fedto</Line>
+    <Line>MODALS:retract_mode=fedrat</Line>
+    <Line>USEWITH:Converted</Line>
+    <Line>CYCLE/TAP,RAPTO,#rapto,FEDTO,#-fedto,RTRCTO,#rtrcto</Line>
+    <Line>MODALS:retract_mode=fedrat</Line>
+    <Line>USEWITH:Converted</Line>
+    <Line>CYCLE/BORE,RAPTO,#rapto,FEDTO,#-fedto</Line>
+    <Line>MODALS:retract_mode=fedrat</Line>
+    <Line>USEWITH:Converted</Line>
+    <Line>CYCLE/BORE,RAPTO,#rapto,FEDTO,#-fedto,RTRCTO,#rtrcto</Line>
+    <Line>MODALS:retract_mode=fedrat</Line>
+    <Line>USEWITH:Converted</Line>
+    <Line>CYCLE/BORE,ORIENT,RAPTO,#rapto,FEDTO,#-fedto</Line>
+    <Line>MODALS:retract_mode=fedrat</Line>
+    <Line>USEWITH:Converted</Line>
+    <Line>CYCLE/BORE,ORIENT,RAPTO,#rapto,FEDTO,#-fedto,RTRCTO,#rtrcto</Line>
+    <Line>MODALS:retract_mode=fedrat</Line>
+    <Line>USEWITH:Converted</Line>
+    <Line>CYCLE/BORE,DRAG,RAPTO,#rapto,FEDTO,#-fedto</Line>
+    <Line>MODALS:retract_mode=fedrat</Line>
+    <Line>USEWITH:Converted</Line>
+    <Line>CYCLE/BORE,DRAG,RAPTO,#rapto,FEDTO,#-fedto,RTRCTO,#rtrcto</Line>
+    <Line>MODALS:retract_mode=fedrat</Line>
+    <Line>USEWITH:Converted</Line>
+    <Line>CYCLE/MILL,RAPTO,#rapto,FEDTO,#-fedto</Line>
+    <Line>MODALS:retract_mode=none</Line>
+    <Line>USEWITH:Converted</Line>
+    <Line>CYCLE/MILL,RAPTO,#rapto,FEDTO,#-fedto,RTRCTO,#rtrcto</Line>
+    <Line>MODALS:retract_mode=none</Line>
+    <Line>USEWITH:Converted</Line>
+    <Line>CYCLE/THRU,RAPTO,#rapto,FEDTO,#-fedto</Line>
+    <Line>USEWITH:Converted</Line>
+    <Line>CYCLE/THRU,RAPTO,#rapto,FEDTO,#-fedto,RTRCTO,#rtrcto</Line>
+    <Line>USEWITH:Converted</Line>
+    <Line></Line>
+  </Cycles>
+  <AutoDiff Method="solid" Type="gouge" Report="on" Uncut="off" Vectors="off">
+    <Stock Name="Stock" Display="off" Type="solid"/>
+    <Design Display="off" Type="solid" Check="on" Keep="on"/>
+    <Constant Gouge="off" Tol="0.4" Excess="off" Minimum="2.5"/>
+    <Solid>
+      <Gouge Tol="0.05" Hue="0"/>
+      <Excess Tol="0.05" Hue="4"/>
+    </Solid>
+    <Surface>
+      <Gouge Value="20" Hue="4"/>
+      <Gouge Value="2.4" Hue="0"/>
+      <Gouge Value="2" Hue="5"/>
+      <Gouge Value="1.6" Hue="3"/>
+      <Gouge Value="1.2" Hue="2"/>
+      <Gouge Value="0.8" Hue="1"/>
+      <Gouge Value="0.4" Hue="6"/>
+      <Gouge Value="0" Hue="4"/>
+      <Excess Value="20" Hue="4"/>
+      <Excess Value="2.4" Hue="0"/>
+      <Excess Value="2" Hue="5"/>
+      <Excess Value="1.6" Hue="3"/>
+      <Excess Value="1.2" Hue="2"/>
+      <Excess Value="0.8" Hue="1"/>
+      <Excess Value="0.4" Hue="6"/>
+      <Excess Value="0" Hue="4"/>
+      <Minimum Check="off" Tol="0" Hue="0"/>
+    </Surface>
+    <Point>
+      <Gouge Tol="0.4" Distance="13"/>
+      <Excess Tol="0.4" Distance="13"/>
+      <Normal X="0" Y="0" Z="1" Direction="out"/>
+    </Point>
+    <Profile>
+      <Gouge Tol="0.4" Hue="0"/>
+      <Excess Tol="0.4" Hue="4"/>
+    </Profile>
+    <Region Limits="off" Entire="off" Improve="off">
+      <Minimum X="0" Y="0" Z="0"/>
+      <Maximum X="1" Y="1" Z="1"/>
+    </Region>
+  </AutoDiff>
+  <Setup Name="1" Active="on">
+    <Property Export="off" StockCheck="off">
+      <Tolerance Model="0.1" NURBS="0.05" Volume="0"/>
+      <Cutting Base="tool" Tol="0.25"/>
+      <Review DoMaterial="off" DoMachine="off"/>
+    </Property>
+    <Report>
+      <File></File>
+    </Report>
+    <Views Layout="tile horizontally">
+      <View Name="VIEW 1" Type="combined"
+       Back="shaded" Draw="shaded" Trans="off">
+        <Light I="0" J="0" K="1"/>
+        <Attach>Base</Attach>
+        <Rotation I="-65.7179124643" J="24.056637327" K="11.7112360051"/>
+        <Port XMin="-1122.74010998" XMax="1374.2067737" YMin="-579.733412762"
+         YMax="1378.16341661" ZMin="-5151.49266512" ZMax="4451.26259353"/>
+        <Location X="0" Y="0" Width="100" Height="100" Front="0" Order="1"/>
+        <OpenGL Accel="off" Perspective="off" Angle="30" Clip="25" Translucency="100"/>
+      </View>
+      <File>hhelp</File>
+      <File></File>
+      <File></File>
+      <File>hhelp</File>
+    </Views>
+    <Section Mouse="off" Count="5" Delay="0" Start="0" End="-1">
+    </Section>
+    <Build Loose="keep">
+      <Component Name="KON_5215"
+       Subsystem="1"
+       Cut="no" MaxDist="0"
+       Type="fixture" Visible="all" Draw="shaded" Hue="1">
+        <Attach>Attach</Attach>
+        <Position X="0" Y="0" Z="46"/>
+        <Rotation I="0" J="0" K="0"/>
+        <Poly Unit="millimeter" Visible="on" Mirror="Off" MirrorCsys="0" Hue="4">
+          <File>V:\vericut_7.0\DMU-70eVLine (iTNC530)_v7\plita.ply</File>
+          <Position X="0" Y="0" Z="-46"/>
+          <Rotation I="0" J="0" K="0"/>
+        </Poly>
+      </Component>
+      <Component Name="Fixture"
+       Subsystem="1"
+       Cut="no" MaxDist="0"
+       Type="fixture" Visible="machine" Draw="shaded" Hue="4">
+        <Attach>KON_5215</Attach>
+        <Position X="0" Y="0" Z="0"/>
+        <Rotation I="0" J="0" K="0"/>
+      </Component>
+      <Component Name="Stock"
+       Subsystem="1"
+       Type="stock" Visible="all" Draw="shaded" Hue="5">
+        <Attach>Fixture</Attach>
+        <Position X="0" Y="0" Z="0"/>
+        <Rotation I="0" J="0" K="0"/>
+      </Component>
+      <Component Name="Design"
+       Subsystem="1"
+       Type="design" Visible="none" Draw="shaded" Hue="3">
+        <Attach>Stock</Attach>
+        <Position X="0" Y="0" Z="0"/>
+        <Rotation I="0" J="0" K="0"/>
+      </Component>
+      <MachineAttributes>
+        <Component Name="Design" Visible="none" Count="0">
+        </Component>
+        <Component Name="Stock" Visible="all" Count="0">
+        </Component>
+        <Component Name="Fixture" Visible="machine" Count="0">
+        </Component>
+        <Component Name="KON_5215" Visible="all" Count="1">
+          <Model Visible="on"/>
+        </Component>
+        <Component Name="Attach" Visible="machine" Count="0">
+        </Component>
+        <Component Name="C" Visible="machine" Count="1">
+          <Model Visible="on"/>
+        </Component>
+        <Component Name="B" Visible="machine" Count="2">
+          <Model Visible="on"/>
+          <Model Visible="on"/>
+        </Component>
+        <Component Name="Tool" Visible="all" Count="0">
+        </Component>
+        <Component Name="Spindle" Visible="machine" Count="0">
+        </Component>
+        <Component Name="Z" Visible="machine" Count="2">
+          <Model Visible="on"/>
+          <Model Visible="on"/>
+        </Component>
+        <Component Name="Y" Visible="machine" Count="2">
+          <Model Visible="on"/>
+          <Model Visible="on"/>
+        </Component>
+        <Component Name="X" Visible="machine" Count="1">
+          <Model Visible="on"/>
+        </Component>
+        <Component Name="Base" Visible="machine" Count="3">
+          <Model Visible="on"/>
+          <Model Visible="on"/>
+          <Model Visible="on"/>
+        </Component>
+      </MachineAttributes>
+    </Build>
+    <NCPrograms Type="gcode" Change="tool_num" List="tool_num">
+      <Init Flag="off"></Init>
+      <Over Flag="off"></Over>
+    </NCPrograms>
+    <Filter Type="arc" Accel="off" Remove="off">
+      <File></File>
+      <Arc XY="on" YZ="on" XZ="on" Fit="0.01" Flat="0.0001"
+       Points="5" Small="0.1" Large="9999"/>
+      <NURBS Tol="0.254" Points="5" Order="102"/>
+    </Filter>
+    <ToolChange>
+    </ToolChange>
+    <Motion Fast="1" Animation="off" Skip="0" SpinCheck="on" SpindleOn="off"
+     Cycle="full" MaxDist="100" MinMotionDist="0.1" MaxMotionDist="10" Removal="standard" LimitsCheck="off"
+     Angle="45" MinLimit="0.25" MaxLimit="0.25" Tol="0"/>
+    <Tool CutterVisible="all" HolderVisible="all" Draw="translucent"
+     HolderStockCollision="on" HolderFixtureCollision="on" CutterFixtureCollision="on"
+     HolderStockNearMiss="0" HolderFixtureNearMiss="0" CutterFixtureNearMiss="0"
+     MinHeight="0" Clear="0" MinCalcKeep="off"/>
+    <GCode Prog="length_comp" Init="off" Comp="on" Type="scan_convert"
+     Column="0" Accel="off" Feed="0.2" Rapid="2">
+      <Table Name="Program Zero">
+      </Table>
+      <Table Name="Work Offsets">
+        <Row Index="1" SubIndex="1" Auto="auto">
+          <System>1</System>
+          <From CSystem="off" X="0" Y="0" Z="0">Spindle</From>
+          <To CSystem="on" X="0" Y="0" Z="0">NC_ZERO</To>
+          <AddOffset X="0" Y="0" Z="0" A="0" B="0" C="0" U="0" V="0" W="0" A2="0" B2="0" C2="0" />
+          <RelPosition X="0" Y="0" Z="0" A="0" B="0" C="0" U="0" V="0" W="0" A2="0" B2="0" C2="0" />
+          <Value>-360</Value>
+          <Value>-237</Value>
+          <Value>-634</Value>
+          <Value>0</Value>
+          <Value>0</Value>
+          <Value>0</Value>
+          <Value>0</Value>
+          <Value>0</Value>
+          <Value>0</Value>
+          <Value>0</Value>
+          <Value>0</Value>
+          <Value>0</Value>
+        </Row>
+      </Table>
+      <Block Skip="/" Apply="immediate">
+        <Switch>on</Switch>
+        <Switch>on</Switch>
+        <Switch>on</Switch>
+        <Switch>on</Switch>
+        <Switch>on</Switch>
+        <Switch>on</Switch>
+        <Switch>on</Switch>
+        <Switch>on</Switch>
+        <Switch>on</Switch>
+        <Switch>on</Switch>
+      </Block>
+      <Wire XY="0" UV="25" Diameter="0.25"/>
+      <Variable Name="122" Type="text" System="" Description="" Expand="off">
+        <Value>0</Value>
+      </Variable>
+      <Output APT="off">
+        <APT></APT>
+        <Log></Log>
+      </Output>
+      <Modal Macro="mmDEBUG_OFFSETS" Value="mmNO_TEXT"/>
+      <Modal Macro="mmDEBUG_DELTA_INFO" Value="mmNO_TEXT"/>
+      <Modal Macro="mmDEBUG_RATE_CALCULATIONS" Value="mmNO_TEXT"/>
+      <Modal Macro="mmDEBUG_LOOP_LOGIC" Value="mmNO_TEXT"/>
+      <Modal Macro="mmDEBUG_MACRO_ARGS" Value="mmNO_TEXT"/>
+      <Modal Macro="mmDEBUG_INTERSECT_POINTS" Value="mmNO_TEXT"/>
+      <Modal Macro="mmDEBUG_CUTCOM_LOOK_AHEAD" Value="mmNO_TEXT"/>
+      <Modal Macro="mmDEBUG_CYCLE_VALUES" Value="mmNO_TEXT"/>
+      <Modal Macro="mmDEBUG_SUBSTITUTION" Value="mmNO_TEXT"/>
+      <Modal Macro="mmDEBUG_VARIABLES" Value="mmNO_TEXT"/>
+      <Modal Macro="mmDEBUG_TURNING" Value="mmNO_TEXT"/>
+      <Modal Macro="mmDEBUG_WIREDM" Value="mmNO_TEXT"/>
+      <Modal Macro="mmDEBUG_OPTIPATH" Value="mmNO_TEXT"/>
+      <Modal Macro="mmDEBUG_CONTROL_API" Value="mmNO_TEXT"/>
+      <Modal Macro="mmDEBUG_TIMING" Value="mmNO_TEXT"/>
+      <Modal Macro="mmDEBUG_ACTIVE_COMPONENTS" Value="mmNO_TEXT"/>
+      <Modal Macro="mmSEND_ERROR" Value="mmTO_LOG_N_SCREEN"/>
+      <Modal Macro="mmSEND_WARN" Value="mmTO_LOG"/>
+      <Modal Macro="mmSEND_INFO" Value="mmTO_LOG"/>
+      <Modal Macro="mmSEND_DEBUG" Value="mmTO_LOG"/>
+      <Modal Macro="mmSEND_MACRO_MODAL" Value="mmTO_LOG"/>
+      <Modal Macro="mmSEND_INPUT" Value="mmTO_LOG"/>
+      <Modal Macro="mmSEND_OUTPUT" Value="mmTO_OUTPUT_N_LOG"/>
+      <Modal Macro="mmOUTPUT_FILENAME_FORMAT" Value="mmLOCAL_FILENAME"/>
+      <Modal Macro="mmOUTPUT_SEQUENCE_NUMBERS" Value="mmYES_TEXT"/>
+      <Modal Macro="mmOUTPUT_WORD_NOT_DEFINED" Value="mmYES_TEXT"/>
+    </GCode>
+    <APT Machine="mill" Unit="millimeter" Multax="on" Clear="2500"
+     Rapid="linear" Major="warn">
+      <Angle Maximum="45" Reset="90"/>
+      <Circle Process="on" Reverse="off" Chords="off" FourAxis="off" Tolerance="0"/>
+      <Tool Reset="off"/>
+      <Matrix Process="off"/>
+      <Home Motion="from" Distance="600"/>
+      <Rotation Philosophy="table" Angle="relative" Direction="shortest"
+       Rotate="ignore" Rotabl="ignore" Rothed="ignore">
+        <Center X="0" Y="0" Z="0"/>
+      </Rotation>
+      <Turn>#zval, #xval</Turn>
+      <CycleSet>VERICUT</CycleSet>
+    </APT>
+    <CSystems Simulation="off">
+      <Machine></Machine>
+      <CSystem Name="NC_ZERO" Type="component" Visible="all" Color="16777215" Transition="off">
+        <Attach>Stock</Attach>
+        <Position X="0" Y="0" Z="0"/>
+        <Rotation I="0" J="0" K="0"/>
+      </CSystem>
+    </CSystems>
+    <IP_SvFiles Count="0" IP_Project="">
+    </IP_SvFiles>
+    <ToolMan>
+      <Library>V:\TOOLS_V_6\End mill (indexable).tls</Library>
+    </ToolMan>
+    <Control>
+      <File>V:\vericut_7.0\DMU-70eVLine (iTNC530)_v7\hei530_7_dmu70.ctl</File>
+      <VNCext VNCexternal="off"/>
+    </Control>
+    <Machine Simulation="on" Up="Z+">
+      <File>V:\vericut_7.0\DMU-70eVLine (iTNC530)_v7\DMU70.mch</File>
+      <Collision Detect="on" Ignore="none">
+        <Between Sub1="off" Sub2="off" Tol="1.5">
+          <Component>KON_5215</Component>
+          <Component>Z</Component>
+        </Between>
+        <Between Sub1="off" Sub2="off" Tol="1.5">
+          <Component>Fixture</Component>
+          <Component>Z</Component>
+        </Between>
+        <Between Sub1="off" Sub2="off" Tol="0">
+          <Component>Stock</Component>
+          <Component>Z</Component>
+        </Between>
+        <Between Sub1="off" Sub2="off" Tol="1.5">
+          <Component>Tool</Component>
+          <Component>KON_5215</Component>
+        </Between>
+        <Between Sub1="off" Sub2="off" Tol="1.5">
+          <Component>Tool</Component>
+          <Component>Fixture</Component>
+        </Between>
+        <Between Sub1="off" Sub2="off" Tol="0">
+          <Component>Stock</Component>
+          <Component>Base</Component>
+        </Between>
+      </Collision>
+      <Travel Beyond="on" LogError="on" Hue="0"/>
+    </Machine>
+    <Inspect>
+    </Inspect>
+    <DieSink Animation="off" Speed="100">
+      <Stock Display="on" Type="solid"></Stock>
+      <Electrode Display="off" Type="solid"/>
+      <Burned Display="off" Type="solid"/>
+    </DieSink>
+    <OptiPath Over="100" AptDecimals="10">
+      <Output>*.opti</Output>
+      <Material>Default</Material>
+      <Machine>Default</Machine>
+      <Learn Append="off" Update="off" Reset="off" Change="-1"
+       Clean="-1" Minimum="-1" Maximum="-1" Air="-1">
+        <Library></Library>
+      </Learn>
+    </OptiPath>
+    <SetupPlans>
+    </SetupPlans>
+  </Setup>
+  <Thumbnail Width="128" Height="100" Format="rrggbb">
+373e47373e47383f47383f47383f47373e47383f47373e47383f47383f47373e47383f47373e47383f47383f47383f47
+373e47373e47383f47383f47373e47383f47383f47373e47373e47373e47383f47373e47383f47373e47373e47383f47
+373e47383f47373e47345850326554326554326554326554326554326554326554326554326554326554326554326554
+32655432655432655455ad8f68d2ae68d2ae68d2ae67ba9e656565656565656565666666d7d7d7dededed3d3d3d2d2d2
+d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2cacaca506f65373e47
+383f47373e47373e47383f47383f47373e47383f47373e47383f47373e47383f47383f47373e47383f47373e47383f47
+373e47383f47383f47383f47373e47383f47373e47383f47373e47373e47383f47373e47373e47373e47383f47373e47
+373e47383f47373e47373e47383f47373e47373e47373e47373e47373e47383f47373e47373e47373e47383f47383e47
+394049394048394048394048394048394048394048394048394048394048394048394049394048394049394048394048
+394048394049394048394048394048394048394048394049394048394048394049394048394048394048394048394048
+394048394048394048345950326554326554326554326554326554326554326554326554326554326554326554326554
+32655432655432655455ad8f68d2ae68d2ae68d2ae67bc9f656565656565656565656565d6d6d6dededed3d3d3d2d2d2
+d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2cacaca506f65394048
+394048394048394048394048394048394048394048394048394048394048394048394048394048394048394048394048
+394048394048394048394048394048394048394048394048394048394048394048394049394048394049394048394048
+394048394049394048394048394049394048394048394048394048394048394048394048394048394048394048394048
+3a414a3a414a3a414a3a414a3a414a3a414a3a414a3a414a3a414a3a414a3a414a3a414a3a414a3a414a3a414a3a414a
+3a414a3a414a3a414a3a414a3a414a3a414a3a414a3a414a3a414a3a414a3a414a3a414a3a414a3a414a3a414a3a414a
+3a414a3a414a3a414a365550326554326554326554326554326554326554326554326554326554326554326554326554
+32655432655432655455ad8f68d2ae68d2ae68d2ae68c9a8656565656565656565656565d6d6d6dededed3d3d3d2d2d2
+d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d0d0d058726a3a414a
+3a414a3a414a3a414a3a414a3a414a3a414a3a414a3a414a3a414a3a414a3a414a3a414a3a414a3a414a3a414a3a414a
+3a414a3a414a3a414a3a414a3a414a3a414a3a414a3a414a3a414a3a414a3a414a3a414a3a414a3a414a3a414a3a414a
+3a414a3a414a3a414a3a414a3a414a3a414a3a414a3a414a3a414a3a414a3a414a3a414a3a414a3a414a3a414a3a414a
+3b424b3b424b3b424b3b424b3b424b3b424b3b424b3b424b3b424b3b424b3b424b3b424b3b424b3b424b3b424b3b424b
+3b424b3b424b3b424b3b424b3b424b3b424b3b424b3b424b3b424b3b424b3b424b3b424b3b424b3b424b3b424b3b424b
+3b424b3b424b3b424b365550326554326554326554326554326554326554326554326554326554326554326554326554
+3265543265543265544f9f8468d2ae68d2ae68d2ae68c9a8656565656565656565656565d6d6d6dededed3d3d3d2d2d2
+d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d25a6d673e4c52
+3b424b3b424b3b424b3b424b3b424b3b424b3b424b3b424b3b424b3b424b3b424b3b424b3b424b3b424b3b424b3b424b
+3b424b3b424b3b424b3b424b3b424b3b424b3b424b3b424b3b424b3b424b3b424b3b424b3b424b3b424b3b424b3b424b
+3b424b3b424b3b424b3b424b3c434c3b424b3b424b3b424b3b424b3b424b3b424b3b424b3b424b3b424b3b424b3b424b
+3d444d3d444d3d444d3d444d3d444d3d444d3d444d3d444d3d444d3d444d3d444d3d444d3d444d3d444d3d444d3d444d
+3d444d3d444d3d444d3d444d3d444d3d444d3d444d3d444d3d444d3d444d3d444d3d444d3d444d3d444d3d444d3d444d
+3d444d3d444d3d444d375550326554326554326554326554326554326554326554326554326554326554326554326554
+3265543265543265544e9d8268d2ae68d2ae68d2ae68c9a8656565656565656565656565d6d6d6dededed4d4d4d2d2d2
+d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d25a6f68415055
+3d444d3d444d3d444d3d444d3d444d3d444d3d444d3d444d3d444d3d444d3d444d3d444d3d444d3d444d3d444d3d444d
+3d444d3d444d3d444d3d444d3d444d3d444d3d444d3d444d3d444d3d444d3d444d3d444d3d444d3d444d3d444d3d444d
+3d444d3d444d3d444d3d444d3d444d3d444d3d444d3d444d3d444d3d444d3c434c3d444d3d444d3d444d3d444d3d444d
+3e454e3e454e3e454e3e454e3e454e3e454e3e454e3e454e3e454e3e454e3e454e3e454e3e454e3e454e3e454e3e454e
+3e454e3e454e3e454e3e454e3e454e3e454e3e454e3e454e3e454e3e454e3e454e3e454e3e454e3e454e3e454e3e454e
+3e454e3e454e3e454e395452326554326554326554326554326554326554326554326554326554326554326554326554
+3265543265543265544e9d8268d2ae68d2ae68d2ae68c9a8656565656565656565656565d6d6d6dededed5d5d5d2d2d2
+d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d25a6f68425157
+3e454e3e454e3e454e3e454e3e454e3e454e3e454e3e454e3e454e3e454e3e454e3e454e3e454e3e454e3e454e3e454e
+3e454e3e454e3e454e3e454e3e454e3e454e3e454e3e454e3e454e3e454e3e454e3e454e3e454e3e454e3e454e3e454e
+3e454e3e454e3e454e3e454e3e454e3e454e3e454e3e454e3e454e3e454e3e454e3e454e3e454e3e454e3e454e3e454e
+3f46503f46503f46503f46503f46503f46503f46503f46503f46503f46503f46503f46503f46503f46503f46503f4650
+3f46503f46503f46503f46503f46503f46503f46503f46503f46503f46503f46503f46503f46503f46503f46503f4650
+3f46503f46503f4650424a543d5756336454326554326554326554326554326554326554326554326554326554326554
+3265543265543265544e9d8268d2ae68d2ae68d2ae68c9a8656565656565656565656565ccccccdededed5d5d5d2d2d2
+d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d25a6f68435358
+3f46503f46503f46503f46503f46503f46503f46503f46503f46503f46503f46503f46503f46503f46503f46503f4650
+3f46503f46503f46503f46503f46503f46503f46503f46503f46503f46503f46503f46503f46503f46503f46503f4650
+3f46503f46503f46503f46503f46503f46503f46503f46503f46503f46503f46503f46503f46503f46503f46503f4650
+414852414852404751414852414852414852404751414852414852414852414852414852404751414852414852414852
+414852404751414852414852414852414852414852404751414852404751414852414852414852414852404751414852
+414852414852404751434b55454d58415157356155326554326554326554326554326554326554326554326554326554
+3265543265543265544e9d8268d2ae68d2ae68d2ae68c9a8656565656565656565656565c5c5c5dededed5d5d5d2d2d2
+d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d25a6f6844545a
+414852414852414852414852404751414852414852414852414852414852414852414852404751414852414851414852
+414852404751414852414852404751414852414852414852404751414852414852414852414852414852414852414852
+414852404751414852414852414852414852414852414852414852404751414852414852404751414852414852414852
+424953424953424953424953424953424953424953424953424953424953424953424953424953424953424953424953
+424953424953424953424953424953424953424953424953424953424953424953424953424953424953424953424953
+424953424953424953444b56454d58454d58444e58395c56326554326554326554326554326554326554326554326554
+3265543265543265544e9d8268d2ae68d2ae68d2ae68d0ac656a68656565656565656565c5c5c5dededed5d5d5d2d2d2
+d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d263787145555b
+424953424953424953424953424953424953424953424953424953424953424953424953424953424953424953424953
+424953424953424953424953424953424953424953424953424953424953424953424953424953424953424953424953
+424953424953424953424953424953424953424953424953424953424953424953424953424953424953424953424953
+434a54434a54434a54434a54434a54434a54434a54434a54434a54434a54434a54434a54434a54434a54434a54434a54
+434a54434a54434a54434a54434a54434a54434a54434a54434a54434a54434a54434a54434a54434a54434a54434a54
+434a54434a54434a54444c56454d58454d58454d58454d583e5557336354326554326554326554326554326554326554
+32655432655432655449947b68d2ae68d2ae68d2ae68d2ae656c6a656565656565656565c5c5c5dededed5d5d5d2d2d2
+d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d26a726f495f62
+434a54434a54434a54434a54434a54434a54434a54434a54434a54434a54434a54434a54434a54434a54434a54434a54
+434a54434a54434a54434a54434a54434a54434a54434a54434a54434a54434a54434a54434a54434a54434a54434a54
+434a54434a54434a54434a54434a54434a54434a54434a54434a54434a54434a54434a54434a54434a54434a54434a54
+444b56444b56444b56444c56444b56444b56444b56444c56444b56444b56444b56444b56444b56444b56444b56444b56
+444b56444b56444b56444c56444b56444b56444b56444b56444b56444b56444b56444b56444b56444b56444b56444b56
+444b56444b56444b56454c57454d58454d58454d58454d58454d58435057366055326554326554326554326554326554
+326554326554326554468d7568d2ae68d2ae68d2ae68d2ae656c6a656565656565656565c5c5c5dededed6d6d6d2d2d2
+d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d26a6f6d4c6b6a
+444b56444b56444b56444b56444b56444b56444b56444b56444b56444b56444b56444b56444b56444b56444b56444b56
+444b56444b56444b56444b56444b56444b56444b56444b56444b56444b56444b56444b56444b56444b56444b56444b56
+444b56444b56444b56444b56444b56444b56444b56444b56444b56444b56444b56444b56444c56444b56444b56444c56
+454d58454d57454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58
+454d58454d58454d58454d57454d58454d58454d58454d58454d58454d58454d58454d57454d58454d58454d58454d58
+454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58444e583b5a56326554326554326554326554
+326554326554326554468d7568d2ae68d2ae68d2ae68d2ae656c6a656565656565656565c5c5c5dededed6d6d6d2d2d2
+d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2686969445058
+454d57454d58454d58454d57454d58454d58454d58454d58454d58454d57454d58454d58454d58454d58454d58454d58
+454d58454d58454d58454d58454d58454d58454d57454d58454d57454d58454d58454d58454d58454d58454d57454d58
+454d58454d58454d58454d58454d58454d58454d58454d58454d57454d58454d57454d58454d58454d57454d57454d58
+464e59464e59464e59464e59464e59464e59464e59464e59464e59464e59464e59464e59464e59464e59464e59464e59
+464e59464e59464e59464e59464e59464e59464e59464e59464e59464e59464e59464e59464e59464e59464e59464e59
+464e59464e59464e59464e59454d58454d58454d58454d58454d58454d58454d58454d58405457346354326554326554
+326554326554326554468d7568d2ae68d2ae68d2ae68d2ae656c6a656565656565656565c1c1c1dededed6d6d6d2d2d2
+d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2676868414853
+414953454d58464e59464e59464e59464e59464e59464e59464e59464e59464e59464e59464e59464e59464e59464e59
+464e59464e59464e59464e59464e59464e59464e59464e59464e59464e59464e59464e59464e59464e59464e59464e59
+464e59464e59464e59464e59464e59464e59464e59464e59464e59464e59464e59464e59464e59464e59464e59464e59
+474f5a474f5a474f5a474f5a474f5a474f5a474f5a474f5a474f5a474f5a474f5a474f5a474f5a474f5a474f5a474f5a
+474f5a474f5a474f5a474f5a474f5a474f5a474f5a474f5a474f5a474f5a474f5a474f5a474f5a474f5a474f5a474f5a
+474f5a474f5a474f5a464e59454d58454d58454d58454d58454d58454d58454d58454d58454d58434f58385e55326554
+326554326554326554468d7568d2ae68d2ae68d2ae68d2ae656c6a656565656565656565b3b3b3dededed6d6d6d2d2d2
+d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2686869454d58
+424a54414852454d57474f5a474f5a474f5a474f5a474f5a474f5a474f5a474f5a474f5a474f5a474f5a474f5a474f5a
+474f5a474f5a474f5a474f5a474f5a474f5a474f5a474f5a474f5a474f5a474f5a474f5a474f5a474f5a474f5a474f5a
+474f5a474f5a474f5a474f5a474f5a474f5a474f5a474f5a474f5a474f5a474f5a474f5a474f5a474f5a474f5a474f5a
+49515c49515c49515c49515c49515c49515c49515c49515c48515c49515c48515c49515c49515c49515c49515c49515c
+49515c49515c48515c49515c49515c49515c48515c49515c49515c49515c49515c49515c49515c49515c49515c49515c
+49515c49515c49515c474f5a454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d583d5756
+326454326554326554468d7568d2ae68d2ae68d2ae68d2ae65736e656565656565656565b3b3b3dededed6d6d6d2d2d2
+d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2686969434b56
+454d58444b56414852434b5548505b49515c49515c48515c49515c49515c49515c49515c48515c49515c49515c49515c
+48515c49515c49515c49515c49515c48515c49515c49515c49515c49515c49515c49515c49515c48515c49515c48515c
+49515c49515c49515c49515c49515c49515c49515c49515c49515c49515c49515c49515c48515c49515c49515c49515c
+4a535e4a535e4a525d4a535e4a525d4a535e4a525d4a535e4a535e4a525d4a535e4a525d4a525d4a535e4a535e4a525d
+4a535e4a525d4a535e4a535e4a525d4a535e4a525d4a525d4a535e4a525d4a525d4a535e4a525d4a525d4a535e4a525d
+4a535e4a535e4a525d48505b454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58
+415257356155326554458b7368d2ae4f767148636461b89d667b74656565656565656565b3b3b3dededed6d6d6d2d2d2
+d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d27b7b7c414852
+424954454d58454d5742495342495348505b4a535e4a525d4a535e4a525d4a525d4a525d4a525d4a525d4a535e4a525d
+4a535e4a525d4a525d4a525d4a525d4a535e4a525d4a525d4a525d4a525d4a535e4a525d4a525d4a525d4a535e4a535e
+4a525d4a525d4a535e4a535e4a535e4a525d4a535e4a525d4a535e4a525d4a525d4a525d4a535e4a525d4a535e4a525d
+4b545f4b545f4b545f4b545f4b545f4b545f4b545f4b545f4b545f4b545f4b545f4b545f4b545f4b545f4b545f4b545f
+4b545f4b545f4b545f4b545f4b545f4b545f4b545f4b545f4b545f4b545f4b545f4b545f4b545f4b545f4b545f4b545f
+4b545f4b545f4b545f49515c454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58
+454d58444e58395d553e7e6968d2ae47555d434b55424c54555d60656565656565656565b3b3b3dededed7d7d7d2d2d2
+d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d27b7b7b454c56
+434a55414852444c57454d58434a55414852464f594b545f4b545f4b545f4b545f4b545f4b545f4b545f4b545f4b545f
+4b545f4b545f4b545f4b545f4b545f4b545f4b545f4b545f4b545f4b545f4b545f4b545f4b545f4b545f4b545f4b545f
+4b545f4b545f4b545f4b545f4b545f4b545f4b545f4b545f4b545f4b545f4b545f4b545f4b545f4b545f4b545f4b545f
+4c55604c55604d56614c55604c55604c55604c55604c55604d56614c55604c55604c55604c55604c55604c55604c5560
+4d56614c55604c55604c55604c55604c55604c55604c55604c55604d56614c55604c55604c55604c55604c55604c5560
+4c55604c55604c55604a535e454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58
+454d58454d58454d584562614f7b74434c56454d58444c574148524c5057626263656565b3b3b3dededed8d8d8d2d2d2
+d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d27b7b7b454d57
+454d58444c56414852434a55454d58444c57414852444c564c545f4c55604c55604c55604c55604c55604c55604c5560
+4c55604c55604c55604c55604c55604c55604c55604c55604c55604c55604c55604c55604c55604c55604c55604c5560
+4d56614c55604c55604c55604d56614c55604c55604c55604c55604c55604c55604c55604c55604c55604d56614c5560
+4e57624e57624e57624e57624e57624e57624e57624e57624e57624e57624e57624e57624e57624e57624e57624e5762
+4e57624e57624e57624e57624e57624e57624e57624e57624e57624e57624e57624e57624e57624e57624e57624e5762
+4e57624e57624e57624a535f454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58
+454d58454d58454d58454d58444c57414853414953444c57454d58424954444a535c5e60b3b3b3dededed8d8d8d2d2d2
+d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d27b7b7b454d57
+454d58454d58454d58424953414953454d57454d584249544249534a535e4e57624e57624e57624e57624e57624e5762
+4e57624e57624e57624e57624e57624e57624e57624e57624e57624e57624e57624e57624e57624e57624e57624e5762
+4e57624e57624e57624e57624e57624e57624e57624e57624e57624e57624e57624e57624e57624e57624e57624e5762
+4f58634f58634f58634f58634f58634f58634f58634f58634f58644f58634f58634f58634f58634f58634f58634f5863
+4f58634f58634f58634f58634f58634f58634f58634f58634f58634f58634f58634f58634f58634f58634e5763455060
+3e4c613d50703e588642629a464f5c454d58454d583d444e414953454d58454d58454d58454d58454d58454d58454d58
+454d58454d58454d58454d58454d58454d58424a54404852444b56454d58434b564148527d8186dbdbdbd8d8d8d2d2d2
+d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d27b7b7b454d57
+454d58454d58454d58454d58434b55414852444b56454d58444c57636e7d5d68754f58634f58634f58634f58634f5863
+4f58634f58634f58634f58634f58634f58634f58634f58634f58634f58634f58644f58634f58634f58634f58634f5863
+4f58634f58634f58634f58634f58634f58634f58634f58634f58634f58634f58634f58634f58634f58634f58634f5863
+505965505965505965505965505965505965505965505965505965505965505965505965505965505965505965505965
+5059655059655059655059655059655059655059655059655059654f58654853623f4d613d4f6d3e5682405e944a6daf
+5179c1537cc6547dc7547dc74a5c7c454d58404751373e46353d48394454454d59454d58454d58454d58454d58454d58
+454d58454d58454d58454d58454d58454d58454d58444b56404852424a54454d58444c57414853666b73c4c5c6d2d2d2
+d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d27b7b7b454d57
+454d58454d58454d58454d58454d58444c57414852424a5448505c91a1b7626c7b4d5561505965505965505965505965
+505965505965505965505965505965505965505965505965505965505965505965505965505965505965505965505965
+505965505965505965505965505965505965505965505965505965505965505965505965505965505965505965505965
+515b67515b67515b67515b67515b67515b67515b67515b67515b67515b67515b67515b67515b67515b67515b67515b67
+515b67515b67515b67515b67515a664b5564424e623e4f6c3e557f405d93476aa85178c0537cc6547dc7547dc7537cc5
+4d73b74465a13a56892f4771293b5b3a4a64394f743f5c8e4668a65178bf5172ad475468454d58454d58454d58454d58
+454d58454d58454d58454d58454d58454d58454d58454d58444c57414953414852444c57454d58424a544a515aa3a5a8
+d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d28b8b8b454c56
+454d58454d58454d58454d58454d58454d58454d58454d585d677591a1b78695aa7f8da0515b67515b67515b67515b67
+515b67515b67515a66515b67515b67515b67515b67515b67515b67515b67515b67515b67515b67515b67515b67515b67
+515b67515b67515a66515b67515b67515b67515b67515b67515b67515b67515b67515b67515b67515b67515b67515b67
+525c68525c68525c68525c68525c68525c68525c68525c68525c68525c68525c68525c68525c68525c68525c68525c68
+4c57664450623e4f693e557c3f5c914567a54f76bc537cc6547dc6547dc7547cc64e74b94567a53b588c324a77273b5d
+273b5e324a763b588c4567a44e75ba547dc7547dc7547dc7547dc7547dc7547dc7537ac04a5d7e454d58454d58454d58
+454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58434a55404752434b55454d58444c56414853
+7a7e84cdcdced2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d28f8f8f464c54
+454d58454d58454d58454d58454d58454d58454d58535d6a91a1b791a1b791a1b78694a9525c68525c68525c68525c68
+525c68525c68525c68525c68525c68525c68525c68525c68525c68525c68525c68525c68525c68525c68525c68525c68
+525c68525c68525c68525c68525c68525c68525c68525c68525c68525c68525c68525c68525c68525c68525c68525c68
+535d69535d69535d69535d69535d69535d69535d69535d69535d69535d69535d694e59674552633f4f683f54793f5b8d
+4466a34d73b8537cc5547dc6547dc7547dc75078bf4669a63d5a90334c78293e6326395b3047713a56894466a24d73b7
+537cc5547dc7547dc7547dc7547dc7547dc7547dc7547dc7547dc7547dc7537cc54d73b743639e384967444c58454d58
+454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58444c56414852424954454d58454d57
+4249535a6068b8b9bbd2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d28f8f8f464c54
+454d58454d58454d58454d58454d58454d58454d58535d6a91a1b791a1b791a1b78695a9535d69535d69535d69535d69
+535d69535d69535d69535d69535d69535d69535d69535d69535d69535d69535d69535d69535d69535d69535d69535d69
+535d69535d69535d69535d69535d69535d69535d69535d69535d69535d69535d69535d69535d69535d69535d69535d69
+545e6b545e6b545e6b545e6b555f6b545e6b515c69475365404f673f54783f59884465a14c72b6537bc4547cc6547dc7
+547dc75279c1486bab3e5d94344d7b2b4066263a5c2e456d38538542639e4c72b5537bc4547dc7547dc7547dc7547dc7
+547dc7547dc7547dc7547dc7547dc7547cc64e74b94567a43a5689314974273a5d243656243656243656384457454d58
+454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58424954414852444c57
+454d58515b67808c9dd1d1d1d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d28f8f8f464c54
+454d58454d58454d58454d58454d58454d58454d58535d6a91a1b791a1b791a1b78695a9545e6b545e6b545e6b545e6b
+545e6b545e6b545e6b545e6b555f6b545e6b555f6b545e6b555f6b545e6b545e6b545e6b545e6b555f6b545e6b545e6b
+545e6b555f6b545e6b545e6b545e6b545e6b545e6b545e6b545e6b555f6b545e6b545e6b545e6b545e6b545e6b555f6b
+56606d545e6c4b57684250674053753f59874160994c71b4527ac3547cc6547dc7547dc7527ac24a6eaf405f9835507f
+2b4168263a5c2c426a375282405f974a6fb0527bc3547dc7547dc7547dc7547dc7547dc7547dc7547dc7547dc7547dc7
+547dc74f75bb4668a63c5a90314a76283c602436562436562436562436562436562436562436562436562b3b56454d58
+454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58434b55404752
+434a55606b7a8d9db3787d84cbcbccd2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d1d2d28c95a54b628a
+4a5d7e48576f47505c454e59454d58454d58454d584c556191a1b791a1b78f9fb47e8c9f56606d56606d56606d56606d
+56606d56606d56606d56606d56606d56606d56606d56606d56606d56606d56606d56606d56606d56606d56606d56606d
+56606d56606d56606d56606d56606d56606d56606d56606d56606d56606d56606d56606d56606d56606d56606d56606c
+3f5270415f97496dad527ac2537cc6547dc7547dc7527bc34b70b341619a3854852d446c26395b2b4168354f7e3f5e96
+486baa527ac2547dc7547dc7547dc7547dc7547dc7547dc7547dc7547dc7547dc7547dc75178bf4769a83e5c93334d7a
+2a40652436562436562436562436562436562436562436562436562436562436562436562436562436562436563f4958
+454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58444c57
+5a647279879991a1b78f9eb4c4c7ccd2d2d2d2d2d2d2d2d2d2d2d2c7cad1adb9ce95a8cb7995c86184c5527ac3527ac3
+527ac3527ac357637656606d555f6c535c69515a665059656f7b8c636e7d59637157616e57616e57616e57616e57616e
+57616e57616e57616e57616e57616e57616e57616e57616e57616e57616e57616e57616e57616e57616e57616e57616e
+57616e57616e57616e57616e57616e57616e57616e57616e57616e57616e57616e57616e57616e57616e57616e57616e
+394b69537bc4537cc64c72b543639e39558730487226395a2a3e63334b783e5d94476aa85077be547dc7547dc7547dc7
+547dc7547dc7547dc7547dc7547dc7547dc7547dc7527ac2496cac3f5e95354f7f2b4167253758243656243656243656
+243656243656243656243656243656243656243656243656243656243656243656243656243656243656243656334157
+454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58
+7a879a91a1b791a1b791a1b7c4c8cdd0d0d0b9b9b97c8aa46486c5547bc3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac358657758626f58626f58626f58626f58626f58626f58626f58626f58626f58626f58626f58626f58626f
+58626f58626f58626f58626f58626f58626f58626f58626f58626f58626f58626f58626f58626f58626f58626f58626f
+58626f58626f58626f58626f58626f58626f58626f58626f58626f58626f58626f58626f58626f58626f58626f58626f
+3d4c662f4771283b5f283c60324a763b598d4669a74f76bb547dc7547dc7547dc7547dc7547dc7547dc7547dc7547dc7
+547dc7547dc7527bc34b70b341609a3752822c4269253859243656243656243656243656243656243656243656243656
+243656243656243656243656243656243656243656243656243656243656243656243656243656243656243656283856
+444c58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58
+76839591a1b791a1b791a1b7cfd2d7cececea2a2a252668a527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac35966785a64715a64715a64715a64715a64715a64715a64715a64715a64715a64715963715a64715a6471
+5a64715a64715a64715a64715a64715a64715a64715a64715a64715a64715a64715a64715a64715a64715a64715a6471
+5a64715a64715a64715a64715a64715a64715a64715a64715963715a64715a64715a64715a64715a64715a64715a6471
+3d4d67273b5e395688547cc6547dc7547dc7547dc7547dc7547dc7547dc7547dc7547dc7547dc7537bc44c71b442639e
+3954862e456d26395a243656243656243656243656243656243656243656243656243656243656243656243656243656
+243656243656243656243656243656243656243656243656243656243656243656243656243656243656243656243656
+313f57394963455570475366464f5e454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58
+76839591a1b791a1b791a1b7c8cdd3cececea6a6a65c6f93527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac35a677a5b65735b65725b65735b65735b65735b65725b65735b65725b65735b65735b65735b65735b6573
+5b65735b65735b65725b65735b65735b65735b65725b65735b65735b65735b65735b65735b65735b65735b65735b6572
+5b65735b65735b65735b65725b65735b65725b65735b65735b65735b65735b65735b65735b65735b65735b65735b6573
+3e4e68273b5e2b4168537cc5547dc7547dc7547dc7547dc7547dc74d73b64466a239568931497426395b243656243656
+243656243656243656243656243656243656243656243656243656243656243656243656243656243656243656243656
+243656243656243656243656243656243656243656243656243656243656243656243656273b5e3149753a56894364a1
+4c71b5527ac3527ac3527ac35279c15176b94f71ac4e6b9e4c66924a6085495b7848566d465161454d58454d58454d58
+76839591a1b795a4b9a7b3c3ced2d7cececea6a6a65d7299527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac35b687b5c66745c66745c66745c66745c66745c66745c66745c66745c66745c66745c66745c66745c6674
+5c66745c66745c66745c66745c66745c66745c66745c66745c66745c66745c66745c66745c66745c66745c66745c6674
+5c66745c66745c66745c66745c66745c66745c66745c66745c66745c66745c66745c66745c66745c66745c66745c6674
+3e4e682e466f3c598e5178c04f76bc4567a43b588d314a76293d61243656243656243656243656243656243656243656
+243656243656243656243656243656243656243656243656243656243656243656243656243656243656243656243656
+24365624365624365624365624365624365624365626395b2f467039558742629d4b70b35179c1527ac3527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac35178bd5072af4e6da4
+5d7cb17a89a4b1b3b6c7c7c7c2c3c39ca1ac697ea55279c1527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac35c697d5d67755d68765d67755d68765d67755d68765d68765d68765d68765d67755d67755d68765d6775
+5d68765d67755d68765d68765d67755d67755d68765d67755d68765d67755d68765d67755d68765d68765d67755d6876
+5d67755d67755d68765d68765d67755d68765d68765d68765d67755d68765d68765d67755d68765d67755d68765d6775
+3f4f692f4771324b78293e63243757243656243656243656243656243656243656243656243656243656243656243656
+243656243656243656243656243656243656243656243656243656243656243656243656243656243656243656243656
+24365624365626385a2d436b3752824060994a6fb15178c0527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac35279c05379be5379be527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac35b6c875e69775e69775e69775e69775e69775e69775e69775e69775e69775e69775e69775e69775e6977
+5e69775e69775e69775e69775e69775e69775e69775e69775e69775e69775e69775e69775e69775e69775e69775e6977
+5e69775e69775e69775e69775e69775e69775e69775e69775e69775e69775e69775e69775e69775e69775e69775e6977
+3f4f69273b5e273a5d253758243656243656243656243656243656243656243656243656243656243656243656243656
+2436562436562436562436562436562436562436562436562436562436562436562436562436562538592c4269354f7f
+3f5d95496cad5178c0527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac35c6e8a5f6a795f6a785f6a785f6a785f6a785f6a785f6a795f6a785f6a795f6a785f6a785f6a795f6a78
+5f6a785f6a795f6a785f6a795f6a785f6a785f6a785f6a785f6a785f6a785f6a785f6a795f6a785f6a785f6a785f6a78
+5f6a785f6a785f6a795f6a785f6a785f6a795f6a785f6a795f6a785f6a785f6a785f6a795f6a785f6a795f6a785f6a79
+46556d273b5e273b5e273b5e25385a243656243656243656243656243656243656243656243656243656243656243656
+2436562436562436562436562436562436562436562436562537572b4167344d7b3e5c934669a75077bf527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac35d6f8b606b7a606b7a606b7a606b7a606b7a606b7a606b7a606b7a606b7a606b7a606b7a606b7a606b7a
+606b7a606b7a606b7a606b7a606b7a606b7a606b7a606b7a606b7a606b7a606b7a606b7a606b7a606b7a606b7a606b7a
+606b7a606b7a606b7a606b7a606b7a606b7a606b7a606b7a606b7a606b7a606b7a606b7a606b7a606b7a616c7a606b7a
+49576f273b5e273b5e273b5e273b5e263a5c243757243656243656243656243656243656243656243656243656243656
+243656243656243656243656293d61334c793c5a8f4668a64e74ba527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac35e708c626d7c626d7c626d7c626d7c626d7c626d7c626d7c626d7c626d7c626d7c626d7c626d7c626d7c
+626d7c626d7c626d7c626d7c626d7c626d7c626d7c626d7c626d7c626d7c626d7c626d7c626d7c626d7c626d7c626d7c
+626d7c626d7c626d7c626d7c626d7c626d7c626d7c626d7c626d7c626d7c626d7c626d7c626d7c626d7c626d7c626d7c
+495870273b5e273b5e273b5e273b5e273b5e273b5d253758243656243656243656243656243656243656243656273b5e
+3149753b578b4566a34d73b8527ac2527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac35f718d636f7d636f7d636f7d636f7d636f7d636f7d636f7d636f7d636f7d636f7d636f7d636f7d636f7d
+636f7d636f7d636f7d636f7d636f7d636f7d636f7d636f7d636f7d636f7d636f7d636f7d636f7d636e7d636f7d636f7d
+636f7d636f7d636e7d636f7d636f7d636f7d636f7d636f7d636e7d636f7d636f7d636f7d636f7d636e7d636f7d636f7d
+4a5971273b5e273b5e273b5e273b5e273b5e273b5e273b5e26395b24365624365625385a2537583b598d4c72b65179c2
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac360738f64707e64707e64707e64707e64707e64707e64707e64707e64707e64707e64707e64707e64707e
+64707e64707e64707e64707e64707e64707e64707e64707e64707e64707e64707e64707e64707e64707e64707e64707e
+64707e64707e64707e64707e64707e64707e64707e64707e64707f64707e64707e64707e64707e64707e64707e64707f
+4b5a71273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e263a5d26395b273b5e273b5e4567a5527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac35f7495667280667280667280667280657180667280657180667280667280667280657180667280667280
+667280667280667280657180667280667280657180667280657180667280667280667280667280667280667280667280
+657180667280667280667280667280667280657180667280667280667280657180667280667280657180667280657180
+4c5b72273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e4567a5527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac35f769a677382677382677382677382677382677382677382677382677382677382677382677382677382
+677382677382677382677382677382677382677382677382677382677382677382677382677382677382677382677382
+677382677382677382677382677382677382677382677382677382677382677382677382677382677382677382677382
+516076273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e4567a5527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac360769b687483687483687483687483687483687483687483687483687483687483687483687483687483
+687483687483687483687483687483687483687483687483687483687483687483687483687483687483687483687483
+687483687483687483687483687483687483687483687483687483687483687483687483687483687483687483687483
+566579273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e41619b527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac361779c697584697584697584697584697584697584697584697584697584697584697584697584697584
+6975846975846975846975846975846975846a7685697584697584697584697584697584697584697584697584697584
+6975846975846975846975846975846975846975846975846975846975846975846a7685697584697584697584697584
+57667b273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e3f5e96527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac361789d6b77866a77866a77866a77866a77866a77866a77866b77866a77866b77866b77866a77866a7786
+6a77866a77866a77866a77866b77866a77866a77866a77866a77866a77866a77866b77866a77866a77866a77866a7786
+6b77866a77866b77866b77866a77866a77866a77866b77866a77866b77866a77866a77866b77866a77866b77866a7786
+58677c273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e3f5e96527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac362799e6b78886b78886b78886b78886b78886b78886b78886b78886b78886b78886b78886b78886b7888
+6b78886b78886b78886b78886b78886b78886b78886b78886b78886b78886b78886b78886b78886b78886b78876b7888
+6b78886b78886b78886b78886b78886b78876b78886b78886b78886b78886b78886b78886b78886b78886b78886b7888
+58677d273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e3f5e96527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac3627aa06c79896c79896c79896c79896c79896c79896c79896c79896c79896c79896c79896c79896c7989
+6c79896c79896c79896c79896c79896c79896c79896c79896c79896c79896c79896c79896c79896c79896c79896c7989
+6c79896c79896c79896c79896c79896c79896c79896c79896c79896c79896c79896c79896c79896c79896c79896c7989
+59687e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e3f5e96527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac3527ac3527ac34364a0334b79273a5d20304d1d2c4620304d2537582d436b395588486bac527ac2527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac35f7aa86e7b8b6d7a8a6e7b8b6e7b8b6e7b8b6e7b8b6e7b8b6e7b8b6d7a8a6e7b8b6e7b8b6e7b8b6e7b8b
+6e7b8b6e7b8b6d7a8a6e7b8b6e7b8b6e7b8b6e7b8b6e7b8b6e7b8b6d7a8a6e7b8b6e7b8b6e7b8b6e7b8b6e7b8b6e7b8b
+6d7a8a6e7b8b6e7b8b6e7b8b6e7b8b6e7b8b6e7b8b6d7a8a6e7b8b6e7b8b6e7b8b6e7b8b6e7b8b6e7b8b6e7b8b6e7b8b
+5c6b80273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e3f5e96527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac35077be3650801f2e4a1b2942223250273a5d2a3f642d436b2d426a2e456e2e446d2d436c2e446c344d7b496dae
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac3607ba96f7c8c6f7c8c6f7c8c6f7c8c6f7c8c6f7c8c6f7c8c6f7c8c6f7c8c6f7c8c6f7c8c6f7c8c6f7c8c
+6f7c8c6f7c8c6f7c8c6f7c8c6f7c8c6f7c8c6f7c8c6f7c8c6f7c8c6f7c8c6f7c8c6f7c8c6f7c8c6f7c8c6f7c8c6f7c8c
+6f7c8c6f7c8c6f7c8c6f7c8c6f7c8c6f7c8c6f7c8c6f7c8c6f7c8c6f7c8c6f7c8c6f7c8c6f7c8c6f7c8c6f7c8c6f7c8c
+667487273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e3c5a90527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+3a56891d2c461e2d4826385a2c426a2f47713047713148733149743047722f46702f46702e456e2e446d2e446d2d436a
+3a568a4f76bc527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac3607ba9707d8e707d8e707d8d707d8e707d8e707d8e707d8e707d8e707d8e707d8d707d8e707d8e707d8d
+707d8e707d8e707d8e707d8d707d8e707d8e707d8d707d8e707d8e707d8e707d8d707d8e707d8e707d8d707d8e707d8e
+707d8e707d8d707d8e707d8e707d8d707d8e707d8e707d8e707d8d707d8e707d8e707d8d707d8e707d8e707d8e707d8d
+677588273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e395588527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac34b70b2233453
+1d2c4626395b2d436a304873324b77324b78324b773149743149743149742f46702f46702f46702e446d2e446d2d436c
+2c42692e466f476aaa527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac3617caa717e8f717e8f717e8f717e8f717e8f717e8f717e8f717e8f717e8f717e8f727f8f717e8f717e8f
+717e8f717e8f717e8f717e8f727f8f717e8f717e8f717e8f717e8f717e8f717e8f727f90717e8f717e8f717e8f717e8f
+717e8f717e8f727f8f717e8f717e8f717e8f717e8f717e8f717e8f727f8f717e8f717e8f717e8f717e8f727f8f717e8f
+68768a273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e395588527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac33c5a901b2942223352
+2b4066304873324a77324b78324b78324b78324b783149753149743149743047712f46702f46702e456e2e446d2e446d
+2c42692b41672a40663d5b925279c2527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac3627dab738091738091738091738091738091738091738091738091738091738091738091738091738091
+738091738091738091738091738091738091738091738091738091738091738091738091738091738091738091738091
+738091738091738091738091738091738091738091738091738091738091738091738091738091738091738091738091
+69778b273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e395588527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac33853851a273e253859304771
+324a77324b78324b78324b78324b78324b78324b78324a773149743149743148732f46702f46702f456f2e446d2e446d
+2d436b2b41672a3f652a3e643550805077bf527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac3627dac748193748193748193748193748193748193748193748193748193748193748193748193748193
+748193748193748193748193748193748193748193748193748193748193748193748193748193748193748193748193
+748193748193748193748193748193748193748193748193748193748193748193748193748193748193748193748193
+6a788d273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e395588527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac33954861c2942283b5f2f466f324b78
+324b78324b78324b78324b78324b78324b78324b78324b783149753149743149743047712f46702f46702e446d2e446d
+2e446c2b41682a3f652a3f65273b5e314a764f76bd527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac35f7db2758294758294758294758294758294758294758294758294758294758294758294758294758294
+758294758294758294758294758294758294758294758294758294758294758294758294758294758294758294758294
+758294758294758294758294758294758294758294758294758294758294758294758294758294758294758294758294
+6b798e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e395588527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac33d5b921b2942293e63304772324b78324b78
+324b78324b78324b78324b78324b78324b78324b78324b78324a773149743149743048732f46702f46702f456f2e446d
+2e446d2c42692a3f652a3f65283c60273b5e3048735077be527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac35e7db4778496778496778496778496778496778496778496778496778496778496778496778496778496
+778496778496778496778496778496778496778496778496778496778496778496778496778496768395778496778496
+778496778496778496778496778496778496778496778496778496778496778496778496778496778496778496778496
+768396273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e395588527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac34567a51b2942273a5c2f4670324b78324b78324b78
+324b78324b78324b78324b78324b78324b78324b78324b78324b783149753149743149742f47712f46702f46702e446d
+2e446d2d436b2a3f652a3f65283d61273b5e26395a2f46705077be527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac35f7eb4788597788597788597788597788597788597788597788597788597788597788597788597788597
+788597788597788597788597788597788597788597788597788597788597788597788597788597788597788597788597
+788597788597788597788597788597788597788597788597788597788597788597788597788597788597788597788597
+798698273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e334c79527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac35178c02132502437572f456e314974324b78324b78324b78
+324b78324b78324b78324b78324b78324b78324b78324b78324b78324a77314974344d7b3f5d92516d9e5f7baa617eaf
+5f7baa5877ab4a6aa23c5a8f314975273b5e263a5d233555314a755179c1527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac35f7eb7798699798699798699798699798699798699798699798699798699798699798699798698798699
+798699798699798699798699798699798699798699798699798699798699798699798699798699798698798699798699
+798698798699798699798699798699798698798699798698798699798699798699798698798699798698798699798699
+7a889a273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e334c79527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3324a771f2f4c2c4168314974314974314a75324b78324b78
+324b78324b78324b78324b78324b78324b78324b78324b783650805673a37d97c098afd0a3b7cfa4b7cfa4b7cfa4b7cf
+a4b7cfa4b7cfa4b7cf9eb3d08aa7d46d8fc8496aa62d446b223452385485527ac3527ac3527ac3527ac3537cc6537cc6
+547dc6547dc7577ec478879c7a889a7a879a7a879a7a889a7a879a7a879a7a889a7a889a7a889a7a879a7a889a7a879a
+7a879a7a879a7a889a7a879a7a879a7a879a7a889a7a879a7a889a7a879a7a879a7a889a7a879a7a879a7a879a7a889a
+7a879a7a879a7a879a7a879a7a889a7a879a7a879a7a879a7a879a7a879a7a889a7a889a7a879a7a879a7a889a7a889a
+7b899c273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e334c79527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac34b6fb21b28402a3e632f4670314973314974314974324a77324b78
+324b78324b78324b78324b78324b78324b783853846783b199afcea4b7cfa4b7cfa3b6cd9aaabe95a4b59aa8b899a6b7
+93a1b298a8bca3b5cda4b7cfa4b7cfa4b7cf9eb3d07f9fd54d6fad2b416842629d527ac3527ac35985d35680cb547dc7
+547dc7547dc7547dc76d84ab7b899c7b899c7b899c7b899c7b899c7b899c7b899c7b899c7b899c7b899c7b899c7b899c
+7b899c7b899c7b899c7b899c7b899c7b899c7b899c7b899c7b899c7b899c7b899c7b899c7b899c7b899c7b899c7b899c
+7b899c7b899c7b899c7b899c7b899c7b899c7b899c7b899c7b899c7b899c7b899c7b899c7b899c7b899c7b899c7b899c
+7c8b9d273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e334c79527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac32d446c2335542d436b2f4670304771314974314974314975324b78
+324b78324b78324b78324b78334c7a5b77a698aecca4b6ce98a7bb949da89a9ea3a0a1a2abababaeaeaeaeaeaeaeaeae
+adadada9a9a99d9e9e979ca2949eab99aabfa4b7cfa4b7cf9cb2d16f95d641629c4d73b85985d45d8bdd5985d4547dc7
+547dc7547dc7547dc75f81bc7c8b9d7c8b9d7c8b9d7c8b9d7c8b9d7c8b9d7c8b9d7c8b9d7c8b9d7c8b9d7c8b9d7c8b9d
+7c8b9d7c8b9d7c8b9d7c8b9d7c8b9d7c8b9d7c8b9d7c8b9d7c8b9d7c8b9d7c8b9d7c8b9d7c8b9d7c8b9d7c8b9d7c8b9d
+7c8b9d7c8b9d7c8b9d7c8b9d7c8b9d7c8b9d7c8b9d7c8b9d7c8b9d7c8b9d7c8b9d7c8b9d7c8b9d7c8b9d7c8b9d7c8b9d
+7d8c9f273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e334c79527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac34a6fb11b2941293d622e456e2f46702f4670304873314974314974324a76
+324b78324b78324b783853837b95bda2b4cc98a5b5989ba0a9a9a9aeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeae
+aeaeaeaeaeaeaeaeaeaeaeaeaeaeae9e9e9f8f97a19bacc2a4b7cfa3b7cf82a2d65a87d75d8bdd5d8bdd5d8bdd537cc6
+547dc7547dc7547dc7557dc6788aa37d8c9f7d8c9e7d8c9e7d8c9e7d8c9f7d8c9e7d8c9e7d8c9e7d8c9f7d8c9f7d8c9e
+7d8c9e7d8c9e7d8c9e7d8c9e7d8c9f7d8c9e7d8c9f7d8c9e7d8c9f7d8c9f7d8c9e7d8c9e7d8c9e7d8c9f7d8c9e7d8c9e
+7d8c9f7d8c9f7d8c9e7d8c9f7d8c9e7d8c9f7d8c9e7d8c9e7d8c9f7d8c9e7d8c9e7d8c9e7d8c9f7d8c9e7d8c9e7d8c9e
+7f8ea02f4264273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e334c79527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac33047712233512c426a2e456e2f456f2f46702f4670314974314974314974
+324b78324b783e5a8a8da5c998a6b9999ca1acacacaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeae
+aeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeae969799919eaea4b7cfa4b7cf8ba8d45e8cdd5d8bdd5d8bdd5883d0
+547dc7547dc7547dc7547dc7566f9a7684957f8ea07f8ea07f8ea07f8ea07f8ea07f8ea07f8ea07f8ea07f8ea07f8ea0
+7f8ea07f8ea07f8ea07f8ea07f8ea07f8ea07f8ea07f8ea07f8ea07f8ea07f8ea07f8ea07f8ea07f8ea07f8ea07f8ea0
+7f8ea07f8ea07f8ea07f8ea07f8ea07f8ea07f8ea07f8ea07f8ea07f8ea07f8ea07f8ea07f8ea07f8ea07f8ea07f8ea0
+808fa2344768273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e2e456f527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac21d2b4526385a2e446d2e446d2f456f2f466f2f466f304771314974314974
+314a753e5a8b8fa6c8939ca8a6a6a6aeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeae
+aeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeae9e9e9e8b96a5a4b7cfa4b7cf86a4d55d8bdd5d8bdd5b88d8
+547cc6547dc7547dc7547dc75175b6434a55697584808fa2808fa2808fa2808fa2808fa2808fa2808fa2808fa2808fa2
+808fa2808fa2808fa2808fa2808fa2808fa2808fa2808fa2808fa2808fa2808fa2808fa2808fa2808fa2808fa2808fa2
+808fa2808fa2808fa2808fa2808fa2808fa2808fa2808fa2808fa2808fa2808fa2808fa2808fa2808fa2808fa2808fa2
+6c7989304263273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e2c436b527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac3527ac3527ac3527ac34668a61a273f293d622c42692e446d2e446d2f466f2f46702f4670304873314974
+375180859ec490969cacacacaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeacabaca6a4a6aeaeae
+aeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeae9d9d9d919fb0a4b7cfa4b7cf779bd85d8bdd5d8bdd
+557ec9547dc7547dc7547dc7547dc745546e40475158626f7d8c9e8190a38190a38190a38190a38190a38190a38190a3
+8190a38190a38190a38190a38190a38190a38190a38190a38190a38190a38190a38190a38190a38190a38190a38190a3
+8190a38190a38190a38190a38190a38190a38190a38190a38190a38190a38190a38190a38190a38190a38190a38190a3
+4047512b3d5c273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e2c436b527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac3527ac3527ac3527ac33650801f2f4b2a3f642a3f652c42692e446c2e446e2f46702f46702f4670324a76
+748fba8f9399adadadaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeacacac9f9b9f9994997a6d7a635163745674634963857c85
+abababa3a1a3908790978597a099a0a9a8a9aeaeaeaeaeaeaeaeaeaeaeae8c8e909bacc2a4b7cf9fb3ce5f8ad55d8bdd
+5984d3547dc7547dc7547dc7547dc74c699a4047514047514a525d7481928291a48392a58392a58392a58291a48392a5
+8392a58392a58291a48392a58392a58291a48392a58392a58291a48392a58392a58291a48392a58291a48291a48291a4
+8392a58392a58291a48392a58392a58291a48392a58291a48392a58392a58291a48291a48392a58291a58291a48291a5
+4047512b3d5c273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e2c436b527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac3527ac3527ac3527ac32b41672233522a3f652a3f652a3f662c42692d436c2e456e2f46702f4670506ea2
+8b939dacacacaeaeaeadadada19fa1918b91887e886756675540556e506e523c52533c53523c525840586e506e6f516f
+7456747e647e6f506f573f57654965654b65706170979197aeaeaeaeaeaea8a8a86f767ea4b7cfa4b7cf839fcc5d8bdd
+5c89da547dc7547dc7547dc7547dc7537ac0414a5740475140475142495365707f8493a68493a68493a68493a68493a6
+8493a68493a68493a68493a68493a68493a68493a68493a68493a68493a68493a68493a68493a68493a68493a68493a6
+8493a68493a68493a68493a68493a68493a68493a68493a68493a68493a68493a68493a68493a68493a68493a68493a6
+4047512b3d5c273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e2c436b527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3253759253759293d612a3e642a3f652b40662c42692d436b2f456f344d7b7685a1
+8780878d858d6d5d6d5844585d445d584058513b51543d54533c53694c696d4f6d6e506e6247627d5b7d5a415a533c53
+735373503a50533c53563e566c4f6c7051706d4f6d6c4e6c6f5e6f9e9b9eaeaeae7979798392a5a4b7cfa2b5ce5a82c7
+5d8bdd557fcb547dc7547dc7547dc7547dc7485b7d404751404751404751404751535c697f8da08594a88594a88594a8
+8594a88594a88594a88594a88594a88594a88594a88594a88594a88594a88594a88594a88594a88594a88594a88594a8
+8594a88594a88594a88594a88594a88594a88594a88594a88594a88594a88594a88594a88594a88594a88594a88594a8
+404751354257273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e2c436b527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac3527ac3527ac3527ac321314e25385a273b5e293d60293e632d3f64353f613b3f5f443f5d4d3d57533c53
+745474503a50533c53533c536347637152716d4f6d6d4f6d735473604660503a50664a66584058513a51573f57644864
+7152716f516f6d4f6d5d435d674b67513b515840586e506e614661694e69a29aa2989898444a51a4b7cfa4b7cf708cb9
+5d8bdd5884d2547dc7547dc7547dc7547dc75071ab424954404751404751404751404751474f5a7380928695a98695a9
+8695a98695a98695a98695a98695a98695a98695a98695a98695a98695a98695a98695a98695a98695a98695a98695a9
+8695a98695a98695a98695a98695a98695a98695a98695a98695a98695a98695a98695a98695a98695a98695a98695a9
+4047514047512b3d5c273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e2a3f65527ac2527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3233453243656273b5e273b5e473c57563f577b597b594059513b51543d54594159
+7052706e506e6d4f6d604660715271523c52584058735373503a50573f575f455f6e506e6f516f705170664a66674b67
+765676543d546c4e6c553e555f455f674a677454746d4f6d6b4e6b6d4f6d5742579d9c9d31313194a5baa4b7cf889ab3
+5b87d75d8adc537bc5547dc7547dc7547dc7547cc6475366434b55404751404751404751404751404751616c7b8595a8
+8797ab8797ab8797ab8797ab8797ab8797ab8797ab8797ab8797ab8797ab8797ab8797ab8797ab8797ab8797ab8797ab
+8797ab8797ab8797ab8797ab8797ab8797ab8797ab8797ab8797ab8797ab8797ab8797ab8797ab8797ab8797ab8797ab
+4047514047512f3f5a273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e5179c1527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3273a5c233555243757283a5c4d3e57584058694c697152716f516f674b676d4f6d
+553e55503a50745474533c53543d546045606a4d6a6d4f6d715271815d815e445e5d445d513b515c435c6a4d6a5d435d
+7e5b7e6f506f7253726b4e6b6d4f6d594059594159543d54513a51684b68694c699286923737376f7a89a4b7cf9fb1c8
+4f73b25d8bdd5681cd547dc7547dc7547dc7547dc74c658f454d58444c574148524047514047514047514047514f5864
+7e8c9f8898ac8898ac8898ac8898ac8898ac8898ac8898ac8898ac8898ac8898ac8898ac8898ac8898ac8898ac8898ac
+8898ac8898ac8898ac8898ac8898ac8898ac8898ac8898ac8898ac8898ac8898ac8898ac8898ac8898ac8898ac8898ac
+4047514047513f4652303f5a273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e5179c1527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac3527ac3527ac3527ac32f47712335543f40616e51706f516f6448645c435c503a505d435d604660523c52
+634863664a666d4f6d6d4f6d6f516f5b425b624762533c535b425b8b648b684b686a4d6a6247627c5a7c6e506e634863
+6e506e543d54553e55523b525d435d6c4e6c6f516f6e506e7a587a8d668d976e97928192383838515861a4b7cfa4b7cf
+5674a65d8bdd5a86d5537cc5547dc7547dc7547dc75277b9454d59454d58454d58424a54404751404751404751404751
+444c566f7c8c8999ae8999ae8999ae8999ae8999ae8999ae8999ae8999ae8999ae8999ae8999ae8999ae8999ae8999ae
+8999ae8999ae8999ae8999ae8999ae8999ae8999ae8999ae8999ae8999ae8999ae8999ae8999ae8999ae8999ae8999ae
+404751404751404751404751364256283b5d273b5e273b5e273b5e273b5e273b5e273b5e273b5e273b5e5179c1527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac3527ac3527ac3527ac33b578c21314f2a3049513b51785778523b525e445e6046607454746f516f6c4e6c
+6e506e5d445d7555756448645e445e6348636a4d6a6c4e6c735473705270654965654a65563f56563e56543d54543d54
+684c686f516f7051706247627c5a7c584058563e56725372553d558b658bb583b589758935353544484ea4b7cfa4b7cf
+5c749a5d8bdd5e8cdf5c89da5680cc547dc7547dc7547dc7495975454d58454d58454d58444b56404752404751404751
+4047514047515c66748897ac8b9baf8b9baf8b9baf8b9baf8a9aaf8b9baf8b9bb08a9aaf8b9baf8b9baf8a9aaf8b9baf
+8b9bb08a9aaf8b9baf8a9aaf8b9baf8b9baf8a9aaf8b9baf8b9baf8b9baf8b9baf8b9baf8b9baf8b9baf8b9baf8b9baf
+4149534047514047514047514047513c45532c3d5c273b5e273b5e273b5e273b5e273b5e273b5e273b5e5179c1527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac3527ac3527ac3527ac34b70b32736526b6b6d6b666b6f516f6e506e6f506f563e565b425b533c53523b52
+6b4d6b684b68705170694c697d5b7d684c685b425b6d4f6d533c53543d54533c536549656e506e6d4f6d6a4d6a775677
+5d435d503a506e506e543d54513b51543d545c435c7e5b7e8e678e9b709b5840584a474c39393943474ca4b7cfa4b7cf
+647ca15d8bdd5e8cdf5e8bde5f8de05984d2547dc7547dc74f6b9e454d58454d58454d58454d58454c57414953404751
+4047514047514047514b535f7d8b9e8c9cb18c9cb18c9cb18c9cb18c9cb18c9cb18c9cb18c9cb18c9cb18c9cb18c9cb1
+8c9cb18c9cb18c9cb18c9cb18c9cb18c9cb18c9cb18c9cb18c9cb18c9cb18c9cb18c9cb18c9cb18c9cb18c9cb18c9cb1
+454d58434a554047514047514047514047513f4652324058273b5e273b5e273b5e273b5e273b5e273b5e5179c1527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac334496f8a8a8abcbabc543d54624762634863674b676f516f6a4d6a755575
+6a4d6a573f57745474523c52533c53543d545d445d7152716d4f6d6e506e674b676d4f6d513b515e445e684c68503a50
+533c535840586e506e8661869a709a956c95856085b684b6b684b6b180b1503d524759543b3b3b44484da4b7cfa4b7cf
+6075955d8bdd5e8ce05f8de15f8de15f8de15c88da557ec9537ac146505e454d58454d58454d58454d58454d58434a55
+404751404751404751404751424a546a76878d9cb18d9db28d9db28d9db28d9db28d9db28d9db28d9db28d9db28d9db2
+8d9db28d9db28d9db28d9db28d9db28d9db28d9db28d9db28d9db28d9db28d9db28d9db28d9db28d9db28d9db28d9db2
+454d58454d58444c56414852404751404751404751404751384355293c5d273b5e273b5e273b5e273b5e5178c0527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac34c6ca78b8b8bc0bec0563e56805d807c5a7c5c435c5d435d604560513b51
+543d54573f576b4e6b6f516f6d4f6d634863725272543d54513b51755575503a50513b51584058694c69805d80986e98
+ab7cab735473b382b3b684b6b684b6b482b4b486b6aa90b599a1b387afaf4e7f723c48443b3b3b464a4fa4b7cfa4b7cf
+566b8d5d8bdd5f8de05f8de15f8de15f8de15f8de15e8bde5781ce4b5f83454d58454d58454d58454d58454d58454d58
+444c5641485240475140475140475140475158626f8797ab8e9eb48f9fb48e9eb38e9eb48e9eb48e9eb38f9fb48e9eb3
+8e9eb48e9eb48e9eb38e9eb48e9eb48e9eb38e9eb38e9eb48e9eb38e9eb48e9eb48e9eb38e9eb48e9eb38e9eb48e9eb4
+454d58454d58454d58454d574249534047514047514047514047513d46522d3e5b273b5e273b5e273b5e4b70b3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac35478ba8f8f8fcfcecf556166694c697b597b8260827356737f5c7f7a587a
+886388886388815d81563e566348636a4d6a503a505940596146617d5b7d936b93a97ba98e678e996f99b684b6b684b6
+b684b6b484b5ab8fb59c9eb38bafb27cbeb06cceae68d2ae68d2ae68d2ae4489725056543f3f3f545a61a4b7cfa4b7cf
+4f668e5d8bdd5f8de15f8de15f8de15f8de15f8de15f8de15f8de15679b7454d58454d58454d58454d58454d58454d58
+454d58454d5842495340475140475140475140475148505b7a889b90a0b590a0b590a0b590a0b590a0b590a0b590a0b5
+90a0b590a0b590a0b590a0b590a0b590a0b590a0b590a0b590a0b590a0b590a0b590a0b590a0b590a0b590a0b590a0b5
+454d58454d58454d58454d58454d58434b55404751404751404751404751404751344157273b5e273b5e4b70b3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac35478ba7676767f7f7f5680724a6f68756e837462746f6f6f846984ac7dac
+b684b69d729d9f739f5f455f664a66946b94a578a5b080b0785778b684b6b684b6b684b6b684b6ae8cb59e9cb48eacb2
+7ebcb06fcbaf68d2ae68d2ae68d2ae68d2ae68d2ae68d2ae68ceab67bc9f5a8174616161424242626b75a4b7cf9eb1c8
+4762915d8bde5f8de15f8de15f8de15f8de15f8de15f8de15f8de15f8cdf475365454d58454d58454d58454d58454d58
+454d58454d58454d58434b554047514047514047514047514148536772828f9fb591a1b791a1b791a1b791a1b791a1b7
+91a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b7
+454d58454d58454d58454d58454d58454d58444c574148524047514047514047514047513a44542a3d5c4b70b3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac15d6e8e6464645f5f5f566963539f865b7c72c2c2c297899ba77aa7
+8d668d6a4d6a624762553e557a587ab684b6b684b6b684b6b189b5a199b490aab280bab071c9af68d2ae68d2ae68d2ae
+68d2ae68d2ae68d2ae66ceab66bfa165a7916491826277706165646161616161616161613b3b3b747f8da4b7cf8190a3
+5075b55e8cde5f8de15f8de15f8de15f8de15f8de15f8de15f8de15f8de14f648a454d58454d58454d58454d58454d58
+454d58454d58454d58454d58444c57414852404751404751404751404751535c698796aa92a2b892a2b892a2b892a2b8
+92a2b892a2b892a2b892a2b892a2b892a2b892a2b892a2b892a2b892a2b892a2b892a2b892a2b892a2b892a2b892a2b8
+454d58454d58454d58454d58454d58454d58454d58454d58424a544047514047514047514047513e46524a6699527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac35874a66365696161615c615f6c6f6ebcbcbc80b1a064b59d
+7bb8ad86a5aa8995a38781978e89a094a6b382b8b173c7af69d1ae68d2ae68d2ae68d2ae68d2ae68d2ae68d2ae61c4a2
+58b1934892794b7e6d55635e6161616161616161616161616161616161616161615f5f5f3434348f9fb3a4b7cf5f6c7f
+5b88d85e8cdf5f8de15f8de15f8de15f8de15f8de15f8de15f8de15f8de15677b2454d58454d58454d58454d58454d58
+454d58454d58454d58454d58454d58454d58424a54404751404751404751404751454c5778859793a3b994a4ba94a4ba
+94a4ba94a4ba94a4ba94a4ba94a4ba94a4ba94a4ba94a4ba94a4ba94a4ba94a4ba94a4ba94a4ba93a3b994a4ba93a3b9
+454d58454d58454d58454d58454d58454d58454d58454d58454d58434b56404752404751404751404751404752475b7f
+5178be527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac35b6b88656565636363616161bdbdbd94c4b45fbf9e
+53a88b61c3a26ad6b26ad6b268d2ae68d2ae68d2ae68d2ae68d2ae68d2ae64cba85dbb9b55ab8e4c987e468a73508170
+6c8d828f9a969798986e6e6e6161616161616161616161616161616161616161614c4c4c404244a2b5cc9dafc6475c81
+5d8bdd5e8ce05f8de15f8de15f8de15f8de15f8de15f8de15f8de15f8de15e87d149525e454d58454d58454d58454d58
+454d58454d58454d58454d58454d58454d58454d58434b56404852404751404751404751404751616b7a91a2b795a5bb
+95a5bb95a5bb95a5bb95a5bb95a5bb95a5bb95a5bb95a5bb95a5bb95a5bb95a5bb95a5bb95a5bb95a5bb95a5bb95a5bb
+454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58444c57414853404751404751404751404751
+4350654f70ad527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac35378bd616772898989686868888888808b876f9a8b
+71b29c6fc7a96dd4b26ad6b268d2ae71d2b18ad7bda2dac7a3d0c19dc4b798bbb09cbbb1aac2bab9c8c3cacecdcecece
+bbbbbbb2b2b29999997070706161616161616161616161616161616161615757573535356a737fa4b7cf7280915379bc
+5d8bdd5f8de05f8de15f8de15f8de15f8de15f8de15f8de15f8de15f8de15e7aa95d6876505965454d58454d58454d58
+454d58454d58454d58454d58454d58454d58454d58454d58444c574149534047514047514047514047514d56628594a8
+95a7bd95a7bd95a7bd95a7bd95a7bd95a7bd95a7bd95a7bd95a7bd95a7bd95a7bd95a7bd95a7bd95a7bd95a7bd95a7bd
+454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58434a55404751404751404751
+4047514149554b6595527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3576a8db5b5b59fa0a2757679d0d0d0848484
+8d8d8dabababb2b6b5b7c5c1c4d2cdd5d6d6e2e2e2e6e6e6e9e9e9eaeaeae8e8e8e6e6e6e2e2e2dededed2d2d2cfcfcf
+bababab3b3b39999997070706161616161616161616161616161615757573535353b3c3e99aac09dafc6495b785d8bdd
+5d8bdd5f8de15f8de15f8de15f8de15f8de15f8de15f8de15f8de15f8bdb5e6c7f5e69775e697756606d474f5b454d58
+454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58434a554047514047514047514047514d5661
+8796aa96a8be96a8be97a9bf96a8be96a8be97a9bf96a8be96a8be96a8be96a8be97a9bf96a8be96a8be96a8be97a9bf
+454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58444c56414852404751
+4047514047514047514657745177bb527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3586f99aeaeaea8aaaf212b3ec1c1c2707070
+8d8d8dacacacb5b5b5c4c4c4d0d0d0d7d7d7e1e1e1e6e6e6e8e8e8eaeaeae8e8e8e6e6e6e3e3e3dcdcdcd2d2d2cfcfcf
+bcbcbcb3b3b39999997070706161616161616161615d5d5d464646343434333333747e8ca4b7cf647181567dc25d8bdd
+5d8bdd5f8de15f8de15f8de15f8de15f8de15f8de15f8de15f8de15f7eb65e69775e69775e69775e69775b66744b545f
+454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454c576772827986998897ab90a0b6
+93a4ba98aac098aac098aac098aac098aac098aac098aac098aac098aac098aac098aac098aac098aac098aac098aac0
+454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d57424953
+404751404751404751404751424d5f4e6ea7527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac359729fa3a3a3bdc0c6233453a1a4a87a7a7a
+8d8d8da8a8a8b4b4b4c6c6c6cfcfcfd9d9d9e0e0e0e6e6e6e8e8e8eaeaeae8e8e8e6e6e6e3e3e3dbdbdbd4d4d4cdcdcd
+c1c1c1b0b0b0999999707070606060515151414141323232303030333333565c63a2b5cc8594a74a64905d8bdd5d8bdd
+5d8bde5f8de15f8de15f8de15f8de15f8de15f8de15f8de15f8de05e6f875e69775e69775e69775e69775e69775e6977
+525b68454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d588897ac91a1b791a1b791a1b7
+93a4ba99abc199abc199abc199abc199abc199abc199abc199abc199abc199abc199abc199abc199abc199abc199abc1
+454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58
+434b5540475140475140475140475140485349618a5279c1527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac3527ac359729f9b9b9bcbced54f75bb8791a48d8d8d
+8181819a9a9aa6a6a6bababac6c6c6d1d1d1dadadae1e1e1e3e3e3e7e7e7e6e6e6e5e5e5e3e3e3dadadad7d7d7cacaca
+c2c2c2b2b2b29898986f6f6f3f3f3f2e2e2e2e2e2e3030302f2f2f4a4e539dafc592a3b8475a775c89d95d8bdd5d8bdd
+5e8cdf5f8de15f8de15f8de15f8de15f8de15f8de15f8de15f82c05e69775e69775e69775e69775e69775e69775e6977
+5e697758626f48505c454d58454d58454d58454d58454d58454d58454d58454d58454d588897ac91a1b791a1b791a1b7
+94a4ba9aacc39aacc39aacc39aacc39aacc39aacc39aacc39aacc39aacc39aacc39aacc39aacc39aacc39aacc39aacc3
+454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58
+454d58444c5741485240475140475140475140475144546d5074b6527ac3527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac3527ac3527ac3527ac3527ac3527ac3527bc4537bc5537cc55a73a1929292d2d2d2567dc47b93be8e8f91
+4a4b4d5959596464647272727979798585859494949c9c9ca8a8a8afafafb5b5b5bdbdbdbcbcbcc0c0c0babababababa
+adadad9f9f9f6f6f6f3636362828282929292b2b2b2c2c2c4f555c9daec595a7bd4a59705a86d35d8bdd5d8bdd5d8bdd
+5e8cdf5f8de15f8de15f8de15f8de15f8de15f8de15f8de15e72915e69775e69775e69775e69775e69775e69775e6977
+5e69775e69775c67754d5662454d58454d58454d58454d58454d58454d58454d58454d588897ac91a1b791a1b791a1b7
+94a5bb9caec59caec49caec59caec49caec49caec59caec59caec49caec59caec49caec49caec59caec49caec49caec4
+454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58
+454d58454d58454d58424954404751404751404751404751414b5a4c699e527ac3527ac3527ac3527ac3527ac3527ac3
+527ac3527ac3527bc4537bc5537cc5547cc6547dc7547dc7547dc7547dc75a74a2878787dadada5a80c36786bca7acb5
+273a5d5076bb6677918796aa58626d1b1d1f1111111717171919192222222828283333334040404b4b4b555555616161
+6a6a6a4848482828282525252727272828283031336d7785a3b6cd8c9cb14757705b86d45d8bdd5d8bdd5d8bdd5d8bdd
+5e8ce05f8de15f8de15f8de15f8de15f8de15f8de15f86cb5e69775e69775e69775e69775e69775e69775e69775e6977
+5e69775e69775e69775e6977545d6a464e59454d58454d58454d58454d58454d58454d588897ac91a1b791a1b791a1b7
+95a5bb9dafc69dafc69dafc69dafc69dafc69dafc69dafc69dafc69dafc69dafc69dafc69dafc69dafc69dafc69dafc6
+454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58
+454d58454d58454d58454d58434b56404752404751404751404751404752485d825178bf527ac3527ac4537bc4537cc5
+547cc6547dc7547dc7547dc7547dc7547dc7547dc7547dc7547dc7547dc758729f7e7e7edcdcdc6485c1577bbdc1c4c9
+4b6fb03149745782cd6c809fa1b4cba0b2ca6e7a8a3b41481314140f0f0f101010101010111111131313161616191919
+1c1c1c1d1d1d202020242424333538626b7699aac0a2b4cc717e8e475c7f5b86d45d8bdd5d8bdd5d8bdd5d8bdd5d8bdd
+5f8de15f8de15f8de15f8de15f8de15f8de15f8de15e769d5e69775e69775e69775e69775e69775e69775e69775e6977
+5e69775e69775e69775e69775e69775964714a525e454d58454d58454d58454d58454d588897ac91a1b791a1b791a1b7
+95a6bc9eb0c79eb0c79eb0c79eb0c79eb0c79eb0c79eb0c79eb0c79eb0c79eb0c79eb0c79eb0c79eb0c79eb0c79eb0c7
+454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58
+454d58454d58454d58454d58454d58444c574148534047514047514047514047514350655174b4547dc7547dc7547dc7
+547dc7547dc7547dc7547dc7547dc7547dc7547dc7547dc7547dc7547dc75670a1737373dddddd6c8bc3547dc7bdc1c8
+597dbe4f76bb3a5689557fc955709d8b9cb1a4b7cfa4b7cfa0b3ca8d9db17582936f7c8b5f69765f69764f57614c545d
+4d555e555d676e7a888695a8a2b5cda4b7cf8999ad515e705072ab5d8bdd5d8bdd5d8bdd5d8bdd5d8bdd5d8bdd5d8bdd
+5f8de15f8de15f8de15f8de15f8de15f8de15f89d65e6a795e69775e69775e69775e69775e69775e69775e69775e6977
+5e69775e69775e69775e69775e69775e69775d68764f5864454d58454d58454d58454d588897ac91a1b791a1b791a1b7
+94a4bb9fb1c99fb1c9a0b2c99fb1c99fb1c9a0b2c99fb1c99fb1c9a0b2c99fb1c9a0b2c99fb1c9a0b2c99fb1c9a0b2c9
+454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58
+454d58454d58454d58454d58454d58454d58454d58424a544047514047514047514047514149554c6898547dc7547dc7
+547dc7547dc7547dc7547dc7547dc7547dc7547dc7547dc7547dc7547dc75877b06c6c6cdcdcdc7a95c6547dc7aab5c9
+6f8bbd547dc7547dc64465a14d74b85075b7586e918191a4a3b6cea4b7cfa4b7cfa4b7cfa4b7cfa4b7cfa4b7cfa4b7cf
+a4b7cfa4b7cfa4b7cfa0b2ca8190a25663754b67955a85d15d8bdd5d8bdd5d8bdd5d8bdd5d8bdd5d8bdd5d8bdd5d8bde
+5f8de15f8de15f8de15f8de15f8de15f8de15e7aa85e69775e69775e69775e69775e69775e69775e69775e69775e6977
+5e69775e69775e69775e69775e69775e69775e69775e697756606d474f5a454d58454d58808fa291a1b791a1b791a1b7
+93a4baa1b3caa1b3caa1b3caa1b3caa1b3caa1b3caa1b3caa1b3caa1b3caa1b3caa1b3caa1b3cba1b3caa1b3caa1b3ca
+454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58
+454d58454d58454d58454d58454d58454d58454d58454d58444b564048524047514047514047514047514759795379bf
+547dc7547dc7547dc7547dc7547dc7547dc7547dc7547dc7547dc7547dc75877b0666666d8d8d88199c4547dc7889cc0
+8da0c2547dc7547dc7547dc7527ac34f75bb5681cd537ac049628c5c6d867380918594a895a7bc97a8bf97a8bf94a5ba
+8190a36f7c8c5c6878485b7c4e6da25b87d65d8bdd5d8bdd5d8bdd5d8bdd5d8bdd5d8bdd5d8bdd5d8bdd5d8bdd5e8cde
+5f8de15f8de15f8de15f8de15f8de15f8bda5e6c7e5e69775e69775e69775e69775e69775e69775e69775e69775e6977
+5e69775e69775e69775e69775e69775e69775e69775b6573545e6b4c5560444c56454d587d8b9e91a1b791a1b791a1b7
+94a4baa2b4cca2b4cca2b4cca2b4cca2b4cca2b4cca2b4cca2b4cca2b4cca2b4cca2b4cca2b4cca2b4cca2b4cca2b4cc
+454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58
+454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58424953404751404751404751404751434e60
+4f70aa547dc7547dc7547dc7547dc7547dc7547dc7547dc7547dc7547dc75877b0656565d1d1d18ea4ca547dc76886bb
+abb4c4547dc7547dc7547dc7547dc7547dc7547dc65681cd5883d05a87d65781cb4f72b049679b486392486393486493
+4e6ea6567dc15c89da5d8bdd5d8bdd5d8bdd5d8bdd5d8bdd5d8bdd5d8bdd5d8bdd5d8bdd5d8bdd5d8bdd5d8bdd5e8cdf
+5f8de15f8de15f8de15f8de15f8de15f7eb45e69775e69775e69775e69775e69775e69775e69775e69775e69775e6977
+5e69775e69775c677456606d4f596549515d434b55404751404751404751404751434a557d8b9e91a1b791a1b791a1b7
+94a4bba3b5cda3b5cda3b5cda3b5cda3b5cda3b5cda3b5cda3b5cda3b5cda3b5cda3b5cda3b5cda3b5cda3b5cda3b5cd
+454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58
+454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58434b55404751404751404751404751
+4048544a638d547dc6547dc7547dc7547dc7547dc7547dc7547dc7547dc75877b0656565c7c7c796a7c6547dc7557bc1
+bcbec2557cc2547dc7547dc7547dc7547dc7547dc7547dc7547dc7547dc75985d45d8bdd5d8bdd5d8bdd5d8bdd5d8bdd
+5d8bdd5d8bdd5d8bdd5d8bdd5d8bdd5d8bdd5d8bdd5d8bdd5d8bdd5d8bdd5d8bdd5d8bdd5d8bdd5d8bdd5d8bdd5e8ce0
+5f8de15f8de15f8de15f8de15f8de05e6e865e69775e69775e69775e69775e69775e69775e69775c677557616e515a66
+4a535e444b564047514047514047514047514047514047514f57645e6877707c8d7e8ca08f9fb591a1b791a1b791a1b7
+94a4bba4b7cfa4b7cfa4b7cfa4b7cfa4b7cfa4b7cfa4b7cfa4b7cfa4b7cfa4b7cfa4b7cfa4b7cfa4b7cfa4b7cfa4b7cf
+454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58
+454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58444c57414852404751404751
+40475140475145546e5277ba547dc7547dc7547dc7547dc7547dc7547dc75777af656565bfbfbfa3b2ce547dc7547dc7
+a7b1c46a86b9547dc7547dc7547dc7547dc7547dc7547dc7547dc7547dc7557fca5d8bdd5d8bdd5d8bdd5d8bdd5d8bdd
+5d8bdd5d8bdd5d8bdd5d8bdd5d8bdd5d8bdd5d8bdd5d8bdd5d8bdd5d8bdd5d8bdd5d8bdd5d8bdd5d8bdd5d8bdd5f8de0
+5f8de15f8de15f8de15f8de15f81bf5e69775e69775e69775d687658626f525b674c5460454c57404752404751404751
+4047514047514047514b535e5b64726d798a7d8b9e8c9bb191a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b7
+94a5bba5b8d0a5b8d0a5b8d0a5b8d0a5b8d0a5b8d0a5b8d0a5b8d0a5b8d0a5b8d0a5b8d0a5b8d0a5b8d0a5b8d0a5b8d0
+454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58
+454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58424954404751
+404751404751404751424b5b4e6da4547dc7547dc7547dc7547dc7547dc75372aa656565b5b5b5abb5c8547dc7547dc7
+7990ba92a2be547dc7547dc7547dc7547dc7547dc7547dc7547dc7547dc7547dc75a87d65d8bdd5d8bdd5d8bdd5d8bdd
+5d8bdd5d8bdd5d8bdd5d8bdd5d8bdd5d8bdd5d8bdd5d8bdd5d8bdd5d8bdd5d8bdd5d8bdd5d8bdd5d8bdd5d8bdd5f8de1
+5f8de15f8de15f8de15f8de0596a86535c694c5560474e5941485240475140475140475140475140475148505b596371
+6874847c899c8b9aaf91a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b7
+94a4baa6b9d2a6b9d2a6b9d2a6b9d2a6b9d2a6b9d2a6b9d2a6b9d2a6b9d2a6b9d2a6b9d2a6b9d2a6b9d2a6b9d2a6b9d2
+454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58
+454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58434b56
+404751404751404751404751404751495f85537bc4547dc7547dc7547dc7567bbd656565adadadb7c1d2547dc7547dc7
+577bbbaeb2b9547cc5547dc7547dc7547dc7547dc7547dc7547dc7547dc7547dc75680cc5d8bdd5d8bdd5d8bdd5d8bdd
+5d8bdd5d8bdd5d8bdd5d8bdd5d8bdd5d8bdd5d8bdd5d8bdd5d8bdd5d8bdd5d8bdd5d8bdd5d8bdd5d8bdd5d8bde5b83cd
+5474ae4d658f475873424b59404751404751404751404751404751464e5957606e6772827885978998ad91a1b691a1b7
+91a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b7
+91a1b7a8bbd4a7bad3a7bad3a8bbd4a8bbd4a7bad3a7bad3a8bbd4a7bad3a8bbd4a8bbd4a8bbd4a8bbd4a7bad3a8bbd4
+454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58
+454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58
+444c5741485340475140475140475140475148556b557abd547dc7547dc7567bbe656565a3a3a3bfc3ca547dc7547dc7
+547dc79ba4b66782b3547dc7547dc7547dc7547dc7547dc7547dc7547dc7547dc7547dc75b88d95d8bdd5d8bdd5d8bdd
+5d8bdd5d8bdd5d8bdd5d8bdd5d8bdd5d8bdd5d8bdd5d8bdd5d8bdd5d8bdd5a84ce5475b04e6793475874424c5b404751
+404751404751404751404751434b55545d6a6570807481938594a890a0b691a1b791a1b791a1b791a1b791a1b791a1b7
+91a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b7
+91a1b8a9bcd5a9bcd5a9bcd5a9bcd5a9bcd5a9bcd5a9bcd5a9bcd5a9bcd5a9bcd5a9bcd5a9bcd5a9bcd5a9bcd5a9bcd5
+454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58
+454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58
+454d58454d5848505b616b7a727e908392a690a0b66889c2547dc7547dc7567bbe6565659a9a9acccfd5547dc6547dc7
+547dc76b84b2939db0547dc7547dc7547dc7547dc7547dc7547dc7547dc7547dc7547dc75782cf5d8bdd5d8bdd5d8bdd
+5d8bdd5d8bdd5d8bdd5d8bdd5d8bdd5b85d15577b44f6a99495c7b434d5d404751404751404751404751404751424954
+505965636e7d737f918291a490a0b691a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b7
+91a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b7
+91a1b8aabdd6aabdd6aabdd6aabdd6aabdd6aabdd6aabdd6aabdd6aabdd6aabdd6aabdd6aabdd6aabdd6aabdd6aabdd6
+454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58
+454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58
+454d58454d5858626f91a1b791a1b791a1b791a1b76d8cc0547dc7547dc7567bbe656565929292d3d3d3577ec4547dc7
+547dc7557cc4a1a4aa5b7dba547dc7547dc7547dc7547dc7547dc7547dc7547dc7547dc7547dc85c89da5d8bdd5d8bdd
+5b86d4567ab94f6b9b4a5f82434f614047524047514047514047514047514148524f57645e6977717e8f808ea28f9fb5
+91a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b7
+91a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b7
+91a1b8abbed8abbed8abbed8abbed8abbed8abbed8abbed8abbed8abbed8abbed8abbed8abbed8abbed8abbed8abbed8
+454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58
+454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58
+454d58454d58535d6a91a1b791a1b791a1b791a1b7718ebf547dc7547dc7567bbe656565868686dadada5a7fc3547dc7
+547dc7547dc7778db38593ac547dc7547dc7547dc7547dc7547dc7547dc7547dc7537bc35072ae4e69994b6084455369
+4047524047514047514047514047514047514d55615c66756c78887f8da08e9db391a1b791a1b791a1b791a1b791a1b7
+91a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b7
+91a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b7
+91a2b8adc0d9adc0daadc0daadc0d9adc0daadc0daadc0daadc0d9adc0daadc0daadc0d9adc0daadc0daadc0daadc0d9
+454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58
+454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58
+454d58454d584d566291a1b791a1b791a1b791a1b7718ebf547dc7547dc75378bb6464647d7d7ddcdcdc6586c2547dc7
+547dc7547dc7557cc19a9da4597bb6547dc7547cc65073b04c6899485c7e445268404853404751404751404751404751
+4047514a525d5b65736a75867b899b8c9cb191a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b7
+91a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b7
+91a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b7
+91a2b8aec1dbaec1dbaec1dbaec1dbaec1dbaec1dbaec1dbaec1dbaec1dbaec1dbaec1dbaec1dbaec1dbaec1dbaec1db
+454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58
+454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58454d58
+454d58454d584d566291a1b791a1b791a1b791a1b7718ebf547dc7547dc7547bc3646568727272dddddd6e8cc4547dc7
+547dc7547dc75174b361718c5b657644536a414955404751404751404751404751404751464d5857616e687484788598
+8998ad91a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b7
+91a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b7
+91a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b791a1b7
+91a1b7abbfd8afc3ddafc3ddafc3ddafc3ddafc3ddafc3ddafc3ddafc3ddafc3ddafc3ddafc3ddafc3ddafc3ddafc3dd
+  </Thumbnail>
+</VcProject>
