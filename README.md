@@ -1,0 +1,2 @@
+# MachineTemplate
+Vericut machine
